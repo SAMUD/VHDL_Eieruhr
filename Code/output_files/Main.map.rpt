@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Main
-Tue Dec 12 16:58:31 2017
+Tue Dec 12 17:11:01 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -15,14 +15,13 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |Main|SubMain:SubMain_1|StateMachine:StateMachine_1|mode
   9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Port Connectivity Checks: "SubMain:SubMain_1|ClockDivider:ClockDivider_1"
- 14. Port Connectivity Checks: "SubMain:SubMain_1"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "SubMain:SubMain_1|ClockDivider:ClockDivider_1"
+ 13. Port Connectivity Checks: "SubMain:SubMain_1"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -49,15 +48,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 12 16:58:31 2017       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 12 17:11:01 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Main                                        ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 230                                         ;
-;     Total combinational functions  ; 226                                         ;
-;     Dedicated logic registers      ; 43                                          ;
-; Total registers                    ; 43                                          ;
+; Total logic elements               ; 128                                         ;
+;     Total combinational functions  ; 124                                         ;
+;     Dedicated logic registers      ; 44                                          ;
+; Total registers                    ; 44                                          ;
 ; Total pins                         ; 59                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -165,7 +164,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -175,7 +174,6 @@ agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                              ; Library ;
 +----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------+---------+
 ; FallingEdge.vhd                  ; yes             ; User VHDL File        ; D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd  ;         ;
-; Counter.vhd                      ; yes             ; User VHDL File        ; D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd      ;         ;
 ; main.vhd                         ; yes             ; Auto-Found VHDL File  ; D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd         ;         ;
 ; submain.vhd                      ; yes             ; Auto-Found VHDL File  ; D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd      ;         ;
 ; clockdivider.vhd                 ; yes             ; Auto-Found VHDL File  ; D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd ;         ;
@@ -188,20 +186,20 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 230       ;
+; Estimated Total logic elements              ; 128       ;
 ;                                             ;           ;
-; Total combinational functions               ; 226       ;
+; Total combinational functions               ; 124       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 89        ;
-;     -- 3 input functions                    ; 46        ;
-;     -- <=2 input functions                  ; 91        ;
+;     -- 4 input functions                    ; 26        ;
+;     -- 3 input functions                    ; 44        ;
+;     -- <=2 input functions                  ; 54        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 159       ;
-;     -- arithmetic mode                      ; 67        ;
+;     -- normal mode                          ; 89        ;
+;     -- arithmetic mode                      ; 35        ;
 ;                                             ;           ;
-; Total registers                             ; 43        ;
-;     -- Dedicated logic registers            ; 43        ;
+; Total registers                             ; 44        ;
+;     -- Dedicated logic registers            ; 44        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 59        ;
@@ -209,9 +207,9 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 43        ;
-; Total fan-out                               ; 863       ;
-; Average fan-out                             ; 2.23      ;
+; Maximum fan-out                             ; 44        ;
+; Total fan-out                               ; 538       ;
+; Average fan-out                             ; 1.88      ;
 +---------------------------------------------+-----------+
 
 
@@ -220,15 +218,14 @@ agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name  ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+--------------+
-; |Main                                 ; 226 (0)             ; 43 (0)                    ; 0           ; 0            ; 0       ; 0         ; 59   ; 0            ; |Main                                                 ; Main         ; work         ;
-;    |SubMain:SubMain_1|                ; 226 (0)             ; 43 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1                               ; SubMain      ; work         ;
+; |Main                                 ; 124 (0)             ; 44 (0)                    ; 0           ; 0            ; 0       ; 0         ; 59   ; 0            ; |Main                                                 ; Main         ; work         ;
+;    |SubMain:SubMain_1|                ; 124 (0)             ; 44 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1                               ; SubMain      ; work         ;
 ;       |ClockDivider:ClockDivider_1|   ; 45 (45)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|ClockDivider:ClockDivider_1   ; ClockDivider ; work         ;
-;       |Counter:Counter_1|             ; 103 (103)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|Counter:Counter_1             ; Counter      ; work         ;
 ;       |FallingEdge:FallingEdge_Clear| ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Clear ; FallingEdge  ; work         ;
 ;       |FallingEdge:FallingEdge_Min|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Min   ; FallingEdge  ; work         ;
 ;       |FallingEdge:FallingEdge_Sec|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Sec   ; FallingEdge  ; work         ;
 ;       |FallingEdge:FallingEdge_Start| ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Start ; FallingEdge  ; work         ;
-;       |StateMachine:StateMachine_1|   ; 77 (77)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|StateMachine:StateMachine_1   ; StateMachine ; work         ;
+;       |StateMachine:StateMachine_1|   ; 78 (78)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|StateMachine:StateMachine_1   ; StateMachine ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -267,18 +264,20 @@ Encoding Type:  One-Hot
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[2] ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr13   ; yes                    ;
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[3] ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr13   ; yes                    ;
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[4] ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr13   ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[5] ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr13   ; yes                    ;
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerEnable_o         ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr20   ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_100_720    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_120_657    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_190_636    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_200_615    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_110_699    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_111_678    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_290_594    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_300_573    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_310_552    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_320_531    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
-; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_reset_741  ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector46 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_100_720    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_120_657    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_190_636    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_200_615    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_110_699    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_111_678    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_290_594    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_390_510    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_300_573    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_310_552    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_320_531    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_reset_741  ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector47 ; yes                    ;
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerCounter[2]       ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr21   ; yes                    ;
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerCounter[1]       ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr21   ; yes                    ;
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerCounter[0]       ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr21   ; yes                    ;
@@ -289,45 +288,9 @@ Encoding Type:  One-Hot
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerCounter[8]       ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr21   ; yes                    ;
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerCounter[9]       ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr21   ; yes                    ;
 ; SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerCounter[3]       ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr21   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[0]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[0]        ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[1]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[2]        ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[2]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[2]        ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[3]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[4]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[5]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[6]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[7]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[8]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[9]                    ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[10]                   ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[11]                   ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]                   ; SubMain:SubMain_1|Counter:Counter_1|CountValue[12]       ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|AlreadyIncremented               ; SubMain:SubMain_1|Counter:Counter_1|CountValue[0]        ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[1]               ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[2]               ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[3]               ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[4]               ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[5]               ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[6]               ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[7]               ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[8]               ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[9]               ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[10]              ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[11]              ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[12]              ; SubMain:SubMain_1|Counter:Counter_1|CountValueSaved[0]   ; yes                    ;
-; Number of user-specified and inferred latches = 56                   ;                                                          ;                        ;
+; Number of user-specified and inferred latches = 32                   ;                                                          ;                        ;
 +----------------------------------------------------------------------+----------------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+-----------------------------------------------------------+--------------------+
-; Register name                                             ; Reason for Removal ;
-+-----------------------------------------------------------+--------------------+
-; SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_390 ; Lost fanout        ;
-; Total Number of Removed Registers = 1                     ;                    ;
-+-----------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -335,10 +298,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 43    ;
+; Total registers                              ; 44    ;
 ; Number of registers using Synchronous Clear  ; 27    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 11    ;
+; Number of registers using Asynchronous Clear ; 12    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -350,9 +313,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Main|SubMain:SubMain_1|Counter:Counter_1|CountValue[1]             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_111 ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Main|SubMain:SubMain_1|Counter:Counter_1|CountValue[3]             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_110 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
 
 
@@ -393,22 +354,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 59                          ;
-; cycloneiii_ff         ; 43                          ;
-;     CLR               ; 11                          ;
+; cycloneiii_ff         ; 44                          ;
+;     CLR               ; 12                          ;
 ;     SCLR              ; 27                          ;
 ;     plain             ; 5                           ;
-; cycloneiii_lcell_comb ; 227                         ;
-;     arith             ; 67                          ;
-;         2 data inputs ; 67                          ;
-;     normal            ; 160                         ;
+; cycloneiii_lcell_comb ; 125                         ;
+;     arith             ; 35                          ;
+;         2 data inputs ; 35                          ;
+;     normal            ; 90                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 18                          ;
-;         3 data inputs ; 46                          ;
-;         4 data inputs ; 89                          ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 44                          ;
+;         4 data inputs ; 26                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.50                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 3.25                        ;
 +-----------------------+-----------------------------+
 
 
@@ -427,7 +388,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Dec 12 16:58:02 2017
+    Info: Processing started: Tue Dec 12 17:10:34 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Eieruhr -c Main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -451,15 +412,17 @@ Warning (12125): Using design file submain.vhd, which is not specified as a desi
     Info (12022): Found design unit 1: SubMain-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 53
     Info (12023): Found entity 1: SubMain File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 25
 Info (12128): Elaborating entity "SubMain" for hierarchy "SubMain:SubMain_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd Line: 92
-Info (12128): Elaborating entity "FallingEdge" for hierarchy "SubMain:SubMain_1|FallingEdge:FallingEdge_Min" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 146
+Warning (10541): VHDL Signal Declaration warning at submain.vhd(43): used implicit default value for signal "CountValue_o" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 43
+Warning (10541): VHDL Signal Declaration warning at submain.vhd(65): used implicit default value for signal "CountBlockTelemet" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 65
+Info (12128): Elaborating entity "FallingEdge" for hierarchy "SubMain:SubMain_1|FallingEdge:FallingEdge_Min" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 129
 Warning (12125): Using design file clockdivider.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: ClockDivider-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd Line: 35
     Info (12023): Found entity 1: ClockDivider File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd Line: 20
-Info (12128): Elaborating entity "ClockDivider" for hierarchy "SubMain:SubMain_1|ClockDivider:ClockDivider_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 177
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "SubMain:SubMain_1|ClockDivider:ClockDivider_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 160
 Warning (12125): Using design file statemachine.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: StateMachine-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 55
     Info (12023): Found entity 1: StateMachine File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 25
-Info (12128): Elaborating entity "StateMachine" for hierarchy "SubMain:SubMain_1|StateMachine:StateMachine_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 187
+Info (12128): Elaborating entity "StateMachine" for hierarchy "SubMain:SubMain_1|StateMachine:StateMachine_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 170
 Warning (10492): VHDL Process Statement warning at statemachine.vhd(88): signal "BtnMinF_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 88
 Warning (10492): VHDL Process Statement warning at statemachine.vhd(91): signal "BtnSecF_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 91
 Warning (10492): VHDL Process Statement warning at statemachine.vhd(109): signal "BtnSecF_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 109
@@ -504,56 +467,6 @@ Info (10041): Inferred latch for "nxt_mode.st_111" at statemachine.vhd(80) File:
 Info (10041): Inferred latch for "nxt_mode.st_110" at statemachine.vhd(80) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 80
 Info (10041): Inferred latch for "nxt_mode.st_100" at statemachine.vhd(80) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 80
 Info (10041): Inferred latch for "nxt_mode.st_reset" at statemachine.vhd(80) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 80
-Info (12128): Elaborating entity "Counter" for hierarchy "SubMain:SubMain_1|Counter:Counter_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd Line: 211
-Warning (10492): VHDL Process Statement warning at Counter.vhd(56): signal "CountBlockControl_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 56
-Warning (10492): VHDL Process Statement warning at Counter.vhd(60): signal "CountBlockControl_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at Counter.vhd(61): signal "clk_deci_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at Counter.vhd(61): signal "AlreadyIncremented" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at Counter.vhd(61): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at Counter.vhd(62): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 62
-Warning (10492): VHDL Process Statement warning at Counter.vhd(65): signal "CountBlockControl_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at Counter.vhd(66): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 66
-Warning (10492): VHDL Process Statement warning at Counter.vhd(67): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 67
-Warning (10492): VHDL Process Statement warning at Counter.vhd(69): signal "CountBlockControl_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 69
-Warning (10492): VHDL Process Statement warning at Counter.vhd(70): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 70
-Warning (10492): VHDL Process Statement warning at Counter.vhd(71): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 71
-Warning (10492): VHDL Process Statement warning at Counter.vhd(73): signal "CountBlockControl_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 73
-Warning (10492): VHDL Process Statement warning at Counter.vhd(74): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 74
-Warning (10492): VHDL Process Statement warning at Counter.vhd(75): signal "CountBlockControl_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at Counter.vhd(76): signal "CountValueSaved" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 76
-Warning (10492): VHDL Process Statement warning at Counter.vhd(80): signal "clk_deci_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 80
-Warning (10492): VHDL Process Statement warning at Counter.vhd(85): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 85
-Warning (10492): VHDL Process Statement warning at Counter.vhd(87): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 87
-Warning (10631): VHDL Process Statement warning at Counter.vhd(53): inferring latch(es) for signal or variable "CountValue", which holds its previous value in one or more paths through the process File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Warning (10631): VHDL Process Statement warning at Counter.vhd(53): inferring latch(es) for signal or variable "CountValueSaved", which holds its previous value in one or more paths through the process File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Warning (10631): VHDL Process Statement warning at Counter.vhd(53): inferring latch(es) for signal or variable "AlreadyIncremented", which holds its previous value in one or more paths through the process File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "AlreadyIncremented" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[0]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[1]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[2]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[3]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[4]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[5]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[6]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[7]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[8]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[9]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[10]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[11]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValueSaved[12]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[0]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[1]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[2]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[3]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[4]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[5]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[6]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[7]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[8]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[9]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[10]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[11]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-Info (10041): Inferred latch for "CountValue[12]" at Counter.vhd(53) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
 Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerEnable_o has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 39
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 58
 Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_100_720 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 80
@@ -564,8 +477,8 @@ Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|FallingEdge:FallingEdge_Sec|FallingOutput File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd Line: 30
 Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_111_678 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 80
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|FallingEdge:FallingEdge_Sec|FallingOutput File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd Line: 30
-Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_290_594 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 80
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_200 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 58
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_390_510 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 80
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 58
 Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_300_573 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 80
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 58
 Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_310_552 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 80
@@ -592,32 +505,6 @@ Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerCount
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_310 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 58
 Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerCounter[3] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
     Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_310 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 58
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[1] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[2] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[3] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[4] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[5] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[6] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[7] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[8] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[9] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[10] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[11] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|CountValue[12] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 53
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1] File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd Line: 152
-Warning (13012): Latch SubMain:SubMain_1|Counter:Counter_1|AlreadyIncremented has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Counter.vhd Line: 48
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd Line: 28
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Output1[0]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd Line: 41
     Warning (13410): Pin "Output1[1]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd Line: 41
@@ -660,21 +547,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "CountValueMainOut[10]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd Line: 47
     Warning (13410): Pin "CountValueMainOut[11]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd Line: 47
     Warning (13410): Pin "CountValueMainOut[12]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd Line: 47
-    Warning (13410): Pin "DebugLED_Control[5]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd Line: 49
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BuzzerOverride" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd Line: 37
-Info (21057): Implemented 299 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 198 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 240 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 154 warnings
-    Info: Peak virtual memory: 694 megabytes
-    Info: Processing ended: Tue Dec 12 16:58:31 2017
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:55
+    Info (21061): Implemented 139 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 107 warnings
+    Info: Peak virtual memory: 691 megabytes
+    Info: Processing ended: Tue Dec 12 17:11:01 2017
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:54
 
 

@@ -33,7 +33,7 @@ add wave /*
 
 #pepare clk signal
 force clk_i 1 0, 0 1ps -repeat 2ps
-force clk_deci_i 1 0, 0 15ps -repeat 30ps
+force clk_deci_i 1 0, 0 10ps -repeat 20ps
 
 #set reset on the beginning
 force reset_i 1 0, 0 30ps
@@ -53,4 +53,4 @@ force CountBlockTelemet_i 1 250ps
 
 
 #and now run the simulation for 1,5ns
-run 500 ps
+run 3000 ps

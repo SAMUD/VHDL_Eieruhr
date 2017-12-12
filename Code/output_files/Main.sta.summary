@@ -2,268 +2,184 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : -10.507
-TNS   : -173.343
-
-Type  : Slow 1200mV 85C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -10.161
-TNS   : -146.918
-
 Type  : Slow 1200mV 85C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120'
-Slack : -9.826
-TNS   : -76.506
+Slack : -10.488
+TNS   : -95.445
 
 Type  : Slow 1200mV 85C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
-Slack : -9.343
-TNS   : -57.573
-
-Type  : Slow 1200mV 85C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
-Slack : -4.936
-TNS   : -52.854
+Slack : -8.500
+TNS   : -65.100
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -4.271
-TNS   : -112.631
+Slack : -6.741
+TNS   : -152.101
 
-Type  : Slow 1200mV 85C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -0.461
-TNS   : -0.461
+Type  : Slow 1200mV 85C Model Setup 'BtnClear'
+Slack : -6.486
+TNS   : -39.712
 
-Type  : Slow 1200mV 85C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
-Slack : -0.211
-TNS   : -0.211
+Type  : Slow 1200mV 85C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
+Slack : -3.790
+TNS   : -40.958
 
-Type  : Slow 1200mV 85C Model Hold 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : 0.075
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
-Slack : 0.303
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.545
+Type  : Slow 1200mV 85C Model Hold 'BtnClear'
+Slack : 0.172
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120'
-Slack : 1.513
+Slack : 0.503
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -5.030
-TNS   : -57.469
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.541
+TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : -4.932
-TNS   : -28.885
+Type  : Slow 1200mV 85C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
+Slack : 0.697
+TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Removal 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -0.405
-TNS   : -0.405
-
-Type  : Slow 1200mV 85C Model Removal 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : 0.561
+Type  : Slow 1200mV 85C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
+Slack : 0.765
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -58.255
+TNS   : -59.540
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -1.385
-TNS   : -62.612
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
-Slack : 0.348
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'BtnClear'
+Slack : -3.000
+TNS   : -3.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120'
-Slack : 0.406
-TNS   : 0.000
+Slack : -0.274
+TNS   : -12.326
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : 0.441
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
+Slack : 0.325
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
-Slack : 0.443
+Slack : 0.379
 TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : -9.906
-TNS   : -161.634
 
 Type  : Slow 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120'
-Slack : -9.245
-TNS   : -71.062
-
-Type  : Slow 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -9.126
-TNS   : -133.871
+Slack : -9.852
+TNS   : -88.200
 
 Type  : Slow 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
-Slack : -8.759
-TNS   : -53.697
+Slack : -8.026
+TNS   : -60.587
 
-Type  : Slow 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
-Slack : -4.484
-TNS   : -47.807
+Type  : Slow 1200mV 0C Model Setup 'BtnClear'
+Slack : -6.116
+TNS   : -36.488
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -3.718
-TNS   : -98.987
+Slack : -6.107
+TNS   : -135.310
 
-Type  : Slow 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -0.427
-TNS   : -0.427
+Type  : Slow 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
+Slack : -3.500
+TNS   : -37.345
 
-Type  : Slow 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
-Slack : -0.077
-TNS   : -0.077
-
-Type  : Slow 1200mV 0C Model Hold 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : 0.196
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
-Slack : 0.206
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.497
+Type  : Slow 1200mV 0C Model Hold 'BtnClear'
+Slack : 0.075
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120'
-Slack : 1.346
+Slack : 0.411
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -4.582
-TNS   : -53.584
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.494
+TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : -4.500
-TNS   : -27.764
+Type  : Slow 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
+Slack : 0.578
+TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Removal 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -0.317
-TNS   : -0.317
-
-Type  : Slow 1200mV 0C Model Removal 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : 0.628
+Type  : Slow 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
+Slack : 0.800
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -58.255
+TNS   : -59.540
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -1.265
-TNS   : -54.529
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
-Slack : 0.313
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : 0.332
-TNS   : 0.000
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'BtnClear'
+Slack : -3.000
+TNS   : -3.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120'
-Slack : 0.333
+Slack : -0.222
+TNS   : -8.511
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
+Slack : 0.263
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
-Slack : 0.384
+Slack : 0.334
 TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : -5.598
-TNS   : -83.471
 
 Type  : Fast 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120'
-Slack : -5.055
-TNS   : -35.592
-
-Type  : Fast 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -4.998
-TNS   : -68.102
+Slack : -5.552
+TNS   : -46.984
 
 Type  : Fast 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
-Slack : -4.888
-TNS   : -28.207
+Slack : -4.648
+TNS   : -34.435
 
-Type  : Fast 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
-Slack : -2.368
-TNS   : -25.266
+Type  : Fast 1200mV 0C Model Setup 'BtnClear'
+Slack : -3.658
+TNS   : -22.401
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.653
-TNS   : -34.636
+Slack : -2.759
+TNS   : -53.576
 
-Type  : Fast 1200mV 0C Model Hold 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : -0.113
-TNS   : -0.113
+Type  : Fast 1200mV 0C Model Setup 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
+Slack : -1.722
+TNS   : -18.350
 
-Type  : Fast 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -0.090
-TNS   : -0.090
-
-Type  : Fast 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
-Slack : 0.019
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
-Slack : 0.118
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.248
+Type  : Fast 1200mV 0C Model Hold 'BtnClear'
+Slack : 0.158
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120'
-Slack : 0.815
+Slack : 0.243
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -2.296
-TNS   : -15.526
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.245
+TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : -2.237
-TNS   : -10.546
+Type  : Fast 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
+Slack : 0.256
+TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Removal 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -0.350
-TNS   : -1.121
-
-Type  : Fast 1200mV 0C Model Removal 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : 0.323
+Type  : Fast 1200mV 0C Model Hold 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
+Slack : 0.495
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -48.291
+TNS   : -49.326
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|CountBlockControl_o[1]'
-Slack : -0.504
-TNS   : -18.220
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
-Slack : 0.140
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|ClockDivider:ClockDivider_1|clk_out_alt'
-Slack : 0.215
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'BtnClear'
+Slack : -3.000
+TNS   : -4.999
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120'
-Slack : 0.243
+Slack : 0.067
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100'
+Slack : 0.205
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_290'
-Slack : 0.263
+Slack : 0.297
 TNS   : 0.000
 
 ------------------------------------------------------------

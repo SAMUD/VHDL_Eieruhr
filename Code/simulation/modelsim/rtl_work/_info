@@ -21,9 +21,9 @@ V`:D@l?68=9=hjFA7OVXW@3
 !s100 IA^`V;UFQ?ZAYGaRC[QBD2
 Z6 OV;C;10.5b;63
 31
-Z7 !s110 1513091932
+Z7 !s110 1513094811
 !i10b 1
-Z8 !s108 1513091932.000000
+Z8 !s108 1513094810.000000
 Z9 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd|
 Z10 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd|
 !i113 1
@@ -61,11 +61,11 @@ VQ3>f]:FcN3FU1Rd<QMc9]1
 !s100 j3MZKm;ieB2G8hSiFUJ2G2
 R6
 31
-Z17 !s110 1513091931
+Z17 !s110 1513094810
 !i10b 1
-Z18 !s108 1513091931.000000
-Z19 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd|
-Z20 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd|
+R8
+Z18 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd|
+Z19 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd|
 !i113 1
 R11
 R12
@@ -82,31 +82,31 @@ R6
 31
 R17
 !i10b 1
+R8
 R18
 R19
-R20
 !i113 1
 R11
 R12
 Emain
-Z21 w1513091677
+Z20 w1513091677
 R14
 R2
 R3
 R0
-Z22 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd
-Z23 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd
+Z21 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd
+Z22 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd
 l0
 L25
 VzIJDG@J0Y558mDKRcReE;2
 !s100 QXK;YJRJB:k:6_cbg3KkC1
 R6
 31
-R7
+R17
 !i10b 1
 R8
-Z24 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd|
-Z25 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd|
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd|
+Z24 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd|
 !i113 1
 R11
 R12
@@ -121,33 +121,33 @@ Vn_k06QN[JEd5T20lP4Chz1
 !s100 AJVAUOL6KaRL3jM^6ac8h0
 R6
 31
-R7
+R17
 !i10b 1
 R8
+R23
 R24
-R25
 !i113 1
 R11
 R12
 Estatemachine
-Z26 w1513091584
+Z25 w1513094731
 R14
 R2
 R3
 R0
-Z27 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd
-Z28 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd
+Z26 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd
+Z27 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd
 l0
 L25
 VH34nmHi7f_ck?FdmNZiS23
 !s100 H8N@[2bJ4`8WWjP[9OVYA0
 R6
 31
-Z29 !s110 1513091933
+R7
 !i10b 1
-Z30 !s108 1513091933.000000
-Z31 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd|
-Z32 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd|
+Z28 !s108 1513094811.000000
+Z29 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd|
+Z30 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd|
 !i113 1
 R11
 R12
@@ -158,37 +158,37 @@ R3
 DEx4 work 12 statemachine 0 22 H34nmHi7f_ck?FdmNZiS23
 l63
 L55
-VgdoPJ3lb?P9OgXEdTKmPL0
-!s100 K^5b;QdAVc32eZiDlSHfd2
+V0BUKE>RP0UQ^;0Z9CD_HJ2
+!s100 7BGIGZfM[Ak5cBiC1UW5K3
 R6
 31
-R29
+R7
 !i10b 1
+R28
+R29
 R30
-R31
-R32
 !i113 1
 R11
 R12
 Esubmain
-Z33 w1513091844
+Z31 w1513094515
 R14
 R2
 R3
 R0
-Z34 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd
-Z35 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd
+Z32 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd
+Z33 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd
 l0
 L25
 VnD;eL<Bi<5DnB@=A72>:92
 !s100 <MS4dnIW7FNKL>7UQ<EcF0
 R6
 31
-R7
+R17
 !i10b 1
 R8
-Z36 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd|
-Z37 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd|
+Z34 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd|
+Z35 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd|
 !i113 1
 R11
 R12
@@ -197,17 +197,17 @@ R14
 R2
 R3
 DEx4 work 7 submain 0 22 nD;eL<Bi<5DnB@=A72>:92
-l120
+l119
 L53
-VoH?_ag0l@oO4d]YXDY>Q]0
-!s100 Q@kjOeE8Jl=P8]^>H`F5B2
+VWR>UiZSZ[K<ZLiV6NQz=:0
+!s100 ?>Cf?48gI<=HC<jA>CiN41
 R6
 31
-R7
+R17
 !i10b 1
 R8
-R36
-R37
+R34
+R35
 !i113 1
 R11
 R12

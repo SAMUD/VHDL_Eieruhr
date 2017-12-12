@@ -36,6 +36,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "DebugLED_Control[5]",
+					"strict" : false
+				},
+				{
 					"name" : "Debug_clk_Deci",
 					"strict" : false
 				},
@@ -52,11 +56,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "BtnMin",
-					"strict" : false
-				},
-				{
-					"name" : "BtnClear",
+					"name" : "BtnStart",
 					"strict" : false
 				},
 				{
@@ -64,7 +64,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "BtnStart",
+					"name" : "BtnMin",
+					"strict" : false
+				},
+				{
+					"name" : "BtnClear",
 					"strict" : false
 				}
 			]

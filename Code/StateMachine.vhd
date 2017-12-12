@@ -87,15 +87,12 @@ counter_proc : PROCESS (BtnClearF_i,BtnStartF_i,mode,clk_deci_i)
 		WHEN st_100 =>					-- Set up time
 				IF BtnMinF_i = '1' THEN
 					nxt_mode <= st_110;
-				END IF;
-				IF BtnSecF_i = '1' THEN
+				ELSIF BtnSecF_i = '1' THEN
 					nxt_mode <= st_111;
-				END IF;
-				IF BtnStartF_i = '1' THEN		--AND CountBlockTelemet_i = '0'
-					nxt_mode <= st_200;	--without saving
+				ELSIF BtnStartF_i = '1' AND CountBlockTelemet_i = '0' THEN
+					--nxt_mode <= st_200;	--without saving
 					nxt_mode <= st_190;	--with saving
-				END IF;
-				IF BtnClearF_i = '1' THEN
+				ELSIF BtnClearF_i = '1' THEN
 					nxt_mode <= st_reset;
 				END IF;
 				
@@ -116,8 +113,10 @@ counter_proc : PROCESS (BtnClearF_i,BtnStartF_i,mode,clk_deci_i)
 				
 ------------------------------------
 		WHEN st_200 =>
-				IF BtnStartf_i = '1' OR CountBlockTelemet_i = '1'  THEN
+				IF CountBlockTelemet_i = '1'  THEN
 					nxt_mode <= st_290;
+				ELSIF BtnStartf_i = '1' THEN
+					nxt_mode <= st_100;
 				END IF;
 				
 		WHEN st_290 =>					
@@ -129,8 +128,8 @@ counter_proc : PROCESS (BtnClearF_i,BtnStartF_i,mode,clk_deci_i)
 					nxt_mode <= st_310;
 				END IF;
 				IF BtnStartF_i = '1' OR BuzzerCounter = 0 THEN
-					nxt_mode <= st_100;		--no value load
-					--nxt_mode <= st_390;	--value load
+					--nxt_mode <= st_100;		--no value load
+					nxt_mode <= st_390;	--value load
 				END IF;
 
 		WHEN st_310 =>					
@@ -176,7 +175,7 @@ output_proc : PROCESS (mode,BtnSecF_i,BtnMinF_i)
 				DebugLED_o <= "010";
 				CountBlockControl_o <= "000010";		
 		WHEN st_290 =>	
-				BuzzerCounter <= 600;
+				BuzzerCounter <= 50;
 				CountBlockControl_o <= "000000";					
 ------------------------------------
 		WHEN st_300 =>
