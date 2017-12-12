@@ -1,0 +1,78 @@
+------------------------------------------------------
+--  INT to 4*4bit by Samuel Daurat [178190]  --
+
+-- This module decodes an Int to show it on 4 7Seg-Displays like the follow:
+-- Minutes | Sec Sec | Deci-Sec
+
+
+-- Changelogs:
+-- Version 1.0 | 27.11.17
+--  *initial release
+------------------------------------------------------
+
+-- Library Declaration --
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+
+
+--------------------------------------------
+--	   ENTITY	                           --
+--------------------------------------------
+ENTITY ConvertINTBCD IS
+PORT(
+	
+													--signals between Counter and Decoder. Contains the actual counting value
+													--MSB 3 2 1 0 LSB
+	Input			:		IN		std_logic_vector (from 3 downto 0)
+	
+	
+	a1_dec		:		OUT	std_logic;	-- decoded signals to send to the 7seg
+	b1_dec		:		OUT	std_logic;
+	c1_dec		:		OUT	std_logic;
+	d1_dec		:		OUT	std_logic;
+	e1_dec		:		OUT	std_logic;
+	f1_dec		:		OUT	std_logic;
+	g1_dec		:		OUT	std_logic
+	);
+END Decoder;
+
+--------------------------------------------
+--        ARCHITECTURE	                    --
+--------------------------------------------
+ARCHITECTURE behave OF Decoder IS
+
+BEGIN
+
+-- Registered Process --
+decode_proc : PROCESS (Input)
+	BEGIN
+	
+		-- Output for 7seg-Display
+		a1_dec <= (NOT Input(3) AND NOT Input(2) AND NOT Input(1) AND 		Input(0)) 	OR
+					 (NOT Input(3) AND     Input(2) 						 AND NOT Input(0)) 	OR
+					 (		Input(3) AND 	  Input(2));
+				
+		b1_dec <= (							  Input(2) AND NOT Input(1) AND     Input(0)) 	OR
+					 (    Input(3) AND     Input(2)) 												OR
+					 (  						  Input(2) AND 	 Input(1) AND NOT Input(0));
+				
+		c1_dec <= (		Input(3) AND 	  Input(2)) 												OR
+					 (						 NOT Input(2) AND     Input(1) AND NOT Input(0));
+				
+		d1_dec <= (							  Input(2) AND NOT Input(1) AND NOT Input(0)) 	OR
+					 (						 NOT Input(2) AND NOT Input(1) AND 		Input(0)) 	OR
+					 (							  Input(2) AND 	 Input(1) AND 		Input(0));
+				
+		e1_dec <= 																			Input(0) 	OR
+					 (							  Input(2) AND NOT Input(1) AND NOT Input(0));
+				
+		f1_dec <= (													 Input(1) AND 		Input(0)) 	OR
+					 (NOT Input(3) AND NOT Input(2) AND 	 Input(1)) 							OR
+					 (NOT Input(3) AND NOT Input(2) 						 AND 		Input(0));
+				
+		g1_dec <= (NOT Input(3) AND NOT Input(2) AND NOT Input(1)) 							OR
+					 (NOT Input(3) AND 	  Input(2) AND 	 Input(1) AND 		Input(0));
+		
+	END PROCESS decode_proc;
+
+END behave;

@@ -1,0 +1,81 @@
+------------------------------------------------------
+--  Buzzer by Samuel Daurat [178190]  --
+
+-- This module will sound a buzzer with increasing volume repeated each 4 sec
+
+
+-- Changelog:
+-- Version 1.0 | 05.12.17
+--  *initial release
+------------------------------------------------------
+
+-- Library Declaration --
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+use ieee.numeric_std.all;
+
+
+--------------------------------------------
+--	   ENTITY	                           --
+--------------------------------------------
+ENTITY Buzzer IS
+PORT(
+	
+	clk			:		IN		std_logic;
+	Enable		:		IN		std_logic;
+													
+	BuzzerOut	:		OUT	std_logic
+	
+	);
+END Buzzer;
+
+--------------------------------------------
+--        ARCHITECTURE	                    --
+--------------------------------------------
+ARCHITECTURE behave OF Buzzer IS
+
+	CONSTANT Period  : INTEGER := 50000000;
+	CONSTANT Period2  : INTEGER := 50000000/40;
+	SIGNAL	CountedValue : INTEGER range 0 to 50000000;
+	SIGNAL	CountedValue2nd : INTEGER range 0 to 50000000;	
+
+BEGIN
+
+	-- counting the main Value for PWM
+	Counting : PROCESS (clk)
+		BEGIN
+			
+			CountedValue <= CountedValue+1;
+			IF CountedValue > Period THEN
+				CountedValue = 0:
+			END IF
+			IF Enable = '0' THEN
+				CountedValue = 0:
+			END IF		
+	END PROCESS Counting;
+		
+	-- Counting the second value for the PWM
+	CountingAgain : PROCESS (clk_Deci)
+		BEGIN
+			
+			CountedValue2nd <= CountedValue2nd - Period2;
+			IF CountedValue-Period2 < 0 THEN
+				CountedValue = Period:
+			END IF
+			IF Enable = '0' THEN
+				CountedValue = Period:
+			END IF		
+	END PROCESS CountingAgain;
+
+	-- write the output
+	IF CountedValue2nd < CountedValue THEN
+		BuzzerOut <= '1';
+	ELSE
+		BuzzerOut <= '0';
+	END IF;
+	
+END Buzzer;
+
+
+
+

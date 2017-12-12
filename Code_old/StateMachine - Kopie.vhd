@@ -1,0 +1,188 @@
+---------------------------------------------------------------------
+--  State-machine for project "Eieruhr" by Samuel Daurat [178190]  --
+--  07.10.17
+---------------------------------------------------------------------
+
+-- Library Declaration --
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+
+--------------------------------------------
+--	   ENTITY	                           --
+--------------------------------------------
+ENTITY StateMachine IS
+PORT(
+											--Clock and reset buttons
+	reset			:		IN		std_logic;
+	clk			:		IN		std_logic;
+	clk_Deci		: 		IN		std_logic;
+	DeciFalling : 		IN		std_logic;
+											
+											--User buttons
+	BtnMin		:		IN		 std_logic;
+	BtnSec		:		IN		 std_logic;
+	BtnStart		:		IN		 std_logic;
+	BtnClear		:		IN		 std_logic;
+	
+											--Outputs to other blocks
+	CountValueOut	:		OUT integer range 0 to 6000;
+	BuzzerEnable:		OUT	 std_logic
+	);
+END StateMachine;
+
+--------------------------------------------
+--        ARCHITECTURE	                    --
+--------------------------------------------
+ARCHITECTURE behave OF StateMAchine IS
+
+TYPE state IS (st_reset,st_100,st_110,st_120,st_190,st_200,st_210,st_300,st_310,st_315,st_320);
+SIGNAL mode, nxt_mode : state;
+
+
+BEGIN
+
+-- Registered Process --
+clk_proc : PROCESS (clk,reset)
+
+BEGIN
+		
+		IF (reset='1') THEN  					-- Active Reset
+			mode <= st_reset;
+		ELSIF (clk'EVENT AND clk='1' AND clk'LAST_VALUE='0') THEN
+			mode <= nxt_mode;					--Set the next mode each X clk-Cycles
+		END IF;
+		
+END PROCESS clk_proc;
+
+	
+-- Combinational Process --	
+counter_proc : PROCESS (clk,BtnSec,BtnMin,BtnClear,BtnStart,mode)
+	VARIABLE CountValueSaved: integer range 0 to 6000 :=0;
+	VARIABLE CountValueBuzzer:integer range 0 to 600  :=0;
+	VARIABLE CountValue:integer range 0 to 6000  :=0;
+	VARIABLE AlreadyDone : std_logic;
+	
+	BEGIN 
+	CASE mode IS
+	   WHEN st_reset => 				-- Reset mode
+				CountValueSaved := 0;
+				CountValue := 0;
+				AlreadyDone := '0';
+				nxt_mode <= st_100;
+				
+		WHEN st_100 =>					-- Set up time
+				IF BtnMin = '1' AND CountValue<4999 AND AlreadyDone = '0' THEN
+					CountValue := CountValue + 600;
+					nxt_mode <= st_110;
+					AlreadyDone := '1';
+				END IF;
+				IF BtnSec = '1' AND CountValue<5589 AND AlreadyDone = '0' THEN
+					CountValue := CountValue + 10;
+					nxt_mode <= st_110;
+					AlreadyDone := '1';
+				END IF;
+				IF BtnStart = '1' AND CountValue>0 THEN
+					CountValueSaved := CountValue;
+					nxt_mode <= st_190;
+				END IF;
+				IF BtnClear = '1' AND CountValue>0 THEN
+					nxt_mode <= st_reset;
+				END IF;
+				
+		WHEN st_110 =>					-- Set Deci-Sec to 0
+				--CountValue := CountValue- (CountValue mod 10);
+				IF BtnSec= '0' AND BtnMin = '0' THEN
+					nxt_mode <= st_100;
+					AlreadyDone := '0';
+				END IF;
+				
+		WHEN st_190 =>					-- Set Deci-Sec to 0
+				--CountValue := CountValue- (CountValue mod 10);
+				IF BtnStart= '0' THEN
+					nxt_mode <= st_200;
+					AlreadyDone := '0';
+				END IF;
+				
+		--Timer is running
+				
+		WHEN st_200 =>
+				IF clk_Deci='1' AND AlreadyDone = '0' THEN
+					CountValue := CountValue - 1;
+					AlreadyDone := '1';
+					nxt_mode <= st_210;
+				END IF;
+				IF BtnStart = '1' THEN
+					nxt_mode <= st_100;
+				END IF;
+				IF CountValue=0 THEN
+					nxt_mode <= st_300;
+					AlreadyDone := '0';
+				END IF;
+				
+		WHEN st_210 =>
+			IF clk_Deci = '0' THEN
+				AlreadyDone := '0';
+				nxt_mode <= st_200;
+			END IF;
+				
+		--Alarm
+		
+		WHEN st_300 =>
+				CountValueBuzzer := 600;
+				nxt_mode <= st_310;
+
+		WHEN st_310 =>
+				IF clk_Deci='1' AND AlreadyDone = '0' THEN
+					CountValueBuzzer := CountValueBuzzer - 1;
+					AlreadyDone := '1';
+					nxt_mode <= st_315;
+				END IF;
+				IF BtnStart='1' THEN
+					nxt_mode <= st_320;
+				END IF;
+				IF	CountValueBuzzer=0 THEN
+					nxt_mode <= st_320;
+					AlreadyDone := '0';
+				END IF;
+				
+		WHEN st_315 =>
+			IF clk_Deci = '0' THEN
+				AlreadyDone := '0';
+				nxt_mode <= st_310;
+			END IF;
+				
+		WHEN st_320 =>
+				CountValue := CountValueSaved;
+				nxt_mode <= st_100;
+		
+		WHEN OTHERS =>
+				nxt_mode <= st_reset;
+				
+
+		END CASE;
+		
+		CountValueOut <= CountValue;
+		
+END PROCESS counter_proc;
+	   
+-- Output Process --
+output_proc : PROCESS (mode)
+	BEGIN
+		
+		If mode = st_310 THEN
+			BuzzerEnable <= '1';
+		ELSE
+			BuzzerEnable <= '0';
+		END IF;
+		
+		
+			
+	END PROCESS output_proc;
+
+END behave;
+
+TYPE state IS (st_reset,st_100,st_110,st_111,st_120,st_190,st_200,st_210,st_220,st_221,st_290,
+st_300,st_310,st_320,st_321,st_330);
+SIGNAL mode, nxt_mode : state;

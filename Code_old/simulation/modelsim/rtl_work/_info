@@ -1,0 +1,114 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/simulation/modelsim
+Econvertintbcd
+w1512672604
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+8D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd
+FD:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd
+l0
+L22
+Vi^Jz7Qf_8UeeWKM:;^=[h0
+!s100 ;SSGOFRlQZ=Z?JFzZn_Wk3
+Z4 OV;C;10.5b;63
+31
+!s110 1512674047
+!i10b 1
+Z5 !s108 1512674046.000000
+!s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd|
+!s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd|
+!i113 1
+Z6 o-93 -work work
+Z7 tExplicit 1 CvgOpt 0
+Edecoder
+Z8 w1512486795
+R1
+R2
+R3
+R0
+Z9 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Decoder.vhd
+Z10 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Decoder.vhd
+l0
+L29
+V02[<1SN79S^AjULUl3H^m2
+!s100 BC=W=F<DmEZMC=]zik]0e3
+R4
+31
+Z11 !s110 1512674046
+!i10b 1
+R5
+Z12 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Decoder.vhd|
+Z13 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Decoder.vhd|
+!i113 1
+R6
+R7
+Abehave
+R1
+R2
+R3
+DEx4 work 7 decoder 0 22 02[<1SN79S^AjULUl3H^m2
+l46
+L44
+VGOCXn=Pd@KL@FK9KBH4eN1
+!s100 ?c<e]>9D?0[N8J=:]BRQ[2
+R4
+31
+R11
+!i10b 1
+R5
+R12
+R13
+!i113 1
+R6
+R7
+Emain
+Z14 w1512673920
+R1
+R2
+R3
+R0
+Z15 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Main.vhd
+Z16 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Main.vhd
+l0
+L25
+VFg<U;06Z0nH63nGZmRJaz1
+!s100 zSRd]l1?457a5EOBlioVM0
+R4
+31
+R11
+!i10b 1
+R5
+Z17 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Main.vhd|
+Z18 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Main.vhd|
+!i113 1
+R6
+R7
+Abehave
+R1
+R2
+R3
+DEx4 work 4 main 0 22 Fg<U;06Z0nH63nGZmRJaz1
+l128
+L53
+ViNhQgF^D2GLn=[4<LgBgf2
+!s100 UG]5kA1jQ>?M5l;O[I@cV2
+R4
+31
+R11
+!i10b 1
+R5
+R17
+R18
+!i113 1
+R6
+R7

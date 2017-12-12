@@ -1,0 +1,233 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Output1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Output1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Output1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Output1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Output1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Output1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Output1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Output2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Output2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Output2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Output2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Output2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Output2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Output2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Output3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Output3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Output3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Output3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Output3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Output3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Output3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Output4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Output4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Output4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Output4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Output4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Output4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Output4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[3]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[4]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[5]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[8]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[9]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[10]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[11]",
+					"strict" : false
+				},
+				{
+					"name" : "CountValueMainOut[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DebugLED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DebugLED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DebugLED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DebugLED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DebugLED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DebugLED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DebugLED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DebugLED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BuzzerOut",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "BtnSec",
+					"strict" : false
+				},
+				{
+					"name" : "BtnStart",
+					"strict" : false
+				},
+				{
+					"name" : "BtnClear",
+					"strict" : false
+				},
+				{
+					"name" : "BtnMin",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

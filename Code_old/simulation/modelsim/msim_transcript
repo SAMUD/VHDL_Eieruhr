@@ -1,0 +1,58 @@
+# Reading C:/intelFPGA/17.0/modelsim_ase/tcl/vsim/pref.tcl
+# do Zaehler_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/17.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Decoder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:14:06 on Dec 07,2017
+# vcom -reportprogress 300 -93 -work work D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Decoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Decoder
+# -- Compiling architecture behave of Decoder
+# End time: 20:14:06 on Dec 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Main.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:14:06 on Dec 07,2017
+# vcom -reportprogress 300 -93 -work work D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/Main.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Main
+# -- Compiling architecture behave of Main
+# End time: 20:14:06 on Dec 07,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:14:06 on Dec 07,2017
+# vcom -reportprogress 300 -93 -work work D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ConvertIntBcd
+# -- Compiling architecture behave of ConvertIntBcd
+# ** Error: D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd(68): (vcom-1436) Actual expression (shared variable "Minutes") of formal "Input" is not globally static.
+# ** Error: D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd(73): (vcom-1436) Actual expression (shared variable "SecTen") of formal "Input" is not globally static.
+# ** Error: D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd(78): (vcom-1436) Actual expression (shared variable "Sec") of formal "Input" is not globally static.
+# ** Error: D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd(83): (vcom-1436) Actual expression (shared variable "SecDeci") of formal "Input" is not globally static.
+# ** Error: D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd(87): VHDL Compiler exiting
+# End time: 20:14:07 on Dec 07,2017, Elapsed time: 0:00:01
+# Errors: 5, Warnings: 0
+# ** Error: C:/intelFPGA/17.0/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./Zaehler_run_msim_rtl_vhdl.do line 10
+# C:/intelFPGA/17.0/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/Projekt_Eieruhr/Code/ConvertIntBcd.vhd}"
