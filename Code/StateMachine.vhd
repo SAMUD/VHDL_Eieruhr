@@ -24,24 +24,28 @@ use ieee.numeric_std.all;
 --------------------------------------------
 ENTITY StateMachine IS
 PORT(
-		reset			:		IN		std_logic;
-		clk			:		IN		std_logic;
+		reset_i			:		IN		std_logic;
+		clk_i				:		IN		std_logic;
+		clk_deci_i		:		IN		std_logic;
 											
 		--User buttons
-		BtnMinF		:		IN		 std_logic;
-		BtnSecF		:		IN		 std_logic;
-		BtnStartF	:		IN		 std_logic;
-		BtnClearF	:		IN		 std_logic;
-		
-		--Current count Value Input
-		CountValue	:		IN 	 integer range 0 to 6000;
+		BtnMinF_i		:		IN		 std_logic;
+		BtnSecF_i		:		IN		 std_logic;
+		BtnStartF_i		:		IN		 std_logic;
+		BtnClearF_i		:		IN		 std_logic;
 		
 		--Outputs to other blocks
-		DebugLED			:	OUT 	std_logic_vector(7 downto 0);
-		BuzzerEnable	:	OUT	std_logic;
+		DebugLED_o		:	OUT 	std_logic_vector(2 downto 0);
+		BuzzerEnable_o	:	OUT	std_logic;
 		
 		--Control the Counter-Block
-		CountBlockControl	:OUT	std_logic_vector(5 downto 0);	--Bit0: LoadLastSavedValue, Bit1: SaveActualValue, Bit2: Inrement 1s, Bit3: Increment 1min, Bit4: Counting is enabled, Bit5: Reset to 0
+		CountBlockControl_o 	:OUT	std_logic_vector(5 downto 0);	--Bit0: LoadLastSavedValue (Left)
+																					--Bit1: SaveActualValue
+																					--Bit2: Inrement 1s
+																					--Bit3: Increment 1min
+																					--Bit4: Counting is enabled
+																					--Bit5: Reset to 0			(Right)
+		CountBlockTelemet_i 	:In	std_logic							--Bit0: Counter is at 0
 	);
 END StateMachine;
 
@@ -50,20 +54,22 @@ END StateMachine;
 --------------------------------------------
 ARCHITECTURE behave OF StateMachine IS
 
-TYPE state IS (st_reset,st_100,st_110,st_111,st_120,st_190,st_200,st_210,st_220,st_221,st_290,st_300,st_310,st_320,st_321,st_330);
+TYPE state IS (st_reset,st_100,st_110,st_111,st_120,st_190,st_200,st_290,st_300,st_310,st_320,st_390);
 SIGNAL mode, nxt_mode : state;
+
+SIGNAL BuzzerCounter : integer range 0 to 600 :=0;
 
 
 BEGIN
 
 -- Registered Process --
-clk_proc : PROCESS (clk,reset)
+clk_proc : PROCESS (clk_i,reset_i)
 
 BEGIN
 		
-		IF (reset='1') THEN  				-- Active Reset
+		IF (reset_i='1') THEN  				-- Active Reset
 			mode <= st_reset;
-		ELSIF (clk'EVENT AND clk='1' AND clk'LAST_VALUE='0') THEN
+		ELSIF (clk_i'EVENT AND clk_i='1' AND clk_i'LAST_VALUE='0') THEN
 			mode <= nxt_mode;					--Set the next mode each X clk-Cycles
 		END IF;
 		
@@ -71,7 +77,7 @@ END PROCESS clk_proc;
 
 	
 -- Combinational Process --	
-counter_proc : PROCESS (BtnSecF,BtnMinF,BtnClearF,BtnStartF,mode)
+counter_proc : PROCESS (BtnClearF_i,BtnStartF_i,mode,clk_deci_i)
 	
 	BEGIN 
 	CASE mode IS
@@ -79,125 +85,113 @@ counter_proc : PROCESS (BtnSecF,BtnMinF,BtnClearF,BtnStartF,mode)
 				nxt_mode <= st_100;
 				
 		WHEN st_100 =>					-- Set up time
-				IF BtnMin = '1' AND CountValue<4999 THEN
+				IF BtnMinF_i = '1' THEN
 					nxt_mode <= st_110;
 				END IF;
-				IF BtnSec = '1' AND CountValue<5589 THEN
+				IF BtnSecF_i = '1' THEN
 					nxt_mode <= st_111;
 				END IF;
-				IF BtnStart = '1' AND CountValue>0 THEN
-					nxt_mode <= st_190;
+				IF BtnStartF_i = '1' THEN		--AND CountBlockTelemet_i = '0'
+					nxt_mode <= st_200;	--without saving
+					nxt_mode <= st_190;	--with saving
 				END IF;
-				IF BtnClear = '1' THEN
+				IF BtnClearF_i = '1' THEN
 					nxt_mode <= st_reset;
 				END IF;
 				
 		WHEN st_110 =>					
-				nxt_mode <= st_100;
+				nxt_mode <= st_120;
 			
-		WHEN st_111 =>	
-				nxt_mode <= st_100;
+		WHEN st_111 =>					
+				nxt_mode <= st_120;
+			
+		WHEN st_120 =>					
+				IF BtnSecF_i = '0' AND BtnMinF_i = '0' THEN
+					nxt_mode <= st_100;
+				END IF;		
+		
 		
 		WHEN st_190 =>					
 				nxt_mode <= st_200;
 				
---###############################
-
+------------------------------------
 		WHEN st_200 =>
-				IF clk_Deci='1' THEN
-					nxt_mode <= st_210;
-				END IF;
-				IF BtnStart = '1' THEN
-					nxt_mode <= st_221;
-				END IF;
-				IF CountValue=0 THEN
+				IF BtnStartf_i = '1' OR CountBlockTelemet_i = '1'  THEN
 					nxt_mode <= st_290;
-				END IF;
-				
-		WHEN st_210 =>					
-				nxt_mode <= st_220;
-				
-		WHEN st_220 =>					
-				IF clk_Deci= '0' THEN
-					nxt_mode <= st_200;
-				END IF;
-				
-		WHEN st_221 =>					
-				IF BtnStart= '0' THEN
-					nxt_mode <= st_100;
 				END IF;
 				
 		WHEN st_290 =>					
 				nxt_mode <= st_300;
---###############################
+				
+------------------------------------
 		WHEN st_300 =>
-				IF clk_Deci='1' THEN
+				IF clk_deci_i='1' THEN
 					nxt_mode <= st_310;
 				END IF;
-				IF BtnStart = '1' THEN
-					nxt_mode <= st_321;
+				IF BtnStartF_i = '1' OR BuzzerCounter = 0 THEN
+					nxt_mode <= st_100;		--no value load
+					--nxt_mode <= st_390;	--value load
 				END IF;
-				IF CountValue=0 THEN
-					nxt_mode <= st_330;
-				END IF;
-				
+
 		WHEN st_310 =>					
 				nxt_mode <= st_320;
-				
+		
 		WHEN st_320 =>					
-				IF clk_Deci= '0' THEN
+				IF clk_deci_i= '0' THEN
 					nxt_mode <= st_300;
 				END IF;
 				
-		WHEN st_321 =>					
-				IF BtnStart= '0' THEN
-					nxt_mode <= st_330;
-				END IF;
-				
-		WHEN st_330 =>					
+		WHEN st_390 =>					
 				nxt_mode <= st_100;
-
+					
 		END CASE;
-		
-		
 		
 END PROCESS counter_proc;
 	   
 -- Output Process --
-output_proc : PROCESS (mode)
+output_proc : PROCESS (mode,BtnSecF_i,BtnMinF_i)
 	BEGIN
 		
-	   IF mode=st_reset THEN 				-- Reset mode
-			CountValue := 0;
-			CountValueSaved := 0;		
-		ELSIF mode=st_110 THEN					
-			CountValue := CountValue + 600;
-		ELSIF mode=st_111 THEN					
-			CountValue := CountValue + 10;
-		--ELSIF mode=st_120 THEN					
-			--CountValue := CountValue- (CountValue mod 10);
-		ELSIF mode=st_190 THEN					
-			CountValueSaved := CountValue;
-		ELSIF mode=st_210 THEN
-			CountValue := CountValue -1;
-		ELSIF mode=st_290 THEN
-			CountValueBuzzer := 600;
-		ELSIF mode=st_310 THEN
-			CountValueBuzzer := CountValueBuzzer -1;
-		ELSIF mode=st_330 THEN					
-			CountValue := CountValueSaved;
-		END IF;
-
-		If mode = st_300 THEN
-			BuzzerEnable <= '1';
-		ELSE
-			BuzzerEnable <= '0';
-		END IF;
-		
-		
+	   CASE mode IS
+	   WHEN st_reset => 				-- Reset mode
+				DebugLED_o <= "111";
+				CountBlockControl_o <= "000001";	
+				BuzzerEnable_o <= '0';	
+		WHEN st_100 =>					-- Set up time
+				DebugLED_o <= "100";
+				BuzzerEnable_o <= '0';
+				CountBlockControl_o <= "000000";
+		WHEN st_110 =>		
+				CountBlockControl_o <= "000100";
+		WHEN st_111 =>					-- Set up time
+				CountBlockControl_o <= "001000";
+		WHEN st_120 =>					-- Set up time
+				DebugLED_o <= "100";
+				--CountBlockControl_o <= "000000";
+		WHEN st_190 =>					
+				DebugLED_o <= "100";
+				CountBlockControl_o <= "010000";		
+------------------------------------
+		WHEN st_200 =>
+				DebugLED_o <= "010";
+				CountBlockControl_o <= "000010";		
+		WHEN st_290 =>	
+				BuzzerCounter <= 600;
+				CountBlockControl_o <= "000000";					
+------------------------------------
+		WHEN st_300 =>
+				DebugLED_o <= "001";
+				BuzzerEnable_o <= '1';
+		WHEN st_310 =>					
+				DebugLED_o <= "001";
+				BuzzerCounter <= BuzzerCounter-1;	
+		WHEN st_320 =>					
+				DebugLED_o <= "001";			
+		WHEN st_390 =>					
+				CountBlockControl_o <= "100000";
+				BuzzerEnable_o <= '0';			
+		END CASE;
 			
 	END PROCESS output_proc;
-	
-	CountValueOut <= CountValue;
 
 END behave;

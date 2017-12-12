@@ -32,16 +32,24 @@ add wave /*
 #------------------RUN SIMULATION HERE---------------
 
 #pepare clk signal
-force clk 1 0, 0 1ps -repeat 2ps
-force clk_Deci 1 0, 0 15ps -repeat 30ps
+force clk_i 1 0, 0 1ps -repeat 2ps
+force clk_deci_i 1 0, 0 15ps -repeat 30ps
 
 #set reset on the beginning
-force reset 1 0, 0 100ps
+force reset_i 1 0, 0 30ps
 
 #simulate 1button press
-force BtnSec 0 0, 1 140ps, 0 141ps, 1 160ps, 0 170ps
-force BtnMin 0 0, 1 200ps, 0 230ps
-force BtnStart 0 0, 1 250ps, 0 260ps
+force BtnSecF_i 0 0, 1 40ps, 0 41ps, 1 50ps, 0 70ps
+force BtnMinF_i 0 0, 1 100ps, 0 130ps
+
+#now start counting
+force CountBlockTelemet_i 1 0,0 150ps
+force BtnStartF_i 0 0, 1 160ps, 0 161ps
+
+#wait while it is counting
+#now simulate counting finished
+force CountBlockTelemet_i 1 250ps
+
 
 
 #and now run the simulation for 1,5ns
