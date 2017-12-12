@@ -1,0 +1,526 @@
+Analysis & Synthesis report for Main
+Tue Dec 12 12:46:08 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Main|SubMain:SubMain_1|StateMachine:StateMachine_1|mode
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Dec 12 12:46:08 2017       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                      ; Main                                        ;
+; Top-level Entity Name              ; Main                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 118                                         ;
+;     Total combinational functions  ; 114                                         ;
+;     Dedicated logic registers      ; 20                                          ;
+; Total registers                    ; 20                                          ;
+; Total pins                         ; 58                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; Main               ; Main               ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------+---------+
+; Main.vhd                         ; yes             ; User VHDL File        ; D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd         ;         ;
+; SubMain.vhd                      ; yes             ; User VHDL File        ; D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/SubMain.vhd      ;         ;
+; StateMachine.vhd                 ; yes             ; User VHDL File        ; D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd ;         ;
+; fallingedge.vhd                  ; yes             ; Auto-Found VHDL File  ; D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/fallingedge.vhd  ;         ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 118       ;
+;                                             ;           ;
+; Total combinational functions               ; 114       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 39        ;
+;     -- 3 input functions                    ; 36        ;
+;     -- <=2 input functions                  ; 39        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 94        ;
+;     -- arithmetic mode                      ; 20        ;
+;                                             ;           ;
+; Total registers                             ; 20        ;
+;     -- Dedicated logic registers            ; 20        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 58        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 20        ;
+; Total fan-out                               ; 471       ;
+; Average fan-out                             ; 1.88      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                    ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name  ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+--------------+
+; |Main                                 ; 114 (0)             ; 20 (0)                    ; 0           ; 0            ; 0       ; 0         ; 58   ; 0            ; |Main                                                 ; Main         ; work         ;
+;    |SubMain:SubMain_1|                ; 114 (0)             ; 20 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1                               ; SubMain      ; work         ;
+;       |FallingEdge:FallingEdge_Clear| ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Clear ; FallingEdge  ; work         ;
+;       |FallingEdge:FallingEdge_Min|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Min   ; FallingEdge  ; work         ;
+;       |FallingEdge:FallingEdge_Sec|   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Sec   ; FallingEdge  ; work         ;
+;       |FallingEdge:FallingEdge_Start| ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Start ; FallingEdge  ; work         ;
+;       |StateMachine:StateMachine_1|   ; 113 (113)           ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|SubMain:SubMain_1|StateMachine:StateMachine_1   ; StateMachine ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Main|SubMain:SubMain_1|StateMachine:StateMachine_1|mode                                                                                                                                                                        ;
++---------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+---------------+
+; Name          ; mode.st_330 ; mode.st_321 ; mode.st_320 ; mode.st_310 ; mode.st_300 ; mode.st_290 ; mode.st_221 ; mode.st_220 ; mode.st_210 ; mode.st_200 ; mode.st_190 ; mode.st_120 ; mode.st_111 ; mode.st_110 ; mode.st_100 ; mode.st_reset ;
++---------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+---------------+
+; mode.st_reset ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0             ;
+; mode.st_100   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1             ;
+; mode.st_110   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1             ;
+; mode.st_111   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1             ;
+; mode.st_120   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_190   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_200   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_210   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_220   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_221   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_290   ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_300   ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_310   ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_320   ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_321   ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_330   ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
++---------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                      ;
++----------------------------------------------------------------------+----------------------------------------------------------+------------------------+
+; Latch Name                                                           ; Latch Enable Signal                                      ; Free of Timing Hazards ;
++----------------------------------------------------------------------+----------------------------------------------------------+------------------------+
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[1]          ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr8    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[2]          ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr8    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[3]          ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[4]          ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[5]          ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[6]          ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[7]          ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[8]          ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[9]          ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[10]         ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[11]         ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[12]         ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr7    ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerEnable           ; SubMain:SubMain_1|StateMachine:StateMachine_1|WideOr13   ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_reset_1190 ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_110_1130   ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_111_1100   ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_210_980    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_220_950    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_221_920    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_100_1160   ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_120_1070   ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_290_890    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_300_860    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_310_830    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_320_800    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_321_770    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_200_1010   ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_330_740    ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_190_1040   ; SubMain:SubMain_1|StateMachine:StateMachine_1|Selector32 ; yes                    ;
+; Number of user-specified and inferred latches = 29                   ;                                                          ;                        ;
++----------------------------------------------------------------------+----------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 20    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_110 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Main|SubMain:SubMain_1|StateMachine:StateMachine_1|Selector26      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 58                          ;
+; cycloneiii_ff         ; 20                          ;
+;     CLR               ; 16                          ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 117                         ;
+;     arith             ; 20                          ;
+;         2 data inputs ; 20                          ;
+;     normal            ; 97                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 36                          ;
+;         4 data inputs ; 39                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.45                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Tue Dec 12 12:45:38 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Eieruhr -c Main
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
+    Info (12022): Found design unit 1: Main-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 60
+    Info (12023): Found entity 1: Main File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 25
+Info (12021): Found 2 design units, including 1 entities, in source file submain.vhd
+    Info (12022): Found design unit 1: SubMain-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/SubMain.vhd Line: 53
+    Info (12023): Found entity 1: SubMain File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/SubMain.vhd Line: 25
+Info (12021): Found 2 design units, including 1 entities, in source file statemachine.vhd
+    Info (12022): Found design unit 1: StateMAchine-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 40
+    Info (12023): Found entity 1: StateMachine File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 15
+Info (12127): Elaborating entity "Main" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(42): used implicit default value for signal "Output1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 42
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(43): used implicit default value for signal "Output2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 43
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(44): used implicit default value for signal "Output3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 44
+Warning (10541): VHDL Signal Declaration warning at Main.vhd(45): used implicit default value for signal "Output4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 45
+Info (12128): Elaborating entity "SubMain" for hierarchy "SubMain:SubMain_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 91
+Warning (12125): Using design file fallingedge.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FallingEdge-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/fallingedge.vhd Line: 38
+    Info (12023): Found entity 1: FallingEdge File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/fallingedge.vhd Line: 24
+Info (12128): Elaborating entity "FallingEdge" for hierarchy "SubMain:SubMain_1|FallingEdge:FallingEdge_Min" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/SubMain.vhd Line: 98
+Info (12128): Elaborating entity "StateMachine" for hierarchy "SubMain:SubMain_1|StateMachine:StateMachine_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/SubMain.vhd Line: 129
+Warning (10036): Verilog HDL or VHDL warning at StateMachine.vhd(46): object "CountValueSaved" assigned a value but never read File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 46
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(75): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(78): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(81): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(111): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(140): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(67): inferring latch(es) for signal or variable "nxt_mode", which holds its previous value in one or more paths through the process File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(179): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 179
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(182): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(188): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 188
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(206): signal "CountValueBuzzer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 206
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(218): signal "CountValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 218
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(167): inferring latch(es) for signal or variable "CountValue", which holds its previous value in one or more paths through the process File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(167): inferring latch(es) for signal or variable "BuzzerEnable", which holds its previous value in one or more paths through the process File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(167): inferring latch(es) for signal or variable "CountValueBuzzer", which holds its previous value in one or more paths through the process File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "BuzzerEnable" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[0]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[1]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[2]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[3]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[4]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[5]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[6]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[7]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[8]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[9]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[10]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[11]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "CountValue[12]" at StateMachine.vhd(167) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+Info (10041): Inferred latch for "nxt_mode.st_330" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_321" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_320" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_310" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_300" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_290" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_221" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_220" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_210" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_200" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_190" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_120" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_111" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_110" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_100" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Info (10041): Inferred latch for "nxt_mode.st_reset" at StateMachine.vhd(67) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[1] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[2] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[3] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[4] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[5] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[6] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[7] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[8] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[9] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[10] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[11] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|CountValue[12] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 167
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_111 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|BuzzerEnable has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_reset_1190 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|FallingEdge:FallingEdge_Clear|FallingOutput File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/fallingedge.vhd Line: 30
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_110_1130 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_111_1100 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_100 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_210_980 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_200 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_221_920 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_200 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_100_1160 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_120 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_290_890 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_200 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_300_860 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_310_830 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_321_770 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_200_1010 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_220 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_330_740 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|StateMachine:StateMachine_1|mode.st_321 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 43
+Warning (13012): Latch SubMain:SubMain_1|StateMachine:StateMachine_1|nxt_mode.st_190_1040 has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/StateMachine.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SubMain:SubMain_1|FallingEdge:FallingEdge_Clear|FallingOutput File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/fallingedge.vhd Line: 30
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Output1[0]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 42
+    Warning (13410): Pin "Output1[1]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 42
+    Warning (13410): Pin "Output1[2]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 42
+    Warning (13410): Pin "Output1[3]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 42
+    Warning (13410): Pin "Output1[4]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 42
+    Warning (13410): Pin "Output1[5]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 42
+    Warning (13410): Pin "Output1[6]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 42
+    Warning (13410): Pin "Output2[0]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 43
+    Warning (13410): Pin "Output2[1]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 43
+    Warning (13410): Pin "Output2[2]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 43
+    Warning (13410): Pin "Output2[3]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 43
+    Warning (13410): Pin "Output2[4]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 43
+    Warning (13410): Pin "Output2[5]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 43
+    Warning (13410): Pin "Output2[6]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 43
+    Warning (13410): Pin "Output3[0]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 44
+    Warning (13410): Pin "Output3[1]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 44
+    Warning (13410): Pin "Output3[2]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 44
+    Warning (13410): Pin "Output3[3]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 44
+    Warning (13410): Pin "Output3[4]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 44
+    Warning (13410): Pin "Output3[5]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 44
+    Warning (13410): Pin "Output3[6]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 44
+    Warning (13410): Pin "Output4[0]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 45
+    Warning (13410): Pin "Output4[1]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 45
+    Warning (13410): Pin "Output4[2]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 45
+    Warning (13410): Pin "Output4[3]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 45
+    Warning (13410): Pin "Output4[4]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 45
+    Warning (13410): Pin "Output4[5]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 45
+    Warning (13410): Pin "Output4[6]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 45
+    Warning (13410): Pin "CountValue_o[0]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 48
+    Warning (13410): Pin "DebugLED[1]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 49
+    Warning (13410): Pin "DebugLED[3]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 49
+    Warning (13410): Pin "DebugLED[5]" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 49
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "BuzzerOverride" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/Main.vhd Line: 37
+Info (21057): Implemented 191 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 50 output pins
+    Info (21061): Implemented 133 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 108 warnings
+    Info: Peak virtual memory: 692 megabytes
+    Info: Processing ended: Tue Dec 12 12:46:08 2017
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:57
+
+

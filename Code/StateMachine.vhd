@@ -1,57 +1,50 @@
-------------------------------------------------------
---  Timer by Samuel Daurat [178190]  --
-------------------------------------------------------
-
-------------------------------------------------------
---  State Machine by Samuel Daurat [178190]  --
-
-
--- Changelog:
--- Version 2.0 | 
--- Version 1.1 | 05.12.17
---  *refresh interfaces
--- Version 1.0 | 27.11.17
---  *initial release
-------------------------------------------------------
+---------------------------------------------------------------------
+--  State-machine for project "Eieruhr" by Samuel Daurat [178190]  --
+--  07.10.17
+---------------------------------------------------------------------
 
 -- Library Declaration --
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
-use ieee.numeric_std.all;
+USE ieee.numeric_std.ALL;
+
 
 --------------------------------------------
 --	   ENTITY	                           --
 --------------------------------------------
 ENTITY StateMachine IS
 PORT(
-		reset			:		IN		std_logic;
-		clk			:		IN		std_logic;
-											
-		--User buttons
-		BtnMinF		:		IN		 std_logic;
-		BtnSecF		:		IN		 std_logic;
-		BtnStartF	:		IN		 std_logic;
-		BtnClearF	:		IN		 std_logic;
-		
-		--Current count Value Input
-		CountValue	:		IN 	 integer range 0 to 6000;
-		
-		--Outputs to other blocks
-		DebugLED			:	OUT 	std_logic_vector(7 downto 0);
-		BuzzerEnable	:	OUT	std_logic;
-		
-		--Control the Counter-Block
-		CountBlockControl	:OUT	std_logic_vector(5 downto 0);	--Bit0: LoadLastSavedValue, Bit1: SaveActualValue, Bit2: Inrement 1s, Bit3: Increment 1min, Bit4: Counting is enabled, Bit5: Reset to 0
+	--Clock and reset buttons
+	reset			:		IN		std_logic;
+	clk			:		IN		std_logic;
+	clk_Deci		:		IN		std_logic;
+										
+	--User buttons
+	BtnMin		:		IN		 std_logic;
+	BtnSec		:		IN		 std_logic;
+	BtnStart		:		IN		 std_logic;
+	BtnClear		:		IN		 std_logic;
+	
+	--Current count Value Input
+	CountValue_o	:		OUT 	 integer range 0 to 6000;
+	
+	--Outputs to other blocks
+	DebugLED			:	OUT 	std_logic_vector(7 downto 0);
+	BuzzerEnable	:	OUT	std_logic
 	);
 END StateMachine;
 
 --------------------------------------------
 --        ARCHITECTURE	                    --
 --------------------------------------------
-ARCHITECTURE behave OF StateMachine IS
+ARCHITECTURE behave OF StateMAchine IS
 
 TYPE state IS (st_reset,st_100,st_110,st_111,st_120,st_190,st_200,st_210,st_220,st_221,st_290,st_300,st_310,st_320,st_321,st_330);
 SIGNAL mode, nxt_mode : state;
+
+SIGNAL CountValue : integer range 0 to 6000  := 0;
+SIGNAL CountValueSaved: integer range 0 to 6000 :=0;
+SIGNAL CountValueBuzzer:integer range 0 to 600  :=0;
 
 
 BEGIN
@@ -61,7 +54,7 @@ clk_proc : PROCESS (clk,reset)
 
 BEGIN
 		
-		IF (reset='1') THEN  				-- Active Reset
+		IF (reset='1') THEN  					-- Active Reset
 			mode <= st_reset;
 		ELSIF (clk'EVENT AND clk='1' AND clk'LAST_VALUE='0') THEN
 			mode <= nxt_mode;					--Set the next mode each X clk-Cycles
@@ -71,7 +64,7 @@ END PROCESS clk_proc;
 
 	
 -- Combinational Process --	
-counter_proc : PROCESS (BtnSecF,BtnMinF,BtnClearF,BtnStartF,mode)
+counter_proc : PROCESS (clk_Deci,BtnSec,BtnMin,BtnClear,BtnStart,mode)
 	
 	BEGIN 
 	CASE mode IS
@@ -92,18 +85,23 @@ counter_proc : PROCESS (BtnSecF,BtnMinF,BtnClearF,BtnStartF,mode)
 					nxt_mode <= st_reset;
 				END IF;
 				
-		WHEN st_110 =>					
-				nxt_mode <= st_100;
+		WHEN st_110 =>					--Increment 1 Min	
+				nxt_mode <= st_120;
 			
-		WHEN st_111 =>	
-				nxt_mode <= st_100;
+		WHEN st_111 =>					--Increment 1 Sec
+				nxt_mode <= st_120;
+			
+		WHEN st_120 =>					-- Set Deci-Sec to 0
+				IF BtnSec= '0' AND BtnMin = '0' THEN
+					nxt_mode <= st_100;
+				END IF;
 		
-		WHEN st_190 =>					
+		WHEN st_190 =>					--Save current value and start counting				
 				nxt_mode <= st_200;
 				
---###############################
+----------------------------
 
-		WHEN st_200 =>
+		WHEN st_200 =>					--Main State during counting
 				IF clk_Deci='1' THEN
 					nxt_mode <= st_210;
 				END IF;
@@ -114,23 +112,25 @@ counter_proc : PROCESS (BtnSecF,BtnMinF,BtnClearF,BtnStartF,mode)
 					nxt_mode <= st_290;
 				END IF;
 				
-		WHEN st_210 =>					
+		WHEN st_210 =>					--Decrement 1			
 				nxt_mode <= st_220;
 				
-		WHEN st_220 =>					
+		WHEN st_220 =>					--Wait until button is not pressed anymore			
 				IF clk_Deci= '0' THEN
 					nxt_mode <= st_200;
 				END IF;
 				
-		WHEN st_221 =>					
+		WHEN st_221 =>					--Going into pause mode				
 				IF BtnStart= '0' THEN
 					nxt_mode <= st_100;
 				END IF;
 				
-		WHEN st_290 =>					
+		WHEN st_290 =>					--Finished Counting, preparing alarm-timer			
 				nxt_mode <= st_300;
---###############################
-		WHEN st_300 =>
+				
+----------------------------
+
+		WHEN st_300 =>					--Main state for alarm
 				IF clk_Deci='1' THEN
 					nxt_mode <= st_310;
 				END IF;
@@ -167,37 +167,60 @@ END PROCESS counter_proc;
 output_proc : PROCESS (mode)
 	BEGIN
 		
-	   IF mode=st_reset THEN 				-- Reset mode
-			CountValue := 0;
-			CountValueSaved := 0;		
-		ELSIF mode=st_110 THEN					
-			CountValue := CountValue + 600;
-		ELSIF mode=st_111 THEN					
-			CountValue := CountValue + 10;
-		--ELSIF mode=st_120 THEN					
-			--CountValue := CountValue- (CountValue mod 10);
-		ELSIF mode=st_190 THEN					
-			CountValueSaved := CountValue;
-		ELSIF mode=st_210 THEN
-			CountValue := CountValue -1;
-		ELSIF mode=st_290 THEN
-			CountValueBuzzer := 600;
-		ELSIF mode=st_310 THEN
-			CountValueBuzzer := CountValueBuzzer -1;
-		ELSIF mode=st_330 THEN					
-			CountValue := CountValueSaved;
-		END IF;
-
-		If mode = st_300 THEN
-			BuzzerEnable <= '1';
-		ELSE
-			BuzzerEnable <= '0';
-		END IF;
+		CASE mode IS
+	   WHEN st_reset => 				-- Reset mode
+				CountValue <= 0;
+				CountValueSaved <= 0;
+				DebugLED <= "10000000";
+				BuzzerEnable <= '0';	
+		WHEN st_100 =>					-- Set up time
+				DebugLED <= "01010101";		
+		WHEN st_110 =>					--Increment 1 Min	
+				CountValue <= CountValue + 600;
+				DebugLED <= "01000000";
+		WHEN st_111 =>					--Increment 1 Sec
+				CountValue <= CountValue + 10;
+				DebugLED <= "00010000";
+		WHEN st_120 =>					-- Set Deci-Sec to 0
+				DebugLED <= "01010101";
+		WHEN st_190 =>					--Save current value and start counting				
+				DebugLED <= "00000001";
+				CountValueSaved <= CountValue;			
+	   -----------------------------
+		WHEN st_200 =>					--Main State during counting
+				DebugLED <= "00000001";		
+		WHEN st_210 =>					--Decrement 1			
+				DebugLED <= "00000000";		
+		WHEN st_220 =>					--Wait until button is not pressed anymore			
+				DebugLED <= "00000000";		
+		WHEN st_221 =>					--Going into pause mode				
+				DebugLED <= "00000000";		
+		WHEN st_290 =>					--Finished Counting, preparing alarm-timer			
+				DebugLED <= "00000101";
+				CountValueBuzzer <= 600;			
+	   ------------------------------	
+		WHEN st_300 =>					--Main state for alarm
+				DebugLED <= "00000101";
+				BuzzerEnable <= '1';		
+		WHEN st_310 =>					
+				CountValueBuzzer <= CountValueBuzzer -1;
+				DebugLED <= "00000101";		
+		WHEN st_320 =>					
+				DebugLED <= "00000101";		
+		WHEN st_321 =>					
+				DebugLED <= "00000001";
+				BuzzerEnable <= '0';		
+		WHEN st_330 =>					
+				DebugLED <= "00000001";
+				
+		END CASE;
 		
+		CountValue_o <= CountValue;
 		
+			
 			
 	END PROCESS output_proc;
 	
-	CountValueOut <= CountValue;
+	CountValue_o <= CountValue;
 
 END behave;

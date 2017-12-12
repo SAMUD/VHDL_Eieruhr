@@ -33,11 +33,14 @@ PORT(
 	BtnStart			:	IN		std_logic;	--Mapped to Btn0
 	BtnClear			:	IN		std_logic;	--Mapped to Btn1
 	
+	--Debug buttons
+	clk_DeciOverride:	IN		std_logic;	--Manual switch to simulate deci-second clock (SW2)
+	
 	--Debug outputs
 	DebugLED 		: 	OUT 	std_logic_vector(7 downto 0);		--Showing state of state machine on LEDs Green 
 	
 	--Count Value Output
-	CountValueOut	:	OUT	integer range 0 to 6000;			--Current counting value in Deci-Seconds
+	CountValue	:	OUT	integer range 0 to 6000;			--Current counting value in Deci-Seconds
 	
 	--Buzzer Output
 	BuzzerOut	:		OUT	std_logic
@@ -55,9 +58,6 @@ ARCHITECTURE behave OF SubMain IS
 	SIGNAL BtnStartFalling	:	std_logic;
 	SIGNAL BtnClearFalling	:	std_logic;
 	
-	SIGNAL CountValue			:  integer range 0 to 6000;
-	SIGNAL CountBlockControl:	std_logic_vector(5 downto 0);
-	
 	--Detecting a falling edge (when button is pressed)
 	component FallingEdge
 	  port(
@@ -67,27 +67,26 @@ ARCHITECTURE behave OF SubMain IS
 	);
 	end component;
 	
-	--Mai state machine
+	--Main state machine
 	component StateMachine
 	  port(											
 		reset			:		IN		std_logic;
 		clk			:		IN		std_logic;
+		clk_Deci		:		IN		std_logic;
 											
 		--User buttons
-		BtnMinF		:		IN		 std_logic;
-		BtnSecF		:		IN		 std_logic;
-		BtnStartF	:		IN		 std_logic;
-		BtnClearF	:		IN		 std_logic;
+		BtnMin		:		IN		 std_logic;
+		BtnSec		:		IN		 std_logic;
+		BtnStart		:		IN		 std_logic;
+		BtnClear		:		IN		 std_logic;
 		
 		--Current count Value Input
-		CountValue	:		IN 	 integer range 0 to 6000;
+		CountValue_o:		OUT 	 integer range 0 to 6000;
 		
 		--Outputs to other blocks
 		DebugLED			:	OUT 	std_logic_vector(7 downto 0);
-		BuzzerEnable	:	OUT	std_logic;
+		BuzzerEnable	:	OUT	std_logic
 		
-		--Control the Counter-Block
-		CountBlockControl	:OUT	std_logic_vector(5 downto 0);	--Bit0: LoadLastSavedValue, Bit1: SaveActualValue, Bit2: Inrement 1s, Bit3: Increment 1min, Bit4: Counting is enabled, Bit5: Reset to 0
 	);
 	end component;
 	
@@ -131,21 +130,19 @@ BEGIN
 		port map (
 			reset 			=> reset,
 			clk				=> clk,
+			clk_Deci			=> clk_DeciOverride,
 												
-			BtnMinF			=> BtnMinFalling,
-			BtnSecF			=> BtnSecFalling,
-			BtnStartF		=> BtnStartFalling,
-			BtnClearF		=> BtnClearFalling,
+			BtnMin			=> BtnMinFalling,
+			BtnSec			=> BtnSecFalling,
+			BtnStart			=> BtnStartFalling,
+			BtnClear			=> BtnClearFalling,
 			
 			--Current count Value Input
-			CountValue		=> CountValue,
+			CountValue_o	=> CountValue,
 			
 			--Outputs to other blocks
 			DebugLED			=> DebugLED,
-			BuzzerEnable	=> BuzzerOut,
-			
-			--Control the Counter-Block
-			CountBlockControl	=> CountBlockControl
+			BuzzerEnable	=> BuzzerOut
 			
 			);
 	

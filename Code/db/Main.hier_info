@@ -1,0 +1,194 @@
+|Main
+reset => SubMain:SubMain_1.reset
+clk => SubMain:SubMain_1.clk
+BtnMin => SubMain:SubMain_1.BtnMin
+BtnSec => SubMain:SubMain_1.BtnSec
+BtnStart => SubMain:SubMain_1.BtnStart
+BtnClear => SubMain:SubMain_1.BtnClear
+BuzzerOverride => ~NO_FANOUT~
+clk_DeciOverride => SubMain:SubMain_1.clk_DeciOverride
+Output1[0] << Output1[0].DB_MAX_OUTPUT_PORT_TYPE
+Output1[1] << Output1[1].DB_MAX_OUTPUT_PORT_TYPE
+Output1[2] << Output1[2].DB_MAX_OUTPUT_PORT_TYPE
+Output1[3] << Output1[3].DB_MAX_OUTPUT_PORT_TYPE
+Output1[4] << Output1[4].DB_MAX_OUTPUT_PORT_TYPE
+Output1[5] << Output1[5].DB_MAX_OUTPUT_PORT_TYPE
+Output1[6] << Output1[6].DB_MAX_OUTPUT_PORT_TYPE
+Output2[0] << Output2[0].DB_MAX_OUTPUT_PORT_TYPE
+Output2[1] << Output2[1].DB_MAX_OUTPUT_PORT_TYPE
+Output2[2] << Output2[2].DB_MAX_OUTPUT_PORT_TYPE
+Output2[3] << Output2[3].DB_MAX_OUTPUT_PORT_TYPE
+Output2[4] << Output2[4].DB_MAX_OUTPUT_PORT_TYPE
+Output2[5] << Output2[5].DB_MAX_OUTPUT_PORT_TYPE
+Output2[6] << Output2[6].DB_MAX_OUTPUT_PORT_TYPE
+Output3[0] << Output3[0].DB_MAX_OUTPUT_PORT_TYPE
+Output3[1] << Output3[1].DB_MAX_OUTPUT_PORT_TYPE
+Output3[2] << Output3[2].DB_MAX_OUTPUT_PORT_TYPE
+Output3[3] << Output3[3].DB_MAX_OUTPUT_PORT_TYPE
+Output3[4] << Output3[4].DB_MAX_OUTPUT_PORT_TYPE
+Output3[5] << Output3[5].DB_MAX_OUTPUT_PORT_TYPE
+Output3[6] << Output3[6].DB_MAX_OUTPUT_PORT_TYPE
+Output4[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
+Output4[1] << Output4[1].DB_MAX_OUTPUT_PORT_TYPE
+Output4[2] << Output4[2].DB_MAX_OUTPUT_PORT_TYPE
+Output4[3] << Output4[3].DB_MAX_OUTPUT_PORT_TYPE
+Output4[4] << Output4[4].DB_MAX_OUTPUT_PORT_TYPE
+Output4[5] << Output4[5].DB_MAX_OUTPUT_PORT_TYPE
+Output4[6] << Output4[6].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[0] << SubMain:SubMain_1.CountValue[0]
+CountValue_o[1] << SubMain:SubMain_1.CountValue[1]
+CountValue_o[2] << SubMain:SubMain_1.CountValue[2]
+CountValue_o[3] << SubMain:SubMain_1.CountValue[3]
+CountValue_o[4] << SubMain:SubMain_1.CountValue[4]
+CountValue_o[5] << SubMain:SubMain_1.CountValue[5]
+CountValue_o[6] << SubMain:SubMain_1.CountValue[6]
+CountValue_o[7] << SubMain:SubMain_1.CountValue[7]
+CountValue_o[8] << SubMain:SubMain_1.CountValue[8]
+CountValue_o[9] << SubMain:SubMain_1.CountValue[9]
+CountValue_o[10] << SubMain:SubMain_1.CountValue[10]
+CountValue_o[11] << SubMain:SubMain_1.CountValue[11]
+CountValue_o[12] << SubMain:SubMain_1.CountValue[12]
+DebugLED[0] << SubMain:SubMain_1.DebugLED[0]
+DebugLED[1] << SubMain:SubMain_1.DebugLED[1]
+DebugLED[2] << SubMain:SubMain_1.DebugLED[2]
+DebugLED[3] << SubMain:SubMain_1.DebugLED[3]
+DebugLED[4] << SubMain:SubMain_1.DebugLED[4]
+DebugLED[5] << SubMain:SubMain_1.DebugLED[5]
+DebugLED[6] << SubMain:SubMain_1.DebugLED[6]
+DebugLED[7] << SubMain:SubMain_1.DebugLED[7]
+BuzzerOut << SubMain:SubMain_1.BuzzerOut
+
+
+|Main|SubMain:SubMain_1
+reset => StateMachine:StateMachine_1.reset
+clk => FallingEdge:FallingEdge_Min.clk
+clk => FallingEdge:FallingEdge_Sec.clk
+clk => FallingEdge:FallingEdge_Clear.clk
+clk => FallingEdge:FallingEdge_Start.clk
+clk => StateMachine:StateMachine_1.clk
+BtnMin => FallingEdge:FallingEdge_Min.Button
+BtnSec => FallingEdge:FallingEdge_Sec.Button
+BtnStart => FallingEdge:FallingEdge_Start.Button
+BtnClear => FallingEdge:FallingEdge_Clear.Button
+clk_DeciOverride => StateMachine:StateMachine_1.clk_Deci
+DebugLED[0] <= StateMachine:StateMachine_1.DebugLED[0]
+DebugLED[1] <= StateMachine:StateMachine_1.DebugLED[1]
+DebugLED[2] <= StateMachine:StateMachine_1.DebugLED[2]
+DebugLED[3] <= StateMachine:StateMachine_1.DebugLED[3]
+DebugLED[4] <= StateMachine:StateMachine_1.DebugLED[4]
+DebugLED[5] <= StateMachine:StateMachine_1.DebugLED[5]
+DebugLED[6] <= StateMachine:StateMachine_1.DebugLED[6]
+DebugLED[7] <= StateMachine:StateMachine_1.DebugLED[7]
+CountValue[0] <= StateMachine:StateMachine_1.CountValue_o[0]
+CountValue[1] <= StateMachine:StateMachine_1.CountValue_o[1]
+CountValue[2] <= StateMachine:StateMachine_1.CountValue_o[2]
+CountValue[3] <= StateMachine:StateMachine_1.CountValue_o[3]
+CountValue[4] <= StateMachine:StateMachine_1.CountValue_o[4]
+CountValue[5] <= StateMachine:StateMachine_1.CountValue_o[5]
+CountValue[6] <= StateMachine:StateMachine_1.CountValue_o[6]
+CountValue[7] <= StateMachine:StateMachine_1.CountValue_o[7]
+CountValue[8] <= StateMachine:StateMachine_1.CountValue_o[8]
+CountValue[9] <= StateMachine:StateMachine_1.CountValue_o[9]
+CountValue[10] <= StateMachine:StateMachine_1.CountValue_o[10]
+CountValue[11] <= StateMachine:StateMachine_1.CountValue_o[11]
+CountValue[12] <= StateMachine:StateMachine_1.CountValue_o[12]
+BuzzerOut <= StateMachine:StateMachine_1.BuzzerEnable
+
+
+|Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Min
+clk => SavedValue.CLK
+Button => SavedValue.DATAIN
+Button => FallingOutput.IN1
+FallingOutput <= FallingOutput.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Sec
+clk => SavedValue.CLK
+Button => SavedValue.DATAIN
+Button => FallingOutput.IN1
+FallingOutput <= FallingOutput.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Clear
+clk => SavedValue.CLK
+Button => SavedValue.DATAIN
+Button => FallingOutput.IN1
+FallingOutput <= FallingOutput.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Main|SubMain:SubMain_1|FallingEdge:FallingEdge_Start
+clk => SavedValue.CLK
+Button => SavedValue.DATAIN
+Button => FallingOutput.IN1
+FallingOutput <= FallingOutput.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Main|SubMain:SubMain_1|StateMachine:StateMachine_1
+reset => mode~3.DATAIN
+clk => mode~1.DATAIN
+clk_Deci => nxt_mode.st_321.IN0
+clk_Deci => Selector32.IN2
+clk_Deci => Selector33.IN3
+clk_Deci => Selector34.IN3
+clk_Deci => Selector35.IN3
+clk_Deci => Selector36.IN3
+clk_Deci => Selector37.IN3
+clk_Deci => Selector38.IN3
+clk_Deci => Selector32.IN3
+clk_Deci => Selector33.IN4
+clk_Deci => Selector34.IN4
+clk_Deci => Selector35.IN4
+clk_Deci => Selector36.IN4
+clk_Deci => Selector37.IN4
+clk_Deci => Selector38.IN4
+BtnMin => counter_proc.IN1
+BtnMin => counter_proc.IN0
+BtnSec => counter_proc.IN1
+BtnSec => counter_proc.IN1
+BtnStart => counter_proc.IN1
+BtnStart => nxt_mode.st_321.IN1
+BtnStart => nxt_mode.st_321.DATAA
+BtnStart => Selector32.IN4
+BtnStart => Selector33.IN5
+BtnStart => Selector34.IN5
+BtnStart => Selector35.IN5
+BtnStart => Selector36.IN5
+BtnStart => Selector37.IN5
+BtnStart => Selector38.IN5
+BtnStart => Selector32.IN5
+BtnStart => Selector33.IN6
+BtnStart => Selector34.IN6
+BtnStart => Selector35.IN6
+BtnStart => Selector36.IN6
+BtnStart => Selector37.IN6
+BtnStart => Selector38.IN6
+BtnStart => nxt_mode.st_310.DATAA
+BtnClear => nxt_mode.st_321.IN1
+BtnClear => nxt_mode.st_190.OUTPUTSELECT
+BtnClear => nxt_mode.st_111.OUTPUTSELECT
+BtnClear => nxt_mode.st_110.OUTPUTSELECT
+BtnClear => Selector0.IN0
+CountValue_o[0] <= <GND>
+CountValue_o[1] <= CountValue[1].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[2] <= CountValue[2].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[3] <= CountValue[3].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[4] <= CountValue[4].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[5] <= CountValue[5].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[6] <= CountValue[6].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[7] <= CountValue[7].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[8] <= CountValue[8].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[9] <= CountValue[9].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[10] <= CountValue[10].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[11] <= CountValue[11].DB_MAX_OUTPUT_PORT_TYPE
+CountValue_o[12] <= CountValue[12].DB_MAX_OUTPUT_PORT_TYPE
+DebugLED[0] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+DebugLED[1] <= <GND>
+DebugLED[2] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+DebugLED[3] <= <GND>
+DebugLED[4] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+DebugLED[5] <= <GND>
+DebugLED[6] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+DebugLED[7] <= DebugLED[7].DB_MAX_OUTPUT_PORT_TYPE
+BuzzerEnable <= BuzzerEnable$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
