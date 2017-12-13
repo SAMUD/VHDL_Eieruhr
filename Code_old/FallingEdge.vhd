@@ -37,20 +37,21 @@ END FallingEdge;
 --------------------------------------------
 ARCHITECTURE behave OF FallingEdge IS
 
-	SIGNAL	SavedValue : std_logic;	--Counter for clk_PWM	
+	SIGNAL	SavedValue : std_logic :='0' ;	--Counter for clk_PWM	
 
 BEGIN
 
 	-- counting the main Value for PWM
-	Save : PROCESS (clk)
+	SAVE : PROCESS (clk)
 	BEGIN
 	
         IF (clk = '1' AND clk'EVENT) then
 			SavedValue<=Button;
         END IF;
+		  FallingOutput<= (NOT Button) AND SavedValue ; 
     
 	END PROCESS SAVE;
 	
-	FallingOutput<= (NOT Button) AND SavedValue ; 		
+			
 
 END behave;

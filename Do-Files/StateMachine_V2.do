@@ -53,4 +53,4 @@ force CountBlockTelemet_i 1 250ps
 
 
 #and now run the simulation for 1,5ns
-run 3000 ps
+run 3500 ps
