@@ -46,11 +46,12 @@ END StateMachine;
 --------------------------------------------
 ARCHITECTURE behave OF StateMachine IS
 
-TYPE state IS (st_reset,st_100,st_190,st_200,st_290,st_291,st_300,st_320,st_321,st_390);
+TYPE state IS (st_reset,st_100,st_190,st_200,st_290,st_291,st_300,st_390);
 SIGNAL mode : state;
 
 SIGNAL CountValueBuzzer:integer range 0 to 600 :=0;
 CONSTANT BuzzerPreload : integer := 50;
+SIGNAL AlreadyDone	: std_logic :='0';
 
 
 BEGIN
@@ -103,17 +104,6 @@ BEGIN
 						IF  CountValueBuzzer < 2 OR BtnStartF_i = '1' THEN
 							mode <= st_390;	--value load
 						END IF;
-						IF  clk_Deci_i = '1' THEN
-							mode <= st_320;	--value load
-						END IF;
-						
-				WHEN st_320 =>						--Pause pressed.				
-							mode <= st_321;
-						
-				WHEN st_321 =>						--Pause pressed.				
-						IF clk_Deci_i = '0' THEN
-							mode <= st_300;
-						END IF;
 						
 				WHEN st_390 =>					
 						IF BtnStartF_i = '0' THEN
@@ -129,7 +119,7 @@ BEGIN
 END PROCESS clk_proc;
 	   
 -- Output Process --
-output_proc : PROCESS (mode)
+output_proc : PROCESS (clk_i)
 	BEGIN
 		
 	   CASE mode IS
@@ -157,13 +147,13 @@ output_proc : PROCESS (mode)
 		WHEN st_300 =>
 				DebugLED_o <= "001";
 				CountBlockControl_o <= "000001";	
-		WHEN st_320 =>
-				DebugLED_o <= "001";
-				CountBlockControl_o <= "000001";		
-				CountValueBuzzer <= CountValueBuzzer-1;
-		WHEN st_321 =>
-				DebugLED_o <= "001";
-				CountBlockControl_o <= "000001";
+				IF AlreadyDone = '0' AND clk_Deci_i = '1' THEN
+					CountValueBuzzer <= CountValueBuzzer-1;
+					AlreadyDone <= '1';
+				END IF;
+				IF AlreadyDone = '1' AND clk_Deci_i = '0' THEN
+					AlreadyDone <= '0';
+				END IF;
 		WHEN st_390 =>
 				DebugLED_o <= "101";
 				CountBlockControl_o <= "000010";	

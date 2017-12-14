@@ -10,4 +10,7 @@ vcom -2008 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV
 vcom -2008 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd}
 vcom -2008 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd}
 vcom -2008 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd}
+vcom -2008 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd}
+vcom -2008 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/decoder.vhd}
+vcom -2008 -work work {D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd}
 

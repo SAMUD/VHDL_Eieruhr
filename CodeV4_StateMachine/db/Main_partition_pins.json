@@ -212,11 +212,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "BtnStart",
+					"name" : "BtnClear",
 					"strict" : false
 				},
 				{
-					"name" : "BtnClear",
+					"name" : "BtnStart",
 					"strict" : false
 				},
 				{
