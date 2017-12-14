@@ -14,58 +14,58 @@ BtnClear => FallingEdge:FallingEdge_Clear.Button
 BuzzerOverride => ~NO_FANOUT~
 SW2 => StateMachine:StateMachine_1.BuzzerTelemet_i
 SW3 => ~NO_FANOUT~
-Output1[0] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[0]
-Output1[1] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[1]
-Output1[2] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[2]
-Output1[3] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[3]
-Output1[4] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[4]
-Output1[5] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[5]
-Output1[6] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[6]
-Output2[0] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[0]
-Output2[1] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[1]
-Output2[2] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[2]
-Output2[3] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[3]
-Output2[4] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[4]
-Output2[5] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[5]
-Output2[6] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[6]
-Output3[0] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[0]
-Output3[1] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[1]
-Output3[2] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[2]
-Output3[3] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[3]
-Output3[4] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[4]
-Output3[5] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[5]
-Output3[6] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[6]
-Output4[0] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[0]
-Output4[1] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[1]
-Output4[2] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[2]
-Output4[3] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[3]
-Output4[4] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[4]
-Output4[5] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[5]
-Output4[6] << ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[6]
-CountValueMainOut[0] << Counter:Counter_1.CountValue_o[0]
-CountValueMainOut[1] << Counter:Counter_1.CountValue_o[1]
-CountValueMainOut[2] << Counter:Counter_1.CountValue_o[2]
-CountValueMainOut[3] << Counter:Counter_1.CountValue_o[3]
-CountValueMainOut[4] << Counter:Counter_1.CountValue_o[4]
-CountValueMainOut[5] << Counter:Counter_1.CountValue_o[5]
-CountValueMainOut[6] << Counter:Counter_1.CountValue_o[6]
-CountValueMainOut[7] << Counter:Counter_1.CountValue_o[7]
-CountValueMainOut[8] << Counter:Counter_1.CountValue_o[8]
-CountValueMainOut[9] << Counter:Counter_1.CountValue_o[9]
-CountValueMainOut[10] << Counter:Counter_1.CountValue_o[10]
-CountValueMainOut[11] << Counter:Counter_1.CountValue_o[11]
-CountValueMainOut[12] << Counter:Counter_1.CountValue_o[12]
-DebugLED[0] << StateMachine:StateMachine_1.DebugLED_o[0]
-DebugLED[1] << StateMachine:StateMachine_1.DebugLED_o[1]
-DebugLED[2] << StateMachine:StateMachine_1.DebugLED_o[2]
-DebugLED_Control[0] << StateMachine:StateMachine_1.CountBlockControl_o[0]
-DebugLED_Control[1] << StateMachine:StateMachine_1.CountBlockControl_o[1]
-DebugLED_Control[2] << StateMachine:StateMachine_1.CountBlockControl_o[2]
-DebugLED_Control[3] << StateMachine:StateMachine_1.CountBlockControl_o[3]
-DebugLED_Control[4] << StateMachine:StateMachine_1.CountBlockControl_o[4]
-DebugLED_Control[5] << StateMachine:StateMachine_1.CountBlockControl_o[5]
-Debug_clk_Deci << Debug_clk_Deci.DB_MAX_OUTPUT_PORT_TYPE
-BuzzerOut << comb.DB_MAX_OUTPUT_PORT_TYPE
+Output1[0] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[0]
+Output1[1] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[1]
+Output1[2] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[2]
+Output1[3] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[3]
+Output1[4] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[4]
+Output1[5] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[5]
+Output1[6] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg1[6]
+Output2[0] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[0]
+Output2[1] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[1]
+Output2[2] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[2]
+Output2[3] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[3]
+Output2[4] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[4]
+Output2[5] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[5]
+Output2[6] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg2[6]
+Output3[0] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[0]
+Output3[1] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[1]
+Output3[2] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[2]
+Output3[3] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[3]
+Output3[4] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[4]
+Output3[5] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[5]
+Output3[6] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg3[6]
+Output4[0] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[0]
+Output4[1] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[1]
+Output4[2] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[2]
+Output4[3] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[3]
+Output4[4] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[4]
+Output4[5] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[5]
+Output4[6] <= ConvertIntBcd:ConvertIntBcd_1.SevenSeg4[6]
+CountValueMainOut[0] <= Counter:Counter_1.CountValue_o[0]
+CountValueMainOut[1] <= Counter:Counter_1.CountValue_o[1]
+CountValueMainOut[2] <= Counter:Counter_1.CountValue_o[2]
+CountValueMainOut[3] <= Counter:Counter_1.CountValue_o[3]
+CountValueMainOut[4] <= Counter:Counter_1.CountValue_o[4]
+CountValueMainOut[5] <= Counter:Counter_1.CountValue_o[5]
+CountValueMainOut[6] <= Counter:Counter_1.CountValue_o[6]
+CountValueMainOut[7] <= Counter:Counter_1.CountValue_o[7]
+CountValueMainOut[8] <= Counter:Counter_1.CountValue_o[8]
+CountValueMainOut[9] <= Counter:Counter_1.CountValue_o[9]
+CountValueMainOut[10] <= Counter:Counter_1.CountValue_o[10]
+CountValueMainOut[11] <= Counter:Counter_1.CountValue_o[11]
+CountValueMainOut[12] <= Counter:Counter_1.CountValue_o[12]
+DebugLED[0] <= StateMachine:StateMachine_1.DebugLED_o[0]
+DebugLED[1] <= StateMachine:StateMachine_1.DebugLED_o[1]
+DebugLED[2] <= StateMachine:StateMachine_1.DebugLED_o[2]
+DebugLED_Control[0] <= StateMachine:StateMachine_1.CountBlockControl_o[0]
+DebugLED_Control[1] <= StateMachine:StateMachine_1.CountBlockControl_o[1]
+DebugLED_Control[2] <= StateMachine:StateMachine_1.CountBlockControl_o[2]
+DebugLED_Control[3] <= StateMachine:StateMachine_1.CountBlockControl_o[3]
+DebugLED_Control[4] <= StateMachine:StateMachine_1.CountBlockControl_o[4]
+DebugLED_Control[5] <= StateMachine:StateMachine_1.CountBlockControl_o[5]
+Debug_clk_Deci <= Debug_clk_Deci.DB_MAX_OUTPUT_PORT_TYPE
+BuzzerOut <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Main|StateMachine:StateMachine_1
@@ -120,28 +120,36 @@ BuzzerTelemet_i => clk_proc.IN1
 clk => SavedValue.CLK
 Button => SavedValue.DATAIN
 Button => FallingOutput.IN1
+Button => InversedOutput.DATAIN
 FallingOutput <= FallingOutput.DB_MAX_OUTPUT_PORT_TYPE
+InversedOutput <= Button.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Main|FallingEdge:FallingEdge_Start
 clk => SavedValue.CLK
 Button => SavedValue.DATAIN
 Button => FallingOutput.IN1
+Button => InversedOutput.DATAIN
 FallingOutput <= FallingOutput.DB_MAX_OUTPUT_PORT_TYPE
+InversedOutput <= Button.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Main|FallingEdge:FallingEdge_Min
 clk => SavedValue.CLK
 Button => SavedValue.DATAIN
 Button => FallingOutput.IN1
+Button => InversedOutput.DATAIN
 FallingOutput <= FallingOutput.DB_MAX_OUTPUT_PORT_TYPE
+InversedOutput <= Button.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Main|FallingEdge:FallingEdge_Sec
 clk => SavedValue.CLK
 Button => SavedValue.DATAIN
 Button => FallingOutput.IN1
+Button => InversedOutput.DATAIN
 FallingOutput <= FallingOutput.DB_MAX_OUTPUT_PORT_TYPE
+InversedOutput <= Button.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Main|Counter:Counter_1
@@ -187,7 +195,7 @@ clk_i => CountValue[10].CLK
 clk_i => CountValue[11].CLK
 clk_i => CountValue[12].CLK
 clk_deci_i => count_proc.IN1
-clk_deci_i => count_proc.IN0
+clk_deci_i => AlreadyIncremented.OUTPUTSELECT
 CountBlockControl_i[0] => ~NO_FANOUT~
 CountBlockControl_i[1] => CountValue.OUTPUTSELECT
 CountBlockControl_i[1] => CountValue.OUTPUTSELECT
@@ -324,8 +332,6 @@ CountValue_o[10] <= CountValue_o[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CountValue_o[11] <= CountValue_o[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CountValue_o[12] <= CountValue_o[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 BtnMinF_i => count_proc.IN1
-BtnMinF_i => count_proc.IN1
-BtnSecF_i => count_proc.IN1
 BtnSecF_i => count_proc.IN1
 
 

@@ -115,7 +115,8 @@ ARCHITECTURE behave OF Main IS
 	  port(
 		clk			 :		IN		std_logic;			--main 50Mhz clock input		
 		Button		 :		IN		std_logic;			--Input											
-		FallingOutput:		OUT	std_logic			--Output
+		FallingOutput:		OUT	std_logic;			--Output to buzzer
+		InversedOutput:	OUT	std_logic
 	);
 	end component;
 	
