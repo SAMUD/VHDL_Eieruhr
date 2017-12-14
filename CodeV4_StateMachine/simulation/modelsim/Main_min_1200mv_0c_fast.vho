@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
--- DATE "12/14/2017 16:22:41"
+-- DATE "12/14/2017 16:36:18"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -73,12 +73,9 @@ END structure;
 LIBRARY ALTERA;
 LIBRARY CYCLONEIVE;
 LIBRARY IEEE;
-LIBRARY STD;
 USE ALTERA.ALTERA_PRIMITIVES_COMPONENTS.ALL;
 USE CYCLONEIVE.CYCLONEIVE_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.STD_LOGIC_ARITH.ALL;
-USE STD.STANDARD.ALL;
 
 ENTITY 	Main IS
     PORT (
@@ -91,15 +88,15 @@ ENTITY 	Main IS
 	BuzzerOverride : IN std_logic;
 	SW2 : IN std_logic;
 	SW3 : IN std_logic;
-	Output1 : OUT std_logic_vector(6 DOWNTO 0);
-	Output2 : OUT std_logic_vector(6 DOWNTO 0);
-	Output3 : OUT std_logic_vector(6 DOWNTO 0);
-	Output4 : OUT std_logic_vector(6 DOWNTO 0);
-	CountValueMainOut : OUT STD.STANDARD.integer range 0 TO 6000;
-	DebugLED : OUT std_logic_vector(2 DOWNTO 0);
-	DebugLED_Control : OUT std_logic_vector(5 DOWNTO 0);
-	Debug_clk_Deci : OUT std_logic;
-	BuzzerOut : OUT std_logic
+	Output1 : BUFFER std_logic_vector(6 DOWNTO 0);
+	Output2 : BUFFER std_logic_vector(6 DOWNTO 0);
+	Output3 : BUFFER std_logic_vector(6 DOWNTO 0);
+	Output4 : BUFFER std_logic_vector(6 DOWNTO 0);
+	CountValueMainOut : BUFFER std_logic_vector(12 DOWNTO 0);
+	DebugLED : BUFFER std_logic_vector(2 DOWNTO 0);
+	DebugLED_Control : BUFFER std_logic_vector(5 DOWNTO 0);
+	Debug_clk_Deci : BUFFER std_logic;
+	BuzzerOut : BUFFER std_logic
 	);
 END Main;
 
@@ -428,7 +425,7 @@ SIGNAL \Counter_1|ClockDivider_1|Equal0~0_combout\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|Equal0~1_combout\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|LessThan0~0_combout\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|LessThan0~1_combout\ : std_logic;
-SIGNAL \Counter_1|ClockDivider_1|convert_proc~0_combout\ : std_logic;
+SIGNAL \Counter_1|ClockDivider_1|divide_proc~0_combout\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|clock_divider[23]~74\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|clock_divider[24]~75_combout\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|clock_divider[24]~76\ : std_logic;
@@ -436,7 +433,7 @@ SIGNAL \Counter_1|ClockDivider_1|clock_divider[25]~77_combout\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|clock_divider[25]~78\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|clock_divider[26]~79_combout\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|Equal0~10_combout\ : std_logic;
-SIGNAL \Counter_1|ClockDivider_1|convert_proc~1_combout\ : std_logic;
+SIGNAL \Counter_1|ClockDivider_1|divide_proc~1_combout\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|clock_divider[0]~28\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|clock_divider[1]~29_combout\ : std_logic;
 SIGNAL \Counter_1|ClockDivider_1|clock_divider[1]~30\ : std_logic;
@@ -3334,7 +3331,7 @@ Output1 <= ww_Output1;
 Output2 <= ww_Output2;
 Output3 <= ww_Output3;
 Output4 <= ww_Output4;
-CountValueMainOut <= IEEE.STD_LOGIC_ARITH.CONV_INTEGER(UNSIGNED(ww_CountValueMainOut));
+CountValueMainOut <= ww_CountValueMainOut;
 DebugLED <= ww_DebugLED;
 DebugLED_Control <= ww_DebugLED_Control;
 Debug_clk_Deci <= ww_Debug_clk_Deci;
@@ -6675,7 +6672,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[20]~67_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(20));
@@ -6709,7 +6706,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[21]~69_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(21));
@@ -6743,7 +6740,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[22]~71_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(22));
@@ -6777,7 +6774,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[23]~73_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(23));
@@ -6883,9 +6880,9 @@ PORT MAP (
 	combout => \Counter_1|ClockDivider_1|LessThan0~1_combout\);
 
 -- Location: LCCOMB_X54_Y44_N4
-\Counter_1|ClockDivider_1|convert_proc~0\ : cycloneive_lcell_comb
+\Counter_1|ClockDivider_1|divide_proc~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \Counter_1|ClockDivider_1|convert_proc~0_combout\ = (\Counter_1|ClockDivider_1|clock_divider\(23) & ((\Counter_1|ClockDivider_1|clock_divider\(22)) # ((\Counter_1|ClockDivider_1|Equal0~3_combout\ & \Counter_1|ClockDivider_1|LessThan0~1_combout\))))
+-- \Counter_1|ClockDivider_1|divide_proc~0_combout\ = (\Counter_1|ClockDivider_1|clock_divider\(23) & ((\Counter_1|ClockDivider_1|clock_divider\(22)) # ((\Counter_1|ClockDivider_1|Equal0~3_combout\ & \Counter_1|ClockDivider_1|LessThan0~1_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6897,7 +6894,7 @@ PORT MAP (
 	datab => \Counter_1|ClockDivider_1|clock_divider\(23),
 	datac => \Counter_1|ClockDivider_1|LessThan0~1_combout\,
 	datad => \Counter_1|ClockDivider_1|clock_divider\(22),
-	combout => \Counter_1|ClockDivider_1|convert_proc~0_combout\);
+	combout => \Counter_1|ClockDivider_1|divide_proc~0_combout\);
 
 -- Location: LCCOMB_X53_Y44_N22
 \Counter_1|ClockDivider_1|clock_divider[24]~75\ : cycloneive_lcell_comb
@@ -6928,7 +6925,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[24]~75_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(24));
@@ -6962,7 +6959,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[25]~77_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(25));
@@ -6992,7 +6989,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[26]~79_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(26));
@@ -7014,9 +7011,9 @@ PORT MAP (
 	combout => \Counter_1|ClockDivider_1|Equal0~10_combout\);
 
 -- Location: LCCOMB_X54_Y44_N0
-\Counter_1|ClockDivider_1|convert_proc~1\ : cycloneive_lcell_comb
+\Counter_1|ClockDivider_1|divide_proc~1\ : cycloneive_lcell_comb
 -- Equation(s):
--- \Counter_1|ClockDivider_1|convert_proc~1_combout\ = (\Counter_1|ClockDivider_1|convert_proc~0_combout\) # (((\BtnSec~input_o\ & \BtnMin~input_o\)) # (!\Counter_1|ClockDivider_1|Equal0~10_combout\))
+-- \Counter_1|ClockDivider_1|divide_proc~1_combout\ = (\Counter_1|ClockDivider_1|divide_proc~0_combout\) # (((\BtnSec~input_o\ & \BtnMin~input_o\)) # (!\Counter_1|ClockDivider_1|Equal0~10_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -7025,10 +7022,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \BtnSec~input_o\,
-	datab => \Counter_1|ClockDivider_1|convert_proc~0_combout\,
+	datab => \Counter_1|ClockDivider_1|divide_proc~0_combout\,
 	datac => \BtnMin~input_o\,
 	datad => \Counter_1|ClockDivider_1|Equal0~10_combout\,
-	combout => \Counter_1|ClockDivider_1|convert_proc~1_combout\);
+	combout => \Counter_1|ClockDivider_1|divide_proc~1_combout\);
 
 -- Location: FF_X53_Y45_N7
 \Counter_1|ClockDivider_1|clock_divider[0]\ : dffeas
@@ -7040,7 +7037,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[0]~27_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(0));
@@ -7074,7 +7071,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[1]~29_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(1));
@@ -7108,7 +7105,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[2]~31_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(2));
@@ -7142,7 +7139,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[3]~33_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(3));
@@ -7176,7 +7173,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[4]~35_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(4));
@@ -7210,7 +7207,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[5]~37_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(5));
@@ -7244,7 +7241,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[6]~39_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(6));
@@ -7278,7 +7275,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[7]~41_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(7));
@@ -7312,7 +7309,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[8]~43_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(8));
@@ -7346,7 +7343,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[9]~45_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(9));
@@ -7380,7 +7377,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[10]~47_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(10));
@@ -7414,7 +7411,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[11]~49_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(11));
@@ -7448,7 +7445,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[12]~51_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(12));
@@ -7482,7 +7479,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[13]~53_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(13));
@@ -7516,7 +7513,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[14]~55_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(14));
@@ -7550,7 +7547,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[15]~57_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(15));
@@ -7584,7 +7581,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[16]~59_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(16));
@@ -7618,7 +7615,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[17]~61_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(17));
@@ -7652,7 +7649,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[18]~63_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(18));
@@ -7667,7 +7664,7 @@ GENERIC MAP (
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
 	d => \Counter_1|ClockDivider_1|clock_divider[19]~65_combout\,
-	sclr => \Counter_1|ClockDivider_1|convert_proc~1_combout\,
+	sclr => \Counter_1|ClockDivider_1|divide_proc~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => \Counter_1|ClockDivider_1|clock_divider\(19));
