@@ -38,7 +38,7 @@ END Buzzer;
 ARCHITECTURE behave OF Buzzer IS
 
 	CONSTANT Period  : INTEGER := 1000 ;						--We will have 1000 pwm-steps.
-	CONSTANT Divide100Sec  		: INTEGER := 400000; 		--CONSTANT for Clock Divider
+	CONSTANT Divide100Sec  		: INTEGER := 200000; 		--CONSTANT for Clock Divider
 	SIGNAL	clk_PWM				:	std_logic;					-- Divided clock
 	
 	SIGNAL	CountedValue : INTEGER range 0 to 1000; 		--Counter for clk
@@ -48,7 +48,6 @@ ARCHITECTURE behave OF Buzzer IS
 	  port(
 														
 		clk_in		:		IN		std_logic;						--Hardware clock
-		reset_i		:		IN		std_logic;
 		Divider_in	:		IN integer range 0 to 100000005;	--Clock Divider
 		clk_out		:		OUT	std_logic						--divided clock
 	);
@@ -59,7 +58,6 @@ BEGIN
 	ClockDivider_PWM: component ClockDivider
 		  port map (
 			  clk_in => clk,
-			  reset_i => '0',
 			  Divider_in => Divide100Sec,
 			  clk_out => clk_PWM
 		 );
@@ -85,7 +83,7 @@ BEGIN
 		
 			CountedValue2nd <= CountedValue2nd + 1;
 			
-			IF CountedValue2nd > (Period/2) THEN
+			IF CountedValue2nd > Period THEN
 				CountedValue2nd <= 0;
 			END IF;
 			IF Enable = '0' THEN

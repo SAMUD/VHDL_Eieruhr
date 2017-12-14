@@ -21,7 +21,7 @@ ENTITY Counter IS
 PORT(
 																		--Hardware clock
 	clk_i		 :		IN		 std_logic;
-	clk_deci_i:		IN		std_logic;
+	clk_deci_i:		IN		 std_logic;
 	
 	--Control the Counter-Block
 	CountBlockControl_i 	:IN	std_logic_vector(5 downto 0);	
@@ -30,7 +30,9 @@ PORT(
 	
 	--User buttons
 	BtnMinF_i		:		IN		 std_logic;
-	BtnSecF_i		:		IN		 std_logic
+	BtnSecF_i		:		IN		 std_logic;
+	BtnMin_i		:		IN		 std_logic;
+	BtnSec_i		:		IN		 std_logic
 	
 	
 	
@@ -45,13 +47,36 @@ ARCHITECTURE behave OF Counter IS
 	signal CountValue: integer range 0 to 6000 :=0;
 	signal CountValueSaved: integer range 0 to 6000 :=0;
 	signal AlreadyIncremented : std_logic :='0';
+	SIGNAL clk_Four: std_logic;
+	CONSTANT Divide4Sec  	: INTEGER := 12500000;
+	
+	--Divides the main clock
+	component ClockDivider
+	  port(
+														
+		clk_in		:		IN		std_logic;							--Hardware clock
+		reset_i			:		IN		std_logic;
+		Divider_in	:		IN integer range 0 to 100000005;		--Divider					
+		clk_out		:		OUT	std_logic;							--divided clock
+		clk_out_alt	:		OUT std_logic
+	);
+	end component;	
 
 BEGIN
+
+ClockDivider_1: component ClockDivider
+		  port map (
+			  clk_in => clk_i,
+			  reset_i => BtnSec_i AND BtnMin_i,
+			  Divider_in => Divide4Sec,
+			  clk_out => clk_Four
+		 );
 
 -- Registered Process --
 count_proc : PROCESS (clk_i)
 	BEGIN
 	
+		
 		IF (rising_edge(clk_i)) THEN
 		
 		
@@ -65,11 +90,20 @@ count_proc : PROCESS (clk_i)
 					AlreadyIncremented <= '1';
 				END IF;
 			ELSIF CountBlockControl_i(3) = '1' THEN  --Increment enable
-				IF CountValue < 4999 AND BtnMinF_i = '1' 	THEN
-					CountValue <= CountValue + 600 - (CountValue mod 10);
+				--IF (BtnMinF_i = '1' OR (BtnMin = '0' AND clk_Deci_i = '1') )	THEN
+				IF (BtnMinF_i = '1' OR (BtnMin_i = '0' AND clk_Four = '1') )	THEN
+					IF CountValue < 5399 THEN
+						CountValue <= CountValue + 600 - (CountValue mod 10);
+					ELSE
+						CountValue <= CountValue - 5400 - (CountValue mod 10);
+					END IF;
 				END IF;
-				IF CountValue < 5989 AND BtnSecF_i = '1' THEN
-					CountValue <= CountValue + 10 - (CountValue mod 10);
+				IF (BtnSecF_i = '1' OR (BtnSec_i = '0' AND clk_Four = '1') )	THEN
+					IF (CountValue-(((CountValue/10)-((CountValue/10) mod 60)))*10) < 589 THEN
+						CountValue <= CountValue + 10 - (CountValue mod 10);
+					ELSE
+						CountValue <= CountValue - 590 - (CountValue mod 10);
+					END IF;
 				END IF;
 			ELSIF CountBlockControl_i(2) = '1' THEN  --Save Value
 					CountValueSaved <= CountValue;

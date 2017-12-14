@@ -49,8 +49,8 @@ ARCHITECTURE behave OF StateMachine IS
 TYPE state IS (st_reset,st_100,st_190,st_200,st_290,st_291,st_300,st_390);
 SIGNAL mode : state;
 
-SIGNAL CountValueBuzzer:integer range 0 to 600 :=0;
-CONSTANT BuzzerPreload : integer := 50;
+SIGNAL CountValueBuzzer:integer range 0 to 6000 :=0;
+CONSTANT BuzzerPreload : integer := 100;
 SIGNAL AlreadyDone	: std_logic :='0';
 
 

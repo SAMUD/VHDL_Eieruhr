@@ -24,7 +24,7 @@ use ieee.numeric_std.all;
 ENTITY FallingEdge IS
 PORT(
 	
-	clk			:		IN		std_logic;			--main 50Mhz clock input		
+	clk			:		IN		std_logic;			--main 50Mhz clock input
 	Button		:		IN		std_logic;			--each clock-cycle here will increment the PWM counter by 1 from 0(off) to 1000(max)
 													
 	FallingOutput:		OUT	std_logic;			--Output to buzzer

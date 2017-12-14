@@ -82,6 +82,7 @@ ARCHITECTURE behave OF Main IS
 	  port(
 														
 		clk_in		:		IN		std_logic;							--Hardware clock
+		reset_i			:		IN		std_logic;
 		Divider_in	:		IN integer range 0 to 100000005;		--Divider					
 		clk_out		:		OUT	std_logic;							--divided clock
 		clk_out_alt	:		OUT std_logic
@@ -131,9 +132,10 @@ ARCHITECTURE behave OF Main IS
 		CountBlockTelemet_o 	:OUT	std_logic;							--Bit0: Counter is at 0
 		CountValue_o		:OUT integer range 0 to 6000;
 		
-		--User buttons
 		BtnMinF_i		:		IN		 std_logic;
-		BtnSecF_i		:		IN		 std_logic
+		BtnSecF_i		:		IN		 std_logic;
+		BtnMin_i		:		IN		 std_logic;
+		BtnSec_i		:		IN		 std_logic
 	);
 	end component;
 
@@ -235,7 +237,9 @@ BEGIN
 			
 			--User buttons
 			BtnMinF_i		=>BtnMinFalling,
-			BtnSecF_i		=>BtnSecFalling
+			BtnSecF_i		=>BtnSecFalling,
+			BtnMin_i			=>BtnMin,
+			BtnSec_i			=>BtnSec
 			);
 			
 
@@ -245,6 +249,7 @@ BEGIN
 	ClockDivider_1: component ClockDivider
 		  port map (
 			  clk_in => clk,
+			  reset_i => '0',
 			  Divider_in => Divide10Sec,
 			  clk_out_alt => clk_Deci
 		 );

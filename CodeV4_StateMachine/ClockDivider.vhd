@@ -23,6 +23,7 @@ PORT(
 													--Hardware clock
 	clk_in		:		IN		 std_logic;
 	Divider_in	:		IN integer range 0 to 100000005;
+	reset_i			:		IN		std_logic;
 													--divided clock
 	clk_out		:		OUT std_logic;
 	clk_out_alt	:		OUT std_logic
@@ -45,7 +46,7 @@ convert_proc : PROCESS (clk_in)
 		IF (clk_in'EVENT AND clk_in='1' AND clk_in'LAST_VALUE='0') THEN
 			
 			clock_divider <= clock_divider+1;	--Divide the clock
-			IF clock_divider>Divider_in THEN  --5000000 THEN			--with this value we will generate a 10Hz clock
+			IF (clock_divider>Divider_in) OR (reset_i='1') THEN  --5000000 THEN			--with this value we will generate a 10Hz clock
 				clock_divider <= 0;
 			END IF;
 			

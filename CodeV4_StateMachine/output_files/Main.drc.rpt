@@ -1,0 +1,338 @@
+Design Assistant report for Main
+Thu Dec 14 15:46:25 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant Summary
+  3. Design Assistant Settings
+  4. Critical Violations
+  5. High Violations
+  6. Medium Violations
+  7. Information only Violations
+  8. Design Assistant Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Design Assistant Summary                                                ;
++-----------------------------------+-------------------------------------+
+; Design Assistant Status           ; Analyzed - Thu Dec 14 15:46:25 2017 ;
+; Revision Name                     ; Main                                ;
+; Top-level Entity Name             ; Main                                ;
+; Family                            ; Cyclone IV E                        ;
+; Total Critical Violations         ; 1                                   ;
+; - Rule A101                       ; 1                                   ;
+; Total High Violations             ; 15                                  ;
+; - Rule A108                       ; 14                                  ;
+; - Rule D101                       ; 1                                   ;
+; Total Medium Violations           ; 1                                   ;
+; - Rule R102                       ; 1                                   ;
+; Total Information only Violations ; 64                                  ;
+; - Rule T101                       ; 14                                  ;
+; - Rule T102                       ; 50                                  ;
++-----------------------------------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant Settings                                                                                                                                                                ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+; Option                                                                                                                                                               ; Setting      ; To ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+; Design Assistant mode                                                                                                                                                ; Post-Fitting ;    ;
+; Threshold value for clock net not mapped to clock spines rule                                                                                                        ; 25           ;    ;
+; Minimum number of clock port feed by gated clocks                                                                                                                    ; 30           ;    ;
+; Minimum number of node fan-out                                                                                                                                       ; 30           ;    ;
+; Maximum number of nodes to report                                                                                                                                    ; 50           ;    ;
+; Rule C101: Gated clock should be implemented according to the Intel FPGA standard scheme                                                                             ; On           ;    ;
+; Rule C102: Logic cell should not be used to generate an inverted clock signal                                                                                        ; On           ;    ;
+; Rule C103: Gated clock does not feed at least a pre-defined number of clock ports to effectively save power                                                          ; On           ;    ;
+; Rule C104: Clock signal source should drive only clock input ports                                                                                                   ; On           ;    ;
+; Rule C105: Clock signal should be a global signal                                                                                                                    ; On           ;    ;
+; Rule C106: Clock signal source should not drive registers triggered by different clock edges                                                                         ; On           ;    ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                                                                         ; On           ;    ;
+; Rule R102: External reset signals should be synchronized using two cascaded registers                                                                                ; On           ;    ;
+; Rule R103: External reset signal should be correctly synchronized                                                                                                    ; On           ;    ;
+; Rule R104: The reset signal that is generated in one clock domain and used in another clock domain should be correctly synchronized                                  ; On           ;    ;
+; Rule R105: The reset signal that is generated in one clock domain and used in another clock domain should be synchronized                                            ; On           ;    ;
+; Rule T101: Nodes with more than the specified number of fan-outs                                                                                                     ; On           ;    ;
+; Rule T102: Top nodes with the highest number of fan-outs                                                                                                             ; On           ;    ;
+; Rule A101: Design should not contain combinational loops                                                                                                             ; On           ;    ;
+; Rule A102: Register output should not drive its own control signal directly or through combinational logic                                                           ; On           ;    ;
+; Rule A103: Design should not contain delay chains                                                                                                                    ; On           ;    ;
+; Rule A104: Design should not contain ripple clock structures                                                                                                         ; On           ;    ;
+; Rule A105: Pulses should not be implemented asynchronously                                                                                                           ; On           ;    ;
+; Rule A106: Multiple pulses should not be generated in design                                                                                                         ; On           ;    ;
+; Rule A107: Design should not contain SR latches                                                                                                                      ; On           ;    ;
+; Rule A108: Design should not contain latches                                                                                                                         ; On           ;    ;
+; Rule S101: Output enable and input of the same tri-state node should not be driven by same signal source                                                             ; On           ;    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source                                                ; On           ;    ;
+; Rule S103: More than one asynchronous port of a register should not be driven by the same signal source                                                              ; On           ;    ;
+; Rule S104: Clock port and any other port of a register should not be driven by the same signal source                                                                ; On           ;    ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains                                                                        ; On           ;    ;
+; Rule D102: Multiple data bits that are transferred across asynchronous clock domains are synchronized, but not all bits may be aligned in the receiving clock domain ; On           ;    ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains                                                              ; On           ;    ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+----+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Critical Violations                                                                                                         ;
++---------------------------------------------------------------------------------+-------------------------------------------+
+; Rule name                                                                       ; Name                                      ;
++---------------------------------------------------------------------------------+-------------------------------------------+
+; Rule A101: Design should not contain combinational loops - Combinational loop 1 ;                                           ;
+;  Combinational loop 1                                                           ; StateMachine:StateMachine_1|AlreadyDone~0 ;
++---------------------------------------------------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; High Violations                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+; Rule name                                                                                                   ; Name                                             ;
++-------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+; Rule A108: Design should not contain latches - Latch 1                                                      ;                                                  ;
+;  Latch 1                                                                                                    ; StateMachine:StateMachine_1|CountValueBuzzer[4]  ;
+; Rule A108: Design should not contain latches - Latch 2                                                      ;                                                  ;
+;  Latch 2                                                                                                    ; StateMachine:StateMachine_1|CountValueBuzzer[3]  ;
+; Rule A108: Design should not contain latches - Latch 3                                                      ;                                                  ;
+;  Latch 3                                                                                                    ; StateMachine:StateMachine_1|CountValueBuzzer[2]  ;
+; Rule A108: Design should not contain latches - Latch 4                                                      ;                                                  ;
+;  Latch 4                                                                                                    ; StateMachine:StateMachine_1|CountValueBuzzer[0]  ;
+; Rule A108: Design should not contain latches - Latch 5                                                      ;                                                  ;
+;  Latch 5                                                                                                    ; StateMachine:StateMachine_1|AlreadyDone          ;
+; Rule A108: Design should not contain latches - Latch 6                                                      ;                                                  ;
+;  Latch 6                                                                                                    ; StateMachine:StateMachine_1|CountValueBuzzer[7]  ;
+; Rule A108: Design should not contain latches - Latch 7                                                      ;                                                  ;
+;  Latch 7                                                                                                    ; StateMachine:StateMachine_1|CountValueBuzzer[8]  ;
+; Rule A108: Design should not contain latches - Latch 8                                                      ;                                                  ;
+;  Latch 8                                                                                                    ; StateMachine:StateMachine_1|CountValueBuzzer[6]  ;
+; Rule A108: Design should not contain latches - Latch 9                                                      ;                                                  ;
+;  Latch 9                                                                                                    ; StateMachine:StateMachine_1|CountValueBuzzer[12] ;
+; Rule A108: Design should not contain latches - Latch 10                                                     ;                                                  ;
+;  Latch 10                                                                                                   ; StateMachine:StateMachine_1|CountValueBuzzer[9]  ;
+; Rule A108: Design should not contain latches - Latch 11                                                     ;                                                  ;
+;  Latch 11                                                                                                   ; StateMachine:StateMachine_1|CountValueBuzzer[10] ;
+; Rule A108: Design should not contain latches - Latch 12                                                     ;                                                  ;
+;  Latch 12                                                                                                   ; StateMachine:StateMachine_1|CountValueBuzzer[11] ;
+; Rule A108: Design should not contain latches - Latch 13                                                     ;                                                  ;
+;  Latch 13                                                                                                   ; StateMachine:StateMachine_1|CountValueBuzzer[5]  ;
+; Rule A108: Design should not contain latches - Latch 14                                                     ;                                                  ;
+;  Latch 14                                                                                                   ; StateMachine:StateMachine_1|CountValueBuzzer[1]  ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains - Structure 1 ;                                                  ;
+;  Source node(s) from clock "clk"                                                                            ; StateMachine:StateMachine_1|mode.st_300          ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[8]               ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[6]               ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[5]               ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[4]               ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[7]               ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[2]               ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[1]               ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[0]               ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[3]               ;
+;  Destination node(s) from clock "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|clk_out"                     ; Buzzer:Buzzer_1|CountedValue2nd[9]               ;
++-------------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Medium Violations                                                                                                                 ;
++---------------------------------------------------------------------------------------+-------------------------------------------+
+; Rule name                                                                             ; Name                                      ;
++---------------------------------------------------------------------------------------+-------------------------------------------+
+; Rule R102: External reset signals should be synchronized using two cascaded registers ; reset                                     ;
+;  Reset signal destination node(s) list                                                ; StateMachine:StateMachine_1|mode.st_reset ;
+;  Reset signal destination node(s) list                                                ; StateMachine:StateMachine_1|mode.st_300   ;
+;  Reset signal destination node(s) list                                                ; StateMachine:StateMachine_1|mode.st_291   ;
+;  Reset signal destination node(s) list                                                ; StateMachine:StateMachine_1|mode.st_290   ;
+;  Reset signal destination node(s) list                                                ; StateMachine:StateMachine_1|mode.st_100   ;
+;  Reset signal destination node(s) list                                                ; StateMachine:StateMachine_1|mode.st_200   ;
+;  Reset signal destination node(s) list                                                ; StateMachine:StateMachine_1|mode.st_190   ;
+;  Reset signal destination node(s) list                                                ; StateMachine:StateMachine_1|mode.st_390   ;
++---------------------------------------------------------------------------------------+-------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Information only Violations                                                                                                                                                                                                             ;
++------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Rule name                                                        ; Name                                                                                                                                                       ; Fan-Out ;
++------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Rule T101: Nodes with more than the specified number of fan-outs ; clk~inputclkctrl                                                                                                                                           ; 145     ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; StateMachine:StateMachine_1|mode.st_reset                                                                                                                  ; 33      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18             ; 31      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~20             ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; StateMachine:StateMachine_1|mode.st_200                                                                                                                    ; 35      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18 ; 33      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ConvertIntBcd:ConvertIntBcd_1|Add0~26                                                                                                                      ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~16 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~18 ; 33      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[13]~20 ; 33      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18 ; 32      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~20 ; 35      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[13]~22 ; 36      ;
+; Rule T101: Nodes with more than the specified number of fan-outs ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~20 ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; clk~inputclkctrl                                                                                                                                           ; 145     ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[13]~22 ; 36      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; StateMachine:StateMachine_1|mode.st_200                                                                                                                    ; 35      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~20 ; 35      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18 ; 33      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; StateMachine:StateMachine_1|mode.st_reset                                                                                                                  ; 33      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~18 ; 33      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[13]~20 ; 33      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~20 ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18 ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~16 ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|Add0~26                                                                                                                      ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~20             ; 32      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18             ; 31      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~16  ; 30      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~18              ; 29      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~18  ; 29      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~16  ; 29      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~16              ; 28      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|ClockDivider:ClockDivider_1|convert_proc~1                                                                                               ; 27      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~14  ; 27      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_10_result_int[8]~12  ; 27      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ClockDivider:ClockDivider_1|LessThan0~6                                                                                                                    ; 27      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|LessThan0~3                                                                                                  ; 27      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[9]~16   ; 26      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[9]~16               ; 26      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[9]~14   ; 26      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_9_result_int[8]~12   ; 25      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[9]~14   ; 24      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~22             ; 24      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~22 ; 24      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~20 ; 24      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_7_result_int[8]~12   ; 23      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_7_result_int[8]~14   ; 23      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_7_result_int[8]~14               ; 23      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[9]~14               ; 22      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~20             ; 22      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; StateMachine:StateMachine_1|mode.st_300                                                                                                                    ; 22      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|alt_u_div_c7f:divider|add_sub_12_result_int[8]~12      ; 21      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|alt_u_div_c7f:divider|add_sub_11_result_int[8]~12      ; 21      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_6_result_int[7]~12   ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_8_result_int[8]~12   ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_6_result_int[7]~12               ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_7_result_int[8]~12   ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_6_result_int[7]~10   ; 20      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|alt_u_div_c7f:divider|add_sub_9_result_int[8]~12       ; 19      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; StateMachine:StateMachine_1|mode.st_100                                                                                                                    ; 19      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|alt_u_div_c7f:divider|add_sub_7_result_int[8]~12       ; 19      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_6_result_int[7]~10   ; 19      ;
+; Rule T102: Top nodes with the highest number of fan-outs         ; ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_11_result_int[8]~12  ; 19      ;
++------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------+
+; Design Assistant Messages ;
++---------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Design Assistant
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Thu Dec 14 15:46:23 2017
+Info: Command: quartus_drc Eieruhr -c Main
+Warning (335093): TimeQuest Timing Analyzer is analyzing 14 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Main.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: StateMachine_1|AlreadyDone~0  from: datac  to: combout
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (308037): (Critical) Rule A101: Design should not contain combinational loops. Found 1 combinational loop(s) related to this rule.
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|AlreadyDone~0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 54
+Critical Warning (308055): (High) Rule A108: Design should not contain latches. Found 14 latch(es) related to this rule.
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[4]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[3]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[2]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[0]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|AlreadyDone" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 54
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[7]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[8]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[6]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[12]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[9]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[10]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[11]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[5]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|CountValueBuzzer[1]" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+Critical Warning (308060): (High) Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains. (Value defined:2). Found 1 asynchronous clock domain interface structure(s) related to this rule.
+    Critical Warning (308012): Node  "StateMachine:StateMachine_1|mode.st_300" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (308023): (Medium) Rule R102: External reset signals should be synchronized using two cascaded registers. Found 1 node(s) related to this rule.
+    Warning (308010): Node  "reset" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 27
+Info (308046): (Information) Rule T101: Nodes with more than the specified number of fan-outs. (Value defined:30). Found 14 node(s) with highest fan-out.
+    Info (308011): Node  "clk~inputclkctrl" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 28
+    Info (308011): Node  "StateMachine:StateMachine_1|mode.st_reset" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+    Info (308011): Node  "Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~20" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "StateMachine:StateMachine_1|mode.st_200" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|Add0~26" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~16" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 42
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[13]~20" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 47
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~20" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 42
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[13]~22" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 47
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~20" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+Info (308044): (Information) Rule T102: Top nodes with the highest number of fan-outs. (Value defined:50). Found 50 node(s) with highest fan-out.
+    Info (308011): Node  "clk~inputclkctrl" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 28
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[13]~22" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 47
+    Info (308011): Node  "StateMachine:StateMachine_1|mode.st_200" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~20" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 42
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "StateMachine:StateMachine_1|mode.st_reset" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 42
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[13]~20" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 47
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~20" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~16" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|Add0~26" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
+    Info (308011): Node  "Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~20" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[11]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~16" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 87
+    Info (308011): Node  "Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 87
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 87
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~16" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 87
+    Info (308011): Node  "Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~16" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 87
+    Info (308011): Node  "Counter:Counter_1|ClockDivider:ClockDivider_1|convert_proc~1"
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[10]~14" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 87
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_10_result_int[8]~12" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_87f.tdf Line: 37
+    Info (308011): Node  "ClockDivider:ClockDivider_1|LessThan0~6" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd Line: 49
+    Info (308011): Node  "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM|LessThan0~3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd Line: 49
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[9]~16" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 82
+    Info (308011): Node  "Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[9]~16" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 82
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[9]~14" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 82
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_9_result_int[8]~12" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_87f.tdf Line: 87
+    Info (308011): Node  "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[9]~14" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 82
+    Info (308011): Node  "Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[12]~22" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 42
+    Info (308002): Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
+Info (308007): Design Assistant information: finished post-fitting analysis of current design -- generated 64 information messages and 17 warning messages
+Info: Quartus Prime Design Assistant was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 555 megabytes
+    Info: Processing ended: Thu Dec 14 15:46:25 2017
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

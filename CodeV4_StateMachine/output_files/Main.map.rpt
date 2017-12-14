@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Main
-Thu Dec 14 13:38:40 2017
+Thu Dec 14 15:18:13 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -26,15 +26,18 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  18. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div3
  19. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3
  20. Parameter Settings for Inferred Entity Instance: Counter:Counter_1|lpm_divide:Mod0
- 21. Port Connectivity Checks: "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM"
- 22. Port Connectivity Checks: "ClockDivider:ClockDivider_1"
- 23. Port Connectivity Checks: "FallingEdge:FallingEdge_Sec"
- 24. Port Connectivity Checks: "FallingEdge:FallingEdge_Min"
- 25. Port Connectivity Checks: "FallingEdge:FallingEdge_Start"
- 26. Port Connectivity Checks: "FallingEdge:FallingEdge_Clear"
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 21. Parameter Settings for Inferred Entity Instance: Counter:Counter_1|lpm_divide:Div0
+ 22. Parameter Settings for Inferred Entity Instance: Counter:Counter_1|lpm_divide:Mod1
+ 23. Port Connectivity Checks: "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM"
+ 24. Port Connectivity Checks: "ClockDivider:ClockDivider_1"
+ 25. Port Connectivity Checks: "Counter:Counter_1|ClockDivider:ClockDivider_1"
+ 26. Port Connectivity Checks: "FallingEdge:FallingEdge_Sec"
+ 27. Port Connectivity Checks: "FallingEdge:FallingEdge_Min"
+ 28. Port Connectivity Checks: "FallingEdge:FallingEdge_Start"
+ 29. Port Connectivity Checks: "FallingEdge:FallingEdge_Clear"
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
 
 
 
@@ -61,15 +64,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 14 13:38:40 2017       ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 14 15:18:12 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Main                                        ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,917                                       ;
-;     Total combinational functions  ; 1,900                                       ;
-;     Dedicated logic registers      ; 129                                         ;
-; Total registers                    ; 129                                         ;
+; Total logic elements               ; 2,319                                       ;
+;     Total combinational functions  ; 2,302                                       ;
+;     Dedicated logic registers      ; 157                                         ;
+; Total registers                    ; 157                                         ;
 ; Total pins                         ; 61                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -86,9 +89,10 @@ agreement for further details.
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                                      ; Main               ; Main               ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; On                 ; Off                ;
+; Maximum processors allowed for parallel compilation                        ; All                ;                    ;
 ; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
 ; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
-; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
@@ -178,7 +182,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -223,20 +227,20 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,917     ;
+; Estimated Total logic elements              ; 2,319     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1900      ;
+; Total combinational functions               ; 2302      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 508       ;
-;     -- 3 input functions                    ; 507       ;
-;     -- <=2 input functions                  ; 885       ;
+;     -- 4 input functions                    ; 578       ;
+;     -- 3 input functions                    ; 641       ;
+;     -- <=2 input functions                  ; 1083      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1306      ;
-;     -- arithmetic mode                      ; 594       ;
+;     -- normal mode                          ; 1501      ;
+;     -- arithmetic mode                      ; 801       ;
 ;                                             ;           ;
-; Total registers                             ; 129       ;
-;     -- Dedicated logic registers            ; 129       ;
+; Total registers                             ; 157       ;
+;     -- Dedicated logic registers            ; 157       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 61        ;
@@ -244,9 +248,9 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 119       ;
-; Total fan-out                               ; 5650      ;
-; Average fan-out                             ; 2.63      ;
+; Maximum fan-out                             ; 147       ;
+; Total fan-out                               ; 6774      ;
+; Average fan-out                             ; 2.62      ;
 +---------------------------------------------+-----------+
 
 
@@ -255,7 +259,7 @@ agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Main                                     ; 1900 (0)            ; 129 (0)                   ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |Main                                                                                                                               ; Main                ; work         ;
+; |Main                                     ; 2302 (0)            ; 157 (0)                   ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |Main                                                                                                                               ; Main                ; work         ;
 ;    |Buzzer:Buzzer_1|                      ; 77 (37)             ; 48 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Buzzer:Buzzer_1                                                                                                               ; Buzzer              ; work         ;
 ;       |ClockDivider:ClockDivider_PWM|     ; 40 (40)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM                                                                                 ; ClockDivider        ; work         ;
 ;    |ClockDivider:ClockDivider_1|          ; 43 (43)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ClockDivider:ClockDivider_1                                                                                                   ; ClockDivider        ; work         ;
@@ -297,16 +301,25 @@ agreement for further details.
 ;          |lpm_divide_icm:auto_generated|  ; 154 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_7nh:divider| ; 154 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
 ;                |alt_u_div_2af:divider|    ; 154 (154)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider ; alt_u_div_2af       ; work         ;
-;    |Counter:Counter_1|                    ; 356 (127)           ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1                                                                                                             ; Counter             ; work         ;
-;       |lpm_divide:Mod0|                   ; 229 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0                                                                                             ; lpm_divide          ; work         ;
-;          |lpm_divide_icm:auto_generated|  ; 229 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated                                                               ; lpm_divide_icm      ; work         ;
-;             |sign_div_unsign_7nh:divider| ; 229 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider                                   ; sign_div_unsign_7nh ; work         ;
-;                |alt_u_div_2af:divider|    ; 229 (229)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider             ; alt_u_div_2af       ; work         ;
+;    |Counter:Counter_1|                    ; 748 (233)           ; 69 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1                                                                                                             ; Counter             ; work         ;
+;       |ClockDivider:ClockDivider_1|       ; 42 (42)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|ClockDivider:ClockDivider_1                                                                                 ; ClockDivider        ; work         ;
+;       |lpm_divide:Div0|                   ; 95 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Div0                                                                                             ; lpm_divide          ; work         ;
+;          |lpm_divide_vim:auto_generated|  ; 95 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Div0|lpm_divide_vim:auto_generated                                                               ; lpm_divide_vim      ; work         ;
+;             |sign_div_unsign_nlh:divider| ; 95 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Div0|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                                   ; sign_div_unsign_nlh ; work         ;
+;                |alt_u_div_27f:divider|    ; 95 (95)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Div0|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_27f:divider             ; alt_u_div_27f       ; work         ;
+;       |lpm_divide:Mod0|                   ; 241 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0                                                                                             ; lpm_divide          ; work         ;
+;          |lpm_divide_icm:auto_generated|  ; 241 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated                                                               ; lpm_divide_icm      ; work         ;
+;             |sign_div_unsign_7nh:divider| ; 241 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider                                   ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_2af:divider|    ; 241 (241)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider             ; alt_u_div_2af       ; work         ;
+;       |lpm_divide:Mod1|                   ; 137 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod1                                                                                             ; lpm_divide          ; work         ;
+;          |lpm_divide_icm:auto_generated|  ; 137 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated                                                               ; lpm_divide_icm      ; work         ;
+;             |sign_div_unsign_7nh:divider| ; 137 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider                                   ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_2af:divider|    ; 137 (137)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider             ; alt_u_div_2af       ; work         ;
 ;    |FallingEdge:FallingEdge_Clear|        ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|FallingEdge:FallingEdge_Clear                                                                                                 ; FallingEdge         ; work         ;
 ;    |FallingEdge:FallingEdge_Min|          ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|FallingEdge:FallingEdge_Min                                                                                                   ; FallingEdge         ; work         ;
 ;    |FallingEdge:FallingEdge_Sec|          ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|FallingEdge:FallingEdge_Sec                                                                                                   ; FallingEdge         ; work         ;
 ;    |FallingEdge:FallingEdge_Start|        ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|FallingEdge:FallingEdge_Start                                                                                                 ; FallingEdge         ; work         ;
-;    |StateMachine:StateMachine_1|          ; 63 (63)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|StateMachine:StateMachine_1                                                                                                   ; StateMachine        ; work         ;
+;    |StateMachine:StateMachine_1|          ; 73 (73)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|StateMachine:StateMachine_1                                                                                                   ; StateMachine        ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -342,9 +355,12 @@ Encoding Type:  One-Hot
 ; StateMachine:StateMachine_1|CountValueBuzzer[7]     ; StateMachine:StateMachine_1|Selector1   ; yes                    ;
 ; StateMachine:StateMachine_1|CountValueBuzzer[8]     ; StateMachine:StateMachine_1|Selector1   ; yes                    ;
 ; StateMachine:StateMachine_1|CountValueBuzzer[9]     ; StateMachine:StateMachine_1|Selector1   ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[10]    ; StateMachine:StateMachine_1|Selector1   ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[11]    ; StateMachine:StateMachine_1|Selector1   ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[12]    ; StateMachine:StateMachine_1|Selector1   ; yes                    ;
 ; StateMachine:StateMachine_1|CountValueBuzzer[3]     ; StateMachine:StateMachine_1|Selector1   ; yes                    ;
 ; StateMachine:StateMachine_1|AlreadyDone             ; StateMachine:StateMachine_1|AlreadyDone ; yes                    ;
-; Number of user-specified and inferred latches = 11  ;                                         ;                        ;
+; Number of user-specified and inferred latches = 14  ;                                         ;                        ;
 +-----------------------------------------------------+-----------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -354,8 +370,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 129   ;
-; Number of registers using Synchronous Clear  ; 87    ;
+; Total registers                              ; 157   ;
+; Number of registers using Synchronous Clear  ; 114   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -369,12 +385,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValueSaved[8]  ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Main|Buzzer:Buzzer_1|CountedValue2nd[4]    ;
-; 7:1                ; 13 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValue[12]      ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Main|Counter:Counter_1|Add0                ;
-; 13:1               ; 6 bits    ; 48 LEs        ; 30 LEs               ; 18 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector9 ;
-; 15:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector4 ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValueSaved[12] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Main|Buzzer:Buzzer_1|CountedValue2nd[6]    ;
+; 10:1               ; 13 bits   ; 78 LEs        ; 52 LEs               ; 26 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValue[4]       ;
+; 13:1               ; 6 bits    ; 48 LEs        ; 30 LEs               ; 18 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector3 ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector6 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
 
@@ -585,20 +600,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Counter:Counter_1|lpm_divide:Div0 ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                                  ;
+; LPM_WIDTHD             ; 4              ; Untyped                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
+; CBXI_PARAMETER         ; lpm_divide_vim ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Counter:Counter_1|lpm_divide:Mod1 ;
++------------------------+----------------+------------------------------------------+
+; Parameter Name         ; Value          ; Type                                     ;
++------------------------+----------------+------------------------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                                  ;
+; LPM_WIDTHD             ; 13             ; Untyped                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
+; CBXI_PARAMETER         ; lpm_divide_icm ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
++------------------------+----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM"                                                                         ;
 +--------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port               ; Type   ; Severity ; Details                                                                                                  ;
 +--------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; divider_in[17..16] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; divider_in[11..10] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; divider_in[26..18] ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[15..12] ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[5..0]   ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[9]      ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[8]      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; divider_in[7]      ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[6]      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; reset_i            ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; divider_in[18..17] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; divider_in[12..11] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; divider_in[26..19] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; divider_in[16..13] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; divider_in[6..0]   ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; divider_in[10]     ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; divider_in[9]      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; divider_in[8]      ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; divider_in[7]      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
 ; clk_out_alt        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
 +--------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
@@ -608,6 +670,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port               ; Type   ; Severity ; Details                                                                             ;
 +--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; reset_i            ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; divider_in[19..18] ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; divider_in[9..8]   ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; divider_in[26..23] ; Input  ; Info     ; Stuck at GND                                                                        ;
@@ -622,6 +685,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; divider_in[7]      ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; divider_in[6]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; clk_out            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Counter:Counter_1|ClockDivider:ClockDivider_1"                                                    ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; divider_in[21..17] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; divider_in[13..10] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; divider_in[26..24] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[9..6]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[4..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[23]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; divider_in[22]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[16]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[15]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; divider_in[14]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[5]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; clk_out_alt        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +--------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -667,26 +750,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 61                          ;
-; cycloneiii_ff         ; 129                         ;
+; cycloneiii_ff         ; 157                         ;
 ;     CLR               ; 8                           ;
 ;     ENA               ; 13                          ;
 ;     ENA SCLR          ; 13                          ;
-;     SCLR              ; 74                          ;
-;     plain             ; 21                          ;
-; cycloneiii_lcell_comb ; 1904                        ;
-;     arith             ; 594                         ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 139                         ;
-;         3 data inputs ; 451                         ;
-;     normal            ; 1310                        ;
-;         0 data inputs ; 74                          ;
-;         1 data inputs ; 17                          ;
-;         2 data inputs ; 655                         ;
-;         3 data inputs ; 56                          ;
-;         4 data inputs ; 508                         ;
+;     SCLR              ; 101                         ;
+;     plain             ; 22                          ;
+; cycloneiii_lcell_comb ; 2310                        ;
+;     arith             ; 801                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 219                         ;
+;         3 data inputs ; 575                         ;
+;     normal            ; 1509                        ;
+;         0 data inputs ; 89                          ;
+;         1 data inputs ; 29                          ;
+;         2 data inputs ; 747                         ;
+;         3 data inputs ; 66                          ;
+;         4 data inputs ; 578                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 59.10                       ;
-; Average LUT depth     ; 33.52                       ;
+; Average LUT depth     ; 32.91                       ;
 +-----------------------+-----------------------------+
 
 
@@ -695,7 +778,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -705,15 +788,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Dec 14 13:38:12 2017
+    Info: Processing started: Thu Dec 14 15:17:44 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Eieruhr -c Main
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file fallingedge.vhd
     Info (12022): Found design unit 1: FallingEdge-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd Line: 39
     Info (12023): Found entity 1: FallingEdge File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd Line: 24
 Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
-    Info (12022): Found design unit 1: Counter-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 43
+    Info (12022): Found design unit 1: Counter-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 45
     Info (12023): Found entity 1: Counter File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 20
 Warning (12125): Using design file main.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: Main-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 63
@@ -723,7 +805,7 @@ Warning (10541): VHDL Signal Declaration warning at main.vhd(52): used implicit 
 Warning (12125): Using design file statemachine.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: StateMachine-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 47
     Info (12023): Found entity 1: StateMachine File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 25
-Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:StateMachine_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 172
+Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:StateMachine_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 174
 Warning (10492): VHDL Process Statement warning at statemachine.vhd(125): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 125
 Warning (10492): VHDL Process Statement warning at statemachine.vhd(150): signal "AlreadyDone" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 150
 Warning (10492): VHDL Process Statement warning at statemachine.vhd(150): signal "clk_Deci_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 150
@@ -743,19 +825,22 @@ Info (10041): Inferred latch for "CountValueBuzzer[6]" at statemachine.vhd(122) 
 Info (10041): Inferred latch for "CountValueBuzzer[7]" at statemachine.vhd(122) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
 Info (10041): Inferred latch for "CountValueBuzzer[8]" at statemachine.vhd(122) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
 Info (10041): Inferred latch for "CountValueBuzzer[9]" at statemachine.vhd(122) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
-Info (12128): Elaborating entity "FallingEdge" for hierarchy "FallingEdge:FallingEdge_Clear" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 194
+Info (10041): Inferred latch for "CountValueBuzzer[10]" at statemachine.vhd(122) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+Info (10041): Inferred latch for "CountValueBuzzer[11]" at statemachine.vhd(122) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+Info (10041): Inferred latch for "CountValueBuzzer[12]" at statemachine.vhd(122) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+Info (12128): Elaborating entity "FallingEdge" for hierarchy "FallingEdge:FallingEdge_Clear" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 196
 Warning (10492): VHDL Process Statement warning at FallingEdge.vhd(52): signal "Button" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd Line: 52
 Warning (10492): VHDL Process Statement warning at FallingEdge.vhd(52): signal "SavedValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd Line: 52
 Warning (10492): VHDL Process Statement warning at FallingEdge.vhd(54): signal "Button" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd Line: 54
-Info (12128): Elaborating entity "Counter" for hierarchy "Counter:Counter_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 226
+Info (12128): Elaborating entity "Counter" for hierarchy "Counter:Counter_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 228
 Warning (12125): Using design file clockdivider.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: ClockDivider-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd Line: 35
+    Info (12022): Found design unit 1: ClockDivider-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd Line: 36
     Info (12023): Found entity 1: ClockDivider File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd Line: 20
-Info (12128): Elaborating entity "ClockDivider" for hierarchy "ClockDivider:ClockDivider_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 245
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "Counter:Counter_1|ClockDivider:ClockDivider_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 67
 Warning (12125): Using design file convertintbcd.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: ConvertIntBcd-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 38
     Info (12023): Found entity 1: ConvertIntBcd File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 22
-Info (12128): Elaborating entity "ConvertIntBcd" for hierarchy "ConvertIntBcd:ConvertIntBcd_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 255
+Info (12128): Elaborating entity "ConvertIntBcd" for hierarchy "ConvertIntBcd:ConvertIntBcd_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 260
 Warning (12125): Using design file decoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: Decoder-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/decoder.vhd Line: 44
     Info (12023): Found entity 1: Decoder File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/decoder.vhd Line: 29
@@ -763,10 +848,10 @@ Info (12128): Elaborating entity "Decoder" for hierarchy "ConvertIntBcd:ConvertI
 Warning (12125): Using design file buzzer.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: Buzzer-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 38
     Info (12023): Found entity 1: Buzzer File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 24
-Info (12128): Elaborating entity "Buzzer" for hierarchy "Buzzer:Buzzer_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 267
-Warning (10492): VHDL Process Statement warning at buzzer.vhd(100): signal "CountedValue2nd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at buzzer.vhd(100): signal "CountedValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 100
-Info (278001): Inferred 9 megafunctions from design logic
+Info (12128): Elaborating entity "Buzzer" for hierarchy "Buzzer:Buzzer_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 272
+Warning (10492): VHDL Process Statement warning at buzzer.vhd(102): signal "CountedValue2nd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at buzzer.vhd(102): signal "CountedValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 102
+Info (278001): Inferred 11 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div4" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod2" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 61
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 61
@@ -775,7 +860,9 @@ Info (278001): Inferred 9 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 59
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Counter:Counter_1|Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 69
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Counter:Counter_1|Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 98
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Counter:Counter_1|Div0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 102
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Counter:Counter_1|Mod1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 102
 Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
 Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
     Info (12134): Parameter "LPM_WIDTHN" = "15"
@@ -857,8 +944,8 @@ Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divid
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "Counter:Counter_1|lpm_divide:Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 69
-Info (12133): Instantiated megafunction "Counter:Counter_1|lpm_divide:Mod0" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 69
+Info (12130): Elaborated megafunction instantiation "Counter:Counter_1|lpm_divide:Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 98
+Info (12133): Instantiated megafunction "Counter:Counter_1|lpm_divide:Mod0" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 98
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -884,6 +971,12 @@ Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[8] has unsaf
     Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
 Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[9] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
     Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[10] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[11] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[12] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
 Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[3] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
     Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_300 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
 Warning (13012): Latch StateMachine:StateMachine_1|AlreadyDone has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 54
@@ -898,20 +991,27 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[0]~22" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
     Info (17048): Logic cell "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_11_result_int[0]~24" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 42
     Info (17048): Logic cell "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[0]~26" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 47
+    Info (17048): Logic cell "Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_8_result_int[0]~16" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 82
+    Info (17048): Logic cell "Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_9_result_int[0]~18" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 87
+    Info (17048): Logic cell "Counter:Counter_1|lpm_divide:Mod1|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_10_result_int[0]~20" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 37
+    Info (17048): Logic cell "Counter:Counter_1|Add6~26" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 102
+    Info (17048): Logic cell "Counter:Counter_1|Add6~28" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 102
+    Info (17048): Logic cell "Counter:Counter_1|Add7~34" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 102
+    Info (17048): Logic cell "Counter:Counter_1|Add7~36" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 102
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BuzzerOverride" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 37
     Warning (15610): No output dependent on input pin "SW2" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 38
     Warning (15610): No output dependent on input pin "SW3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 39
-Info (21057): Implemented 1979 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2385 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1918 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 727 megabytes
-    Info: Processing ended: Thu Dec 14 13:38:40 2017
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:55
+    Info (21061): Implemented 2324 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 733 megabytes
+    Info: Processing ended: Thu Dec 14 15:18:13 2017
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:56
 
 
