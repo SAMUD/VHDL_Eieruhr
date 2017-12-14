@@ -7,9 +7,7 @@
 --  *sending a 1111 will show a - on the 7seg-Display
 
 -- Changelog:
--- Version 1.3RS | 04.12.17
---  *changed inputs to vector
--- Version 1.2 | 03.12.17
+-- Version 1.2 | 05.12.17
 --  *changed outputs to vector
 -- Version 1.1 | 27.11.17
 --  *changed inputs to vector

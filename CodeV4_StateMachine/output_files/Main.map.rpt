@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Main
-Thu Dec 14 16:53:53 2017
+Thu Dec 14 17:06:36 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -60,7 +60,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 14 16:53:53 2017       ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 14 17:06:36 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Main                                        ;
 ; Top-level Entity Name              ; Main                                        ;
@@ -747,7 +747,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Dec 14 16:53:19 2017
+    Info: Processing started: Thu Dec 14 17:06:04 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Eieruhr -c Main
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file fallingedge.vhd
@@ -796,31 +796,31 @@ Warning (12125): Using design file clockdivider.vhd, which is not specified as a
     Info (12023): Found entity 1: ClockDivider File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd Line: 29
 Info (12128): Elaborating entity "ClockDivider" for hierarchy "Counter:Counter_1|ClockDivider:ClockDivider_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 67
 Warning (12125): Using design file convertintbcd.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: ConvertIntBcd-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 38
-    Info (12023): Found entity 1: ConvertIntBcd File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 22
+    Info (12022): Found design unit 1: ConvertIntBcd-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 39
+    Info (12023): Found entity 1: ConvertIntBcd File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 23
 Info (12128): Elaborating entity "ConvertIntBcd" for hierarchy "ConvertIntBcd:ConvertIntBcd_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 259
 Warning (12125): Using design file decoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: Decoder-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/decoder.vhd Line: 44
-    Info (12023): Found entity 1: Decoder File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/decoder.vhd Line: 29
-Info (12128): Elaborating entity "Decoder" for hierarchy "ConvertIntBcd:ConvertIntBcd_1|Decoder:Decoder_Min" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 66
+    Info (12022): Found design unit 1: Decoder-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/decoder.vhd Line: 46
+    Info (12023): Found entity 1: Decoder File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/decoder.vhd Line: 31
+Info (12128): Elaborating entity "Decoder" for hierarchy "ConvertIntBcd:ConvertIntBcd_1|Decoder:Decoder_Min" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 70
 Warning (12125): Using design file buzzer.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: Buzzer-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 42
     Info (12023): Found entity 1: Buzzer File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 28
 Info (12128): Elaborating entity "Buzzer" for hierarchy "Buzzer:Buzzer_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 271
 Info (278001): Inferred 11 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div4" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod2" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 61
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 61
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 60
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 60
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 59
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div4" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 65
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod2" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 64
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 64
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 63
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 63
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 65
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 65
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Counter:Counter_1|Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 98
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Counter:Counter_1|Div0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 102
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Counter:Counter_1|Mod1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 102
-Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
-Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
+Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 65
+Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 65
     Info (12134): Parameter "LPM_WIDTHN" = "15"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -840,8 +840,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_
     Info (12023): Found entity 1: lpm_abs_4v9 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/lpm_abs_4v9.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_j0a.tdf
     Info (12023): Found entity 1: lpm_abs_j0a File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/lpm_abs_j0a.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 61
-Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 64
+Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 64
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -852,8 +852,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_7nh File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/sign_div_unsign_7nh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_2af.tdf
     Info (12023): Found entity 1: alt_u_div_2af File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 61
-Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 64
+Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 64
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -864,14 +864,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_qlh File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/sign_div_unsign_qlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_87f.tdf
     Info (12023): Found entity 1: alt_u_div_87f File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_87f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 60
-Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 60
+Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 63
+Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 63
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 60
-Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div0" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 60
+Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 63
+Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div0" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 63
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -882,20 +882,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_nlh File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/sign_div_unsign_nlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_27f.tdf
     Info (12023): Found entity 1: alt_u_div_27f File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_27f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 59
-Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 59
+Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
+Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
-Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div3" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
+Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 65
+Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div3" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 65
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
-Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
+Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 65
+Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 65
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -964,9 +964,9 @@ Info (21057): Implemented 2387 device resources after synthesis - the final reso
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 2326 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 729 megabytes
-    Info: Processing ended: Thu Dec 14 16:53:53 2017
-    Info: Elapsed time: 00:00:34
-    Info: Total CPU time (on all processors): 00:00:56
+    Info: Peak virtual memory: 733 megabytes
+    Info: Processing ended: Thu Dec 14 17:06:36 2017
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:00:55
 
 

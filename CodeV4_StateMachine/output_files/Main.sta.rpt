@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Main
-Thu Dec 14 16:54:46 2017
+Thu Dec 14 17:07:32 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -111,12 +111,12 @@ agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.28        ;
+; Average used               ; 1.06        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  27.5%      ;
+;     Processor 2            ;   5.9%      ;
 +----------------------------+-------------+
 
 
@@ -636,8 +636,8 @@ No paths to report.
 ; 0.386 ; StateMachine:StateMachine_1|mode.st_290                         ; StateMachine:StateMachine_1|mode.st_290                         ; clk          ; clk         ; 0.000        ; 0.097      ; 0.669      ;
 ; 0.386 ; StateMachine:StateMachine_1|mode.st_390                         ; StateMachine:StateMachine_1|mode.st_390                         ; clk          ; clk         ; 0.000        ; 0.097      ; 0.669      ;
 ; 0.403 ; Counter:Counter_1|AlreadyIncremented                            ; Counter:Counter_1|AlreadyIncremented                            ; clk          ; clk         ; 0.000        ; 0.080      ; 0.669      ;
-; 0.440 ; StateMachine:StateMachine_1|mode.st_300                         ; StateMachine:StateMachine_1|mode.st_300                         ; clk          ; clk         ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; StateMachine:StateMachine_1|mode.st_291                         ; StateMachine:StateMachine_1|mode.st_291                         ; clk          ; clk         ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; StateMachine:StateMachine_1|mode.st_300                         ; StateMachine:StateMachine_1|mode.st_300                         ; clk          ; clk         ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.443 ; Buzzer:Buzzer_1|CountedValue[9]                                 ; Buzzer:Buzzer_1|CountedValue[9]                                 ; clk          ; clk         ; 0.000        ; 0.079      ; 0.708      ;
 ; 0.450 ; Counter:Counter_1|CountValue[2]                                 ; Counter:Counter_1|CountValueSaved[2]                            ; clk          ; clk         ; 0.000        ; 0.081      ; 0.717      ;
 ; 0.452 ; Counter:Counter_1|CountValue[3]                                 ; Counter:Counter_1|CountValueSaved[3]                            ; clk          ; clk         ; 0.000        ; 0.081      ; 0.719      ;
@@ -2761,7 +2761,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Dec 14 16:54:39 2017
+    Info: Processing started: Thu Dec 14 17:07:26 2017
 Info: Command: quartus_sta Eieruhr -c Main
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -2859,9 +2859,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 737 megabytes
-    Info: Processing ended: Thu Dec 14 16:54:46 2017
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 735 megabytes
+    Info: Processing ended: Thu Dec 14 17:07:32 2017
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
 
 
