@@ -1,16 +1,19 @@
 ------------------------------------------------------
---  Timer by Samuel Daurat [178190]  --
-------------------------------------------------------
+--  Module for Timer by Samuel Daurat [178190]      --
 
-------------------------------------------------------
---  State Machine by Samuel Daurat [178190]  --
+-- This module is the main state machine controlling
+-- all the other Blocks
 
 
 -- Changelog:
--- Version 2.0 | 
--- Version 1.1 | 05.12.17
+-- Version 1.0RS | 14.12.17
+--	 *lot of changes and tests during this time
+--  *commented code again
+--  *had a big problem with "random working state machine" until I used
+--   the State-Machine example from Quartus
+-- Version 0.2 | 05.12.17
 --  *refresh interfaces
--- Version 1.0 | 27.11.17
+-- Version 0.1 | 27.11.17
 --  *initial release
 ------------------------------------------------------
 
@@ -19,39 +22,47 @@ LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 use ieee.numeric_std.all;
 
---------------------------------------------
---	   ENTITY	                           --
---------------------------------------------
+
+------------------------------------------------------
+--	   ENTITY	                           			 --
+------------------------------------------------------
+
 ENTITY StateMachine IS
 PORT(
-		reset_i			:		IN		std_logic;
-		clk_i				:		IN		std_logic;
-		clk_Deci_i		:		IN		std_logic;
+		reset_i					: IN	std_logic;				--Asynchronous Reset	
+		clk_i						: IN	std_logic;				--Harware Clock-Input
+		clk_Deci_i				: IN	std_logic;				--Divided Clock
 											
 		--User buttons
-		BtnStartF_i		:		IN		 std_logic;
-		BtnClearF_i		:		IN		 std_logic;
+		BtnStartF_i				: IN	std_logic;				--Buttons after going through FallingEdge Detection
+		BtnClearF_i				: IN	std_logic;
 		
-		--Outputs to other blocks
-		DebugLED_o		:	OUT 	std_logic_vector(2 downto 0);
+		--Outputs to other blocks								--Showing the actual State on LEDs
+		DebugLED_o				: OUT std_logic_vector(2 downto 0);
 		
-		--Control the Counter-Block
-		CountBlockControl_o 	:OUT	std_logic_vector(5 downto 0);	
-		CountBlockTelemet_i 	:In	std_logic							--Bit0: Counter is at 0
+		--Control the Counter-Block							--Controlling CounterBlock
+		CountBlockControl_o 	: OUT	std_logic_vector(5 downto 0);	--MSB| Bit 5-4-3-2-1-0 | LSB
+																					--Bit 5 : Reset
+																					--Bit 4 : Counting has started / enable
+																					--Bit 3 : Ready for Incrementing the Value
+																					--Bit 2 : Load last Saved Value
+																					--Bit 1 : Save current Counter Value
+																					--Bit 0 : Enable Buzzer
+		CountBlockTelemet_i 	: IN	std_logic							--Bit 0 : Counter is at 0
 	);
 END StateMachine;
 
---------------------------------------------
---        ARCHITECTURE	                    --
---------------------------------------------
+------------------------------------------------------
+--        ARCHITECTURE	                            --
+------------------------------------------------------
 ARCHITECTURE behave OF StateMachine IS
 
-TYPE state IS (st_reset,st_100,st_190,st_200,st_290,st_291,st_300,st_390);
-SIGNAL mode : state;
+TYPE 		state IS (st_reset,st_100,st_190,st_200,st_290,st_291,st_300,st_390);
+SIGNAL 	mode 					: 	state;
 
-SIGNAL CountValueBuzzer:integer range 0 to 6000 :=0;
-CONSTANT BuzzerPreload : integer := 100;
-SIGNAL AlreadyDone	: std_logic :='0';
+SIGNAL 	CountValueBuzzer	:	integer range 0 to 6000 :=0;
+CONSTANT BuzzerPreload 		: 	integer 						:= 100;
+SIGNAL 	AlreadyDone			: 	std_logic 					:='0';
 
 
 BEGIN
