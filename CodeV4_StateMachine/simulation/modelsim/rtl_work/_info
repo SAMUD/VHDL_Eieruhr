@@ -1,0 +1,211 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/simulation/modelsim
+Eclockdivider
+Z1 w1513091585
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd
+Z5 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd
+l0
+L20
+Vb2c>IC<DEEbDR=mMX_MHz0
+!s100 IA^`V;UFQ?ZAYGaRC[QBD2
+Z6 OV;C;10.5b;63
+33
+Z7 !s110 1513178278
+!i10b 1
+Z8 !s108 1513178278.000000
+Z9 !s90 -reportprogress|300|-2008|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd|
+Z10 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/clockdivider.vhd|
+!i113 1
+Z11 o-2008 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehave
+R2
+R3
+DEx4 work 12 clockdivider 0 22 b2c>IC<DEEbDR=mMX_MHz0
+l39
+L35
+VlTJbid15^4c[JkiTo@76:3
+!s100 aB[J7a^3IPd1@gI:kTC;N0
+R6
+33
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecounter
+Z13 w1513177460
+R2
+R3
+R0
+Z14 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd
+Z15 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd
+l0
+L20
+VU3O7`MfYTYCD@n@GRZg[D1
+!s100 5Be0;0hzcTCK81<o38UJZ1
+R6
+33
+R7
+!i10b 1
+Z16 !s108 1513178277.000000
+Z17 !s90 -reportprogress|300|-2008|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd|
+Z18 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 7 counter 0 22 U3O7`MfYTYCD@n@GRZg[D1
+l49
+L43
+V9zSWbi[QET3=HLlNFzcia2
+!s100 >P2R43LY768Q@fBjONMRT1
+R6
+33
+R7
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R11
+R12
+Efallingedge
+Z19 w1513171705
+Z20 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z21 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd
+Z22 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd
+l0
+L24
+VFF_@78F0DaDgBERF34:0l2
+!s100 j3MZKm;ieB2G8hSiFUJ2G2
+R6
+33
+Z23 !s110 1513178277
+!i10b 1
+R16
+Z24 !s90 -reportprogress|300|-2008|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd|
+Z25 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd|
+!i113 1
+R11
+R12
+Abehave
+R20
+R2
+R3
+DEx4 work 11 fallingedge 0 22 FF_@78F0DaDgBERF34:0l2
+l42
+L38
+VRjBKbTVD5d_Wz>g17nMLU1
+!s100 SED9Mz94Z3_SELk]ViKg]3
+R6
+33
+R23
+!i10b 1
+R16
+R24
+R25
+!i113 1
+R11
+R12
+Emain
+Z26 w1513177586
+R20
+R2
+R3
+R0
+Z27 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd
+Z28 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd
+l0
+L25
+V@P=ZCzm?<zd>QOA_BToTX2
+!s100 kOzIf5kmeJcQL>3WiDLV`3
+R6
+33
+R7
+!i10b 1
+R8
+Z29 !s90 -reportprogress|300|-2008|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd|
+Z30 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd|
+!i113 1
+R11
+R12
+Abehave
+R20
+R2
+R3
+DEx4 work 4 main 0 22 @P=ZCzm?<zd>QOA_BToTX2
+l140
+L63
+VH:FaSTI7I<W;EJba4n2c<2
+!s100 9;>MXKbOO^[H[o4bA;HeK2
+R6
+33
+R7
+!i10b 1
+R8
+R29
+R30
+!i113 1
+R11
+R12
+Estatemachine
+Z31 w1513176053
+R20
+R2
+R3
+R0
+Z32 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd
+Z33 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd
+l0
+L25
+V^PW7OJB1AST`2XjRdXOW50
+!s100 SoL5Bz5IbQ[IG5c?]m@_g2
+R6
+33
+R7
+!i10b 1
+R8
+Z34 !s90 -reportprogress|300|-2008|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd|
+Z35 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd|
+!i113 1
+R11
+R12
+Abehave
+R20
+R2
+R3
+DEx4 work 12 statemachine 0 22 ^PW7OJB1AST`2XjRdXOW50
+l53
+L47
+VVXAbTKjz:@S7f`=>?1_Rz1
+!s100 EC`Cm6^0W>ReX3_o=O@og0
+R6
+33
+R7
+!i10b 1
+R8
+R34
+R35
+!i113 1
+R11
+R12

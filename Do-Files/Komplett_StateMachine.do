@@ -33,14 +33,13 @@ add wave /*
 
 #pepare clk signal
 force clk 1 0, 0 1ps -repeat 2ps
-#force clk_deci_i 1 0, 0 10ps -repeat 20ps
 
 #set reset on the beginning
 force reset 1 0, 0 30ps
 
 #simulate 1button press
-force BtnSec 0 0, 1 40ps, 0 41ps, 1 50ps, 0 70ps
-force BtnMin 0 0, 1 100ps, 0 130ps
+#force BtnSec 0 0, 1 40ps, 0 41ps, 1 50ps, 0 70ps
+#force BtnMin 0 0, 1 100ps, 0 130ps
 
 #now start counting
 force SW3 1 0,0 150ps
@@ -49,6 +48,12 @@ force BtnStart 0 0, 1 160ps, 0 161ps
 #wait while it is counting
 #now simulate counting finished
 force SW3 1 250ps
+
+#now simulate canceling buzer and starting again
+force BtnStart 1 270ps, 0 271ps, 1 300ps, 0 310ps 
+
+#now pause simulation
+force BtnStart 1 350ps, 0 360ps
 
 
 

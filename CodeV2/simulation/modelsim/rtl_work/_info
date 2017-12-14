@@ -1,0 +1,213 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/simulation/modelsim
+Eclockdivider
+Z1 w1513091585
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd
+Z5 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd
+l0
+L20
+V`:D@l?68=9=hjFA7OVXW@3
+!s100 IA^`V;UFQ?ZAYGaRC[QBD2
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1513094811
+!i10b 1
+Z8 !s108 1513094810.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd|
+Z10 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/clockdivider.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehave
+R2
+R3
+DEx4 work 12 clockdivider 0 22 `:D@l?68=9=hjFA7OVXW@3
+l39
+L35
+VYL]hA?HV1WPT@K5Yg4K931
+!s100 aB[J7a^3IPd1@gI:kTC;N0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Efallingedge
+Z13 w1513079513
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z15 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd
+Z16 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd
+l0
+L24
+VQ3>f]:FcN3FU1Rd<QMc9]1
+!s100 j3MZKm;ieB2G8hSiFUJ2G2
+R6
+31
+Z17 !s110 1513094810
+!i10b 1
+R8
+Z18 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd|
+Z19 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/FallingEdge.vhd|
+!i113 1
+R11
+R12
+Abehave
+R14
+R2
+R3
+DEx4 work 11 fallingedge 0 22 Q3>f]:FcN3FU1Rd<QMc9]1
+l42
+L38
+V:?XaJoJ3Mc]6eERJNOGcO0
+!s100 H@G:08Nm;YMk1kQoPF>C>2
+R6
+31
+R17
+!i10b 1
+R8
+R18
+R19
+!i113 1
+R11
+R12
+Emain
+Z20 w1513091677
+R14
+R2
+R3
+R0
+Z21 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd
+Z22 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd
+l0
+L25
+VzIJDG@J0Y558mDKRcReE;2
+!s100 QXK;YJRJB:k:6_cbg3KkC1
+R6
+31
+R17
+!i10b 1
+R8
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd|
+Z24 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/main.vhd|
+!i113 1
+R11
+R12
+Abehave
+R14
+R2
+R3
+DEx4 work 4 main 0 22 zIJDG@J0Y558mDKRcReE;2
+l90
+L61
+Vn_k06QN[JEd5T20lP4Chz1
+!s100 AJVAUOL6KaRL3jM^6ac8h0
+R6
+31
+R17
+!i10b 1
+R8
+R23
+R24
+!i113 1
+R11
+R12
+Estatemachine
+Z25 w1513094731
+R14
+R2
+R3
+R0
+Z26 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd
+Z27 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd
+l0
+L25
+VH34nmHi7f_ck?FdmNZiS23
+!s100 H8N@[2bJ4`8WWjP[9OVYA0
+R6
+31
+R7
+!i10b 1
+Z28 !s108 1513094811.000000
+Z29 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd|
+Z30 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/statemachine.vhd|
+!i113 1
+R11
+R12
+Abehave
+R14
+R2
+R3
+DEx4 work 12 statemachine 0 22 H34nmHi7f_ck?FdmNZiS23
+l63
+L55
+V0BUKE>RP0UQ^;0Z9CD_HJ2
+!s100 7BGIGZfM[Ak5cBiC1UW5K3
+R6
+31
+R7
+!i10b 1
+R28
+R29
+R30
+!i113 1
+R11
+R12
+Esubmain
+Z31 w1513094515
+R14
+R2
+R3
+R0
+Z32 8D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd
+Z33 FD:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd
+l0
+L25
+VnD;eL<Bi<5DnB@=A72>:92
+!s100 <MS4dnIW7FNKL>7UQ<EcF0
+R6
+31
+R17
+!i10b 1
+R8
+Z34 !s90 -reportprogress|300|-93|-work|work|D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd|
+Z35 !s107 D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/Code/submain.vhd|
+!i113 1
+R11
+R12
+Abehave
+R14
+R2
+R3
+DEx4 work 7 submain 0 22 nD;eL<Bi<5DnB@=A72>:92
+l119
+L53
+VWR>UiZSZ[K<ZLiV6NQz=:0
+!s100 ?>Cf?48gI<=HC<jA>CiN41
+R6
+31
+R17
+!i10b 1
+R8
+R34
+R35
+!i113 1
+R11
+R12
