@@ -67,11 +67,9 @@ count_proc : PROCESS (clk_i)
 			ELSIF CountBlockControl_i(3) = '1' THEN  --Increment enable
 				IF CountValue < 4999 AND BtnMinF_i = '1' 	THEN
 					CountValue <= CountValue + 600 - (CountValue mod 10);
-					CountValue <= CountValue- (CountValue mod 10);
 				END IF;
 				IF CountValue < 5989 AND BtnSecF_i = '1' THEN
 					CountValue <= CountValue + 10 - (CountValue mod 10);
-					
 				END IF;
 			ELSIF CountBlockControl_i(2) = '1' THEN  --Save Value
 					CountValueSaved <= CountValue;

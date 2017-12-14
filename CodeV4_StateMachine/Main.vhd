@@ -94,6 +94,7 @@ ARCHITECTURE behave OF Main IS
 	  port(											
 			reset_i			:		IN		std_logic;
 		clk_i				:		IN		std_logic;
+		clk_Deci_i		:		IN		std_logic;
 											
 		--User buttons
 		BtnStartF_i		:		IN		 std_logic;
@@ -104,8 +105,7 @@ ARCHITECTURE behave OF Main IS
 		
 		--Control the Counter-Block
 		CountBlockControl_o 	:OUT	std_logic_vector(5 downto 0);	
-		CountBlockTelemet_i 	:In	std_logic;							--Bit0: Counter is at 0
-		BuzzerTelemet_i 	:In	std_logic							--Bit0: Counter is at 0							--Bit0: Counter is at 0
+		CountBlockTelemet_i 	:In	std_logic							--Bit0: Counter is at 0
 	);
 	end component;
 	
@@ -164,6 +164,7 @@ BEGIN
 		port map (
 			reset_i 					=> reset,
 			clk_i						=> clk,
+			clk_Deci_i				=>clk_Deci,
 												
 			BtnStartF_i				=> BtnStartFalling,
 			BtnClearF_i				=> BtnClearFalling,
@@ -173,8 +174,7 @@ BEGIN
 			
 			--Control the Counter-Block
 			CountBlockControl_o	=> CountBlockControl,
-			CountBlockTelemet_i	=> CountBlockTelemet,
-			BuzzerTelemet_i	=>SW2
+			CountBlockTelemet_i	=> CountBlockTelemet
 			
 			);
 			

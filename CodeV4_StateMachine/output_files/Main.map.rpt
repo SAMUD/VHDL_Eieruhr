@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Main
-Thu Dec 14 10:34:16 2017
+Thu Dec 14 11:30:26 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -14,25 +14,26 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |Main|StateMachine:StateMachine_1|mode
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4
- 12. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2
- 13. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1
- 14. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1
- 15. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div0
- 16. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0
- 17. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div3
- 18. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3
- 19. Parameter Settings for Inferred Entity Instance: Counter:Counter_1|lpm_divide:Mod0
- 20. Port Connectivity Checks: "ClockDivider:ClockDivider_1"
- 21. Port Connectivity Checks: "FallingEdge:FallingEdge_Sec"
- 22. Port Connectivity Checks: "FallingEdge:FallingEdge_Min"
- 23. Port Connectivity Checks: "FallingEdge:FallingEdge_Start"
- 24. Port Connectivity Checks: "FallingEdge:FallingEdge_Clear"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4
+ 13. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod2
+ 14. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div1
+ 15. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod1
+ 16. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div3
+ 19. Parameter Settings for Inferred Entity Instance: ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3
+ 20. Parameter Settings for Inferred Entity Instance: Counter:Counter_1|lpm_divide:Mod0
+ 21. Port Connectivity Checks: "ClockDivider:ClockDivider_1"
+ 22. Port Connectivity Checks: "FallingEdge:FallingEdge_Sec"
+ 23. Port Connectivity Checks: "FallingEdge:FallingEdge_Min"
+ 24. Port Connectivity Checks: "FallingEdge:FallingEdge_Start"
+ 25. Port Connectivity Checks: "FallingEdge:FallingEdge_Clear"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -59,15 +60,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 14 10:34:16 2017       ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 14 11:30:26 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Main                                        ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,772                                       ;
-;     Total combinational functions  ; 1,755                                       ;
-;     Dedicated logic registers      ; 80                                          ;
-; Total registers                    ; 80                                          ;
+; Total logic elements               ; 1,846                                       ;
+;     Total combinational functions  ; 1,829                                       ;
+;     Dedicated logic registers      ; 83                                          ;
+; Total registers                    ; 83                                          ;
 ; Total pins                         ; 61                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -220,20 +221,20 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,772     ;
+; Estimated Total logic elements              ; 1,846     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1755      ;
+; Total combinational functions               ; 1829      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 472       ;
-;     -- 3 input functions                    ; 480       ;
-;     -- <=2 input functions                  ; 803       ;
+;     -- 4 input functions                    ; 494       ;
+;     -- 3 input functions                    ; 498       ;
+;     -- <=2 input functions                  ; 837       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1232      ;
-;     -- arithmetic mode                      ; 523       ;
+;     -- normal mode                          ; 1288      ;
+;     -- arithmetic mode                      ; 541       ;
 ;                                             ;           ;
-; Total registers                             ; 80        ;
-;     -- Dedicated logic registers            ; 80        ;
+; Total registers                             ; 83        ;
+;     -- Dedicated logic registers            ; 83        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 61        ;
@@ -241,8 +242,8 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 80        ;
-; Total fan-out                               ; 5119      ;
+; Maximum fan-out                             ; 83        ;
+; Total fan-out                               ; 5336      ;
 ; Average fan-out                             ; 2.62      ;
 +---------------------------------------------+-----------+
 
@@ -252,7 +253,7 @@ agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Main                                     ; 1755 (0)            ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |Main                                                                                                                               ; Main                ; work         ;
+; |Main                                     ; 1829 (0)            ; 83 (0)                    ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |Main                                                                                                                               ; Main                ; work         ;
 ;    |ClockDivider:ClockDivider_1|          ; 44 (44)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ClockDivider:ClockDivider_1                                                                                                   ; ClockDivider        ; work         ;
 ;    |ConvertIntBcd:ConvertIntBcd_1|        ; 1360 (14)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1                                                                                                 ; ConvertIntBcd       ; work         ;
 ;       |Decoder:Decoder_Min|               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1|Decoder:Decoder_Min                                                                             ; Decoder             ; work         ;
@@ -292,7 +293,7 @@ agreement for further details.
 ;          |lpm_divide_icm:auto_generated|  ; 154 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated                                                   ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_7nh:divider| ; 154 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
 ;                |alt_u_div_2af:divider|    ; 154 (154)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider ; alt_u_div_2af       ; work         ;
-;    |Counter:Counter_1|                    ; 326 (97)            ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1                                                                                                             ; Counter             ; work         ;
+;    |Counter:Counter_1|                    ; 357 (128)           ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1                                                                                                             ; Counter             ; work         ;
 ;       |lpm_divide:Mod0|                   ; 229 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0                                                                                             ; lpm_divide          ; work         ;
 ;          |lpm_divide_icm:auto_generated|  ; 229 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated                                                               ; lpm_divide_icm      ; work         ;
 ;             |sign_div_unsign_7nh:divider| ; 229 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Counter:Counter_1|lpm_divide:Mod0|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider                                   ; sign_div_unsign_7nh ; work         ;
@@ -301,25 +302,48 @@ agreement for further details.
 ;    |FallingEdge:FallingEdge_Min|          ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|FallingEdge:FallingEdge_Min                                                                                                   ; FallingEdge         ; work         ;
 ;    |FallingEdge:FallingEdge_Sec|          ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|FallingEdge:FallingEdge_Sec                                                                                                   ; FallingEdge         ; work         ;
 ;    |FallingEdge:FallingEdge_Start|        ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|FallingEdge:FallingEdge_Start                                                                                                 ; FallingEdge         ; work         ;
-;    |StateMachine:StateMachine_1|          ; 24 (24)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|StateMachine:StateMachine_1                                                                                                   ; StateMachine        ; work         ;
+;    |StateMachine:StateMachine_1|          ; 67 (67)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|StateMachine:StateMachine_1                                                                                                   ; StateMachine        ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Main|StateMachine:StateMachine_1|mode                                                            ;
-+---------------+-------------+-------------+-------------+-------------+-------------+-------------+---------------+
-; Name          ; mode.st_390 ; mode.st_300 ; mode.st_290 ; mode.st_200 ; mode.st_190 ; mode.st_100 ; mode.st_reset ;
-+---------------+-------------+-------------+-------------+-------------+-------------+-------------+---------------+
-; mode.st_reset ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0             ;
-; mode.st_100   ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1             ;
-; mode.st_190   ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1             ;
-; mode.st_200   ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1             ;
-; mode.st_290   ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1             ;
-; mode.st_300   ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1             ;
-; mode.st_390   ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
-+---------------+-------------+-------------+-------------+-------------+-------------+-------------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Main|StateMachine:StateMachine_1|mode                                                                                                      ;
++---------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+---------------+
+; Name          ; mode.st_390 ; mode.st_321 ; mode.st_320 ; mode.st_300 ; mode.st_291 ; mode.st_290 ; mode.st_200 ; mode.st_190 ; mode.st_100 ; mode.st_reset ;
++---------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+---------------+
+; mode.st_reset ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0             ;
+; mode.st_100   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1             ;
+; mode.st_190   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1             ;
+; mode.st_200   ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1             ;
+; mode.st_290   ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_291   ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_300   ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_320   ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_321   ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
+; mode.st_390   ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1             ;
++---------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                ;
++-----------------------------------------------------+-------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                 ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------------+------------------------+
+; StateMachine:StateMachine_1|CountValueBuzzer[3]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[2]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[1]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[0]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[5]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[6]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[7]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[8]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[9]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; StateMachine:StateMachine_1|CountValueBuzzer[4]     ; StateMachine:StateMachine_1|WideOr4 ; yes                    ;
+; Number of user-specified and inferred latches = 10  ;                                     ;                        ;
++-----------------------------------------------------+-------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -327,26 +351,26 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 80    ;
+; Total registers                              ; 83    ;
 ; Number of registers using Synchronous Clear  ; 40    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 7     ;
+; Number of registers using Asynchronous Clear ; 10    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 26    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValueSaved[0]  ;
-; 7:1                ; 13 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValue[12]      ;
-; 11:1               ; 5 bits    ; 35 LEs        ; 20 LEs               ; 15 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector6 ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector3 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValueSaved[1]   ;
+; 7:1                ; 13 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValue[1]        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |Main|Counter:Counter_1|Add0                 ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 42 LEs               ; 28 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector13 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------+
@@ -620,26 +644,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 61                          ;
-; cycloneiii_ff         ; 80                          ;
-;     CLR               ; 7                           ;
+; cycloneiii_ff         ; 83                          ;
+;     CLR               ; 10                          ;
 ;     ENA               ; 13                          ;
 ;     ENA SCLR          ; 13                          ;
 ;     SCLR              ; 27                          ;
 ;     plain             ; 20                          ;
-; cycloneiii_lcell_comb ; 1761                        ;
-;     arith             ; 523                         ;
+; cycloneiii_lcell_comb ; 1832                        ;
+;     arith             ; 541                         ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 75                          ;
-;         3 data inputs ; 444                         ;
-;     normal            ; 1238                        ;
+;         2 data inputs ; 95                          ;
+;         3 data inputs ; 442                         ;
+;     normal            ; 1291                        ;
 ;         0 data inputs ; 74                          ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 642                         ;
-;         3 data inputs ; 36                          ;
-;         4 data inputs ; 472                         ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 654                         ;
+;         3 data inputs ; 56                          ;
+;         4 data inputs ; 494                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 59.10                       ;
-; Average LUT depth     ; 37.08                       ;
+; Average LUT depth     ; 35.60                       ;
 +-----------------------+-----------------------------+
 
 
@@ -658,7 +682,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Dec 14 10:33:47 2017
+    Info: Processing started: Thu Dec 14 11:29:50 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Eieruhr -c Main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -678,6 +702,18 @@ Warning (12125): Using design file statemachine.vhd, which is not specified as a
     Info (12022): Found design unit 1: StateMachine-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 47
     Info (12023): Found entity 1: StateMachine File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 25
 Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:StateMachine_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at statemachine.vhd(163): signal "CountValueBuzzer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 163
+Warning (10631): VHDL Process Statement warning at statemachine.vhd(132): inferring latch(es) for signal or variable "CountValueBuzzer", which holds its previous value in one or more paths through the process File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[0]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[1]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[2]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[3]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[4]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[5]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[6]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[7]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[8]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+Info (10041): Inferred latch for "CountValueBuzzer[9]" at statemachine.vhd(132) File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
 Info (12128): Elaborating entity "FallingEdge" for hierarchy "FallingEdge:FallingEdge_Clear" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 185
 Warning (10492): VHDL Process Statement warning at FallingEdge.vhd(52): signal "Button" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd Line: 52
 Warning (10492): VHDL Process Statement warning at FallingEdge.vhd(52): signal "SavedValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/FallingEdge.vhd Line: 52
@@ -704,7 +740,7 @@ Info (278001): Inferred 9 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 59
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Counter:Counter_1|Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 71
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Counter:Counter_1|Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 69
 Info (12130): Elaborated megafunction instantiation "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
 Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Div4" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
     Info (12134): Parameter "LPM_WIDTHN" = "15"
@@ -786,14 +822,34 @@ Info (12133): Instantiated megafunction "ConvertIntBcd:ConvertIntBcd_1|lpm_divid
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "Counter:Counter_1|lpm_divide:Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 71
-Info (12133): Instantiated megafunction "Counter:Counter_1|lpm_divide:Mod0" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 71
+Info (12130): Elaborated megafunction instantiation "Counter:Counter_1|lpm_divide:Mod0" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 69
+Info (12133): Instantiated megafunction "Counter:Counter_1|lpm_divide:Mod0" with the following parameter: File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/Counter.vhd Line: 69
     Info (12134): Parameter "LPM_WIDTHN" = "13"
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (13014): Ignored 13 buffer(s)
     Info (13016): Ignored 13 CARRY_SUM buffer(s)
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[3] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[2] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[1] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[0] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[5] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[6] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[7] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[8] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[9] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
+Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[4] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal StateMachine:StateMachine_1|mode.st_320 File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 50
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "Debug_clk_Deci" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 52
     Warning (13410): Pin "BuzzerOut" is stuck at GND File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 55
@@ -807,17 +863,18 @@ Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "ConvertIntBcd:ConvertIntBcd_1|lpm_divide:Mod3|lpm_divide_icm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_2af:divider|add_sub_12_result_int[0]~26" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/db/alt_u_div_2af.tdf Line: 47
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BuzzerOverride" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 37
+    Warning (15610): No output dependent on input pin "SW2" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 38
     Warning (15610): No output dependent on input pin "SW3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 39
-Info (21057): Implemented 1834 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1908 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1773 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 736 megabytes
-    Info: Processing ended: Thu Dec 14 10:34:16 2017
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:59
+    Info (21061): Implemented 1847 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 737 megabytes
+    Info: Processing ended: Thu Dec 14 11:30:26 2017
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:01:03
 
 

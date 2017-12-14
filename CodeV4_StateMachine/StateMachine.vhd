@@ -26,6 +26,7 @@ ENTITY StateMachine IS
 PORT(
 		reset_i			:		IN		std_logic;
 		clk_i				:		IN		std_logic;
+		clk_Deci_i		:		IN		std_logic;
 											
 		--User buttons
 		BtnStartF_i		:		IN		 std_logic;
@@ -36,8 +37,7 @@ PORT(
 		
 		--Control the Counter-Block
 		CountBlockControl_o 	:OUT	std_logic_vector(5 downto 0);	
-		CountBlockTelemet_i 	:In	std_logic;							--Bit0: Counter is at 0
-		BuzzerTelemet_i 	:In	std_logic							--Bit0: Counter is at 0
+		CountBlockTelemet_i 	:In	std_logic							--Bit0: Counter is at 0
 	);
 END StateMachine;
 
@@ -46,8 +46,11 @@ END StateMachine;
 --------------------------------------------
 ARCHITECTURE behave OF StateMachine IS
 
-TYPE state IS (st_reset,st_100,st_190,st_200,st_290,st_300,st_390);
+TYPE state IS (st_reset,st_100,st_190,st_200,st_290,st_291,st_300,st_320,st_321,st_390);
 SIGNAL mode : state;
+
+SIGNAL CountValueBuzzer:integer range 0 to 600 :=0;
+CONSTANT BuzzerPreload : integer := 50;
 
 
 BEGIN
@@ -80,7 +83,7 @@ BEGIN
 		------------------------------------
 				WHEN st_200 =>
 						IF CountBlockTelemet_i = '1'  THEN
-							mode <= st_300;
+							mode <= st_291;
 						ELSIF BtnStartf_i = '1' THEN
 							mode <= st_290;
 						END IF;
@@ -90,10 +93,26 @@ BEGIN
 							mode <= st_100;
 						END IF;
 						
+				WHEN st_291 =>						--Prepare Buzzer.				
+						IF CountValueBuzzer = BuzzerPreload THEN
+							mode <= st_300;
+						END IF;
+						
 		------------------------------------
 				WHEN st_300 =>
-						IF  BuzzerTelemet_i = '1' OR BtnStartF_i = '1' THEN
+						IF  CountValueBuzzer = 0 OR BtnStartF_i = '1' THEN
 							mode <= st_390;	--value load
+						END IF;
+						IF  clk_Deci_i = '1' THEN
+							mode <= st_320;	--value load
+						END IF;
+						
+				WHEN st_320 =>						--Pause pressed.				
+							mode <= st_321;
+						
+				WHEN st_321 =>						--Pause pressed.				
+						IF clk_Deci_i = '0' THEN
+							mode <= st_300;
 						END IF;
 						
 				WHEN st_390 =>					
@@ -128,12 +147,23 @@ output_proc : PROCESS (mode)
 				DebugLED_o <= "010";
 				CountBlockControl_o <= "010000";		
 		WHEN st_290 =>	
+				DebugLED_o <= "110";
+				CountBlockControl_o <= "000000";		
+		WHEN st_291 =>	
 				DebugLED_o <= "011";
-				CountBlockControl_o <= "000001";					
+				CountBlockControl_o <= "000000";	
+				CountValueBuzzer <= BuzzerPreload;
 ------------------------------------
 		WHEN st_300 =>
 				DebugLED_o <= "001";
-				CountBlockControl_o <= "000001";			
+				CountBlockControl_o <= "000001";	
+		WHEN st_320 =>
+				DebugLED_o <= "001";
+				CountBlockControl_o <= "000001";		
+				CountValueBuzzer <= CountValueBuzzer-1;
+		WHEN st_321 =>
+				DebugLED_o <= "001";
+				CountBlockControl_o <= "000001";
 		WHEN st_390 =>
 				DebugLED_o <= "101";
 				CountBlockControl_o <= "000010";	
