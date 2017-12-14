@@ -114,10 +114,9 @@ ARCHITECTURE behave OF Main IS
 	--Detecting a falling edge (when button is pressed)
 	component FallingEdge
 	  port(
-		clk			 :		IN		std_logic;			--main 50Mhz clock input		
-		Button		 :		IN		std_logic;			--Input											
-		FallingOutput:		OUT	std_logic;			--Output to buzzer
-		InversedOutput:	OUT	std_logic
+		clk_i			 :		IN		std_logic;			--main 50Mhz clock input		
+		Button_i		 :		IN		std_logic;			--Input											
+		Falling_o:		OUT	std_logic
 	);
 	end component;
 	
@@ -195,30 +194,30 @@ BEGIN
 			
 	FallingEdge_Clear : component FallingEdge
 		port map(
-			clk => clk,
-			Button => BtnClear,
-			FallingOutput => BtnClearFalling
+			clk_i => clk,
+			Button_i => BtnClear,
+			Falling_o => BtnClearFalling
 			);
 			
 	FallingEdge_Start : component FallingEdge
 		port map(
-			clk => clk,
-			Button => BtnStart,
-			FallingOutput => BtnStartFalling
+			clk_i => clk,
+			Button_i => BtnStart,
+			Falling_o => BtnStartFalling
 			);
 			
 	FallingEdge_Min : component FallingEdge
 		port map(
-			clk => clk,
-			Button => BtnMin,
-			FallingOutput => BtnMinFalling
+			clk_i => clk,
+			Button_i => BtnMin,
+			Falling_o => BtnMinFalling
 			);
 	
 	FallingEdge_Sec : component FallingEdge
 		port map(
-			clk => clk,
-			Button => BtnSec,
-			FallingOutput => BtnSecFalling
+			clk_i => clk,
+			Button_i => BtnSec,
+			Falling_o => BtnSecFalling
 			);
 
 ----------------------------------------------

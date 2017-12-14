@@ -1,14 +1,19 @@
 ------------------------------------------------------
---  Buzzer by Samuel Daurat [178190]  --
+--  Module for Timer by Samuel Daurat [178190]      --
 
--- This module will sound a buzzer with increasing volume repeated each 4 sec
+-- This module will detect falling edges. --> Button pressed on the board.
+-- Button_i: 	------_______-----
+-- Falling_o:	______-___________
 
 
 -- Changelog:
--- Version 1.1 | 06.12.17
---  *code stopped working during night :(
+-- Version 1.0RS | 14.12.17
+--	 *lot of changes and tests during this time
+--  *commented code again
+--  *renamed signals
+-- Version 0.9 | 06.12.17
 --  *added comments
--- Version 1.0 | 05.12.17
+-- Version 0.2 | 05.12.17
 --  *initial release
 ------------------------------------------------------
 
@@ -18,42 +23,39 @@ USE IEEE.std_logic_1164.ALL;
 use ieee.numeric_std.all;
 
 
---------------------------------------------
---	   ENTITY	                           --
---------------------------------------------
+------------------------------------------------------
+--	   ENTITY	                           			 --
+------------------------------------------------------
 ENTITY FallingEdge IS
 PORT(
 	
-	clk			:		IN		std_logic;			--main 50Mhz clock input
-	Button		:		IN		std_logic;			--each clock-cycle here will increment the PWM counter by 1 from 0(off) to 1000(max)
+	clk_i				:	IN		std_logic;						--main 50Mhz clock input
+	Button_i			:	IN		std_logic;						--Input for the Button
 													
-	FallingOutput:		OUT	std_logic;			--Output to buzzer
-	InversedOutput:	OUT	std_logic
+	Falling_o		:	OUT	std_logic						--Signal output
 	
 	);
 END FallingEdge;
 
---------------------------------------------
---        ARCHITECTURE	                  --
---------------------------------------------
+------------------------------------------------------
+--        ARCHITECTURE	                            --
+------------------------------------------------------
 ARCHITECTURE behave OF FallingEdge IS
 
-	SIGNAL	SavedValue : std_logic :='0' ;				--Save the last Value of Button
+	SIGNAL	SavedValue : std_logic :='0';					--Save the last Value of Button to compare
 
+------------------------------------------------------
 BEGIN
 
-	SAVE : PROCESS (clk)								
+	Check : PROCESS (clk_i)								
 	BEGIN
 	
-        IF (clk = '1' AND clk'EVENT) then					--Save the actual value in Saved Value 
-			SavedValue<=Button;
+        IF (clk_i = '1' AND clk_i'EVENT) THEN			--Save the actual value in Saved Value 
+			SavedValue<=Button_i;
         END IF;
 		  
-		  FallingOutput<= (NOT Button) AND SavedValue ; --When Button is pressed and the saved value is still
+		  Falling_o<= (NOT Button_i) AND SavedValue ;   --When Button is pressed and the saved value is still
 																		--"button not pressed", generate an output signal
-		  InversedOutput <= (NOT Button);
-	END PROCESS SAVE;
+	END PROCESS Check;
 	
-			
-
 END behave;

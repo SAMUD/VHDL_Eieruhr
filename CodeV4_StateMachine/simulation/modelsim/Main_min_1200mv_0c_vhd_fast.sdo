@@ -30,7 +30,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "Main")
-  (DATE "12/14/2017 15:19:11")
+  (DATE "12/14/2017 16:22:43")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition")
@@ -590,7 +590,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\FallingEdge_Start\|FallingOutput\~0\\)
+    (INSTANCE \\FallingEdge_Start\|Falling_o\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT dataa (230:230:230) (295:295:295))

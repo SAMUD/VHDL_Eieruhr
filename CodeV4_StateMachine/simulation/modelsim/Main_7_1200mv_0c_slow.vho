@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
--- DATE "12/14/2017 15:19:09"
+-- DATE "12/14/2017 16:22:40"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -73,9 +73,12 @@ END structure;
 LIBRARY ALTERA;
 LIBRARY CYCLONEIVE;
 LIBRARY IEEE;
+LIBRARY STD;
 USE ALTERA.ALTERA_PRIMITIVES_COMPONENTS.ALL;
 USE CYCLONEIVE.CYCLONEIVE_COMPONENTS.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE STD.STANDARD.ALL;
 
 ENTITY 	Main IS
     PORT (
@@ -88,15 +91,15 @@ ENTITY 	Main IS
 	BuzzerOverride : IN std_logic;
 	SW2 : IN std_logic;
 	SW3 : IN std_logic;
-	Output1 : BUFFER std_logic_vector(6 DOWNTO 0);
-	Output2 : BUFFER std_logic_vector(6 DOWNTO 0);
-	Output3 : BUFFER std_logic_vector(6 DOWNTO 0);
-	Output4 : BUFFER std_logic_vector(6 DOWNTO 0);
-	CountValueMainOut : BUFFER std_logic_vector(12 DOWNTO 0);
-	DebugLED : BUFFER std_logic_vector(2 DOWNTO 0);
-	DebugLED_Control : BUFFER std_logic_vector(5 DOWNTO 0);
-	Debug_clk_Deci : BUFFER std_logic;
-	BuzzerOut : BUFFER std_logic
+	Output1 : OUT std_logic_vector(6 DOWNTO 0);
+	Output2 : OUT std_logic_vector(6 DOWNTO 0);
+	Output3 : OUT std_logic_vector(6 DOWNTO 0);
+	Output4 : OUT std_logic_vector(6 DOWNTO 0);
+	CountValueMainOut : OUT STD.STANDARD.integer range 0 TO 6000;
+	DebugLED : OUT std_logic_vector(2 DOWNTO 0);
+	DebugLED_Control : OUT std_logic_vector(5 DOWNTO 0);
+	Debug_clk_Deci : OUT std_logic;
+	BuzzerOut : OUT std_logic
 	);
 END Main;
 
@@ -254,7 +257,7 @@ SIGNAL \clk~input_o\ : std_logic;
 SIGNAL \clk~inputclkctrl_outclk\ : std_logic;
 SIGNAL \BtnStart~input_o\ : std_logic;
 SIGNAL \FallingEdge_Start|SavedValue~q\ : std_logic;
-SIGNAL \FallingEdge_Start|FallingOutput~0_combout\ : std_logic;
+SIGNAL \FallingEdge_Start|Falling_o~0_combout\ : std_logic;
 SIGNAL \BtnClear~input_o\ : std_logic;
 SIGNAL \FallingEdge_Clear|SavedValue~q\ : std_logic;
 SIGNAL \StateMachine_1|Selector3~4_combout\ : std_logic;
@@ -3331,7 +3334,7 @@ Output1 <= ww_Output1;
 Output2 <= ww_Output2;
 Output3 <= ww_Output3;
 Output4 <= ww_Output4;
-CountValueMainOut <= ww_CountValueMainOut;
+CountValueMainOut <= IEEE.STD_LOGIC_ARITH.CONV_INTEGER(UNSIGNED(ww_CountValueMainOut));
 DebugLED <= ww_DebugLED;
 DebugLED_Control <= ww_DebugLED_Control;
 Debug_clk_Deci <= ww_Debug_clk_Deci;
@@ -4030,9 +4033,9 @@ PORT MAP (
 	q => \FallingEdge_Start|SavedValue~q\);
 
 -- Location: LCCOMB_X48_Y46_N12
-\FallingEdge_Start|FallingOutput~0\ : cycloneive_lcell_comb
+\FallingEdge_Start|Falling_o~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \FallingEdge_Start|FallingOutput~0_combout\ = (\FallingEdge_Start|SavedValue~q\ & !\BtnStart~input_o\)
+-- \FallingEdge_Start|Falling_o~0_combout\ = (\FallingEdge_Start|SavedValue~q\ & !\BtnStart~input_o\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4042,7 +4045,7 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \FallingEdge_Start|SavedValue~q\,
 	datac => \BtnStart~input_o\,
-	combout => \FallingEdge_Start|FallingOutput~0_combout\);
+	combout => \FallingEdge_Start|Falling_o~0_combout\);
 
 -- Location: IOIBUF_X115_Y53_N15
 \BtnClear~input\ : cycloneive_io_ibuf
@@ -4088,7 +4091,7 @@ PORT MAP (
 -- Location: LCCOMB_X49_Y46_N24
 \StateMachine_1|Selector3~5\ : cycloneive_lcell_comb
 -- Equation(s):
--- \StateMachine_1|Selector3~5_combout\ = (\StateMachine_1|mode.st_100~q\ & ((\StateMachine_1|Selector3~4_combout\) # ((!\Counter_1|CountBlockTelemet_o~q\ & \FallingEdge_Start|FallingOutput~0_combout\))))
+-- \StateMachine_1|Selector3~5_combout\ = (\StateMachine_1|mode.st_100~q\ & ((\StateMachine_1|Selector3~4_combout\) # ((!\Counter_1|CountBlockTelemet_o~q\ & \FallingEdge_Start|Falling_o~0_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4099,13 +4102,13 @@ PORT MAP (
 	dataa => \StateMachine_1|Selector3~4_combout\,
 	datab => \StateMachine_1|mode.st_100~q\,
 	datac => \Counter_1|CountBlockTelemet_o~q\,
-	datad => \FallingEdge_Start|FallingOutput~0_combout\,
+	datad => \FallingEdge_Start|Falling_o~0_combout\,
 	combout => \StateMachine_1|Selector3~5_combout\);
 
 -- Location: LCCOMB_X49_Y46_N14
 \StateMachine_1|Selector3~6\ : cycloneive_lcell_comb
 -- Equation(s):
--- \StateMachine_1|Selector3~6_combout\ = (\StateMachine_1|Selector3~5_combout\) # ((\StateMachine_1|mode.st_200~q\ & ((\Counter_1|CountBlockTelemet_o~q\) # (\FallingEdge_Start|FallingOutput~0_combout\))))
+-- \StateMachine_1|Selector3~6_combout\ = (\StateMachine_1|Selector3~5_combout\) # ((\StateMachine_1|mode.st_200~q\ & ((\Counter_1|CountBlockTelemet_o~q\) # (\FallingEdge_Start|Falling_o~0_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4116,7 +4119,7 @@ PORT MAP (
 	dataa => \StateMachine_1|mode.st_200~q\,
 	datab => \StateMachine_1|Selector3~5_combout\,
 	datac => \Counter_1|CountBlockTelemet_o~q\,
-	datad => \FallingEdge_Start|FallingOutput~0_combout\,
+	datad => \FallingEdge_Start|Falling_o~0_combout\,
 	combout => \StateMachine_1|Selector3~6_combout\);
 
 -- Location: LCCOMB_X49_Y46_N6
@@ -4263,7 +4266,7 @@ PORT MAP (
 -- Location: LCCOMB_X49_Y46_N16
 \StateMachine_1|Selector3~7\ : cycloneive_lcell_comb
 -- Equation(s):
--- \StateMachine_1|Selector3~7_combout\ = (!\FallingEdge_Start|FallingOutput~0_combout\ & ((\StateMachine_1|mode.st_190~q\) # ((\StateMachine_1|mode.st_390~q\) # (\StateMachine_1|mode.st_290~q\))))
+-- \StateMachine_1|Selector3~7_combout\ = (!\FallingEdge_Start|Falling_o~0_combout\ & ((\StateMachine_1|mode.st_190~q\) # ((\StateMachine_1|mode.st_390~q\) # (\StateMachine_1|mode.st_290~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4271,7 +4274,7 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \FallingEdge_Start|FallingOutput~0_combout\,
+	dataa => \FallingEdge_Start|Falling_o~0_combout\,
 	datab => \StateMachine_1|mode.st_190~q\,
 	datac => \StateMachine_1|mode.st_390~q\,
 	datad => \StateMachine_1|mode.st_290~q\,
@@ -6376,7 +6379,7 @@ PORT MAP (
 -- Location: LCCOMB_X50_Y46_N2
 \StateMachine_1|Selector3~10\ : cycloneive_lcell_comb
 -- Equation(s):
--- \StateMachine_1|Selector3~10_combout\ = (\StateMachine_1|mode.st_300~q\ & ((\FallingEdge_Start|FallingOutput~0_combout\) # ((\StateMachine_1|Selector3~9_combout\ & \StateMachine_1|Equal0~2_combout\))))
+-- \StateMachine_1|Selector3~10_combout\ = (\StateMachine_1|mode.st_300~q\ & ((\FallingEdge_Start|Falling_o~0_combout\) # ((\StateMachine_1|Selector3~9_combout\ & \StateMachine_1|Equal0~2_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6386,14 +6389,14 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \StateMachine_1|mode.st_300~q\,
 	datab => \StateMachine_1|Selector3~9_combout\,
-	datac => \FallingEdge_Start|FallingOutput~0_combout\,
+	datac => \FallingEdge_Start|Falling_o~0_combout\,
 	datad => \StateMachine_1|Equal0~2_combout\,
 	combout => \StateMachine_1|Selector3~10_combout\);
 
 -- Location: LCCOMB_X49_Y46_N18
 \StateMachine_1|Selector3~11\ : cycloneive_lcell_comb
 -- Equation(s):
--- \StateMachine_1|Selector3~11_combout\ = ((\StateMachine_1|Selector3~10_combout\) # ((\FallingEdge_Start|FallingOutput~0_combout\ & !\Counter_1|CountBlockTelemet_o~q\))) # (!\StateMachine_1|Selector3~5_combout\)
+-- \StateMachine_1|Selector3~11_combout\ = ((\StateMachine_1|Selector3~10_combout\) # ((\FallingEdge_Start|Falling_o~0_combout\ & !\Counter_1|CountBlockTelemet_o~q\))) # (!\StateMachine_1|Selector3~5_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6401,7 +6404,7 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \FallingEdge_Start|FallingOutput~0_combout\,
+	dataa => \FallingEdge_Start|Falling_o~0_combout\,
 	datab => \StateMachine_1|Selector3~5_combout\,
 	datac => \Counter_1|CountBlockTelemet_o~q\,
 	datad => \StateMachine_1|Selector3~10_combout\,
@@ -6425,7 +6428,7 @@ PORT MAP (
 -- Location: LCCOMB_X49_Y46_N28
 \StateMachine_1|Selector4~3\ : cycloneive_lcell_comb
 -- Equation(s):
--- \StateMachine_1|Selector4~3_combout\ = ((!\FallingEdge_Start|FallingOutput~0_combout\ & ((\StateMachine_1|mode.st_390~q\) # (\StateMachine_1|mode.st_290~q\)))) # (!\StateMachine_1|mode.st_reset~q\)
+-- \StateMachine_1|Selector4~3_combout\ = ((!\FallingEdge_Start|Falling_o~0_combout\ & ((\StateMachine_1|mode.st_390~q\) # (\StateMachine_1|mode.st_290~q\)))) # (!\StateMachine_1|mode.st_reset~q\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6433,7 +6436,7 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \FallingEdge_Start|FallingOutput~0_combout\,
+	dataa => \FallingEdge_Start|Falling_o~0_combout\,
 	datab => \StateMachine_1|mode.st_reset~q\,
 	datac => \StateMachine_1|mode.st_390~q\,
 	datad => \StateMachine_1|mode.st_290~q\,
@@ -6476,8 +6479,8 @@ PORT MAP (
 -- Location: LCCOMB_X49_Y46_N0
 \StateMachine_1|Selector4~4\ : cycloneive_lcell_comb
 -- Equation(s):
--- \StateMachine_1|Selector4~4_combout\ = (\StateMachine_1|Selector4~3_combout\ & (((\FallingEdge_Start|FallingOutput~0_combout\)) # (!\StateMachine_1|mode.st_190~q\))) # (!\StateMachine_1|Selector4~3_combout\ & (\StateMachine_1|Selector4~5_combout\ & 
--- ((\FallingEdge_Start|FallingOutput~0_combout\) # (!\StateMachine_1|mode.st_190~q\))))
+-- \StateMachine_1|Selector4~4_combout\ = (\StateMachine_1|Selector4~3_combout\ & (((\FallingEdge_Start|Falling_o~0_combout\)) # (!\StateMachine_1|mode.st_190~q\))) # (!\StateMachine_1|Selector4~3_combout\ & (\StateMachine_1|Selector4~5_combout\ & 
+-- ((\FallingEdge_Start|Falling_o~0_combout\) # (!\StateMachine_1|mode.st_190~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -6488,7 +6491,7 @@ PORT MAP (
 	dataa => \StateMachine_1|Selector4~3_combout\,
 	datab => \StateMachine_1|mode.st_190~q\,
 	datac => \StateMachine_1|Selector4~5_combout\,
-	datad => \FallingEdge_Start|FallingOutput~0_combout\,
+	datad => \FallingEdge_Start|Falling_o~0_combout\,
 	combout => \StateMachine_1|Selector4~4_combout\);
 
 -- Location: FF_X49_Y46_N1
@@ -20505,7 +20508,7 @@ PORT MAP (
 -- Location: LCCOMB_X49_Y46_N10
 \StateMachine_1|Selector6~3\ : cycloneive_lcell_comb
 -- Equation(s):
--- \StateMachine_1|Selector6~3_combout\ = (!\FallingEdge_Start|FallingOutput~0_combout\ & ((\StateMachine_1|mode.st_190~q\) # ((!\Counter_1|CountBlockTelemet_o~q\ & \StateMachine_1|mode.st_200~q\))))
+-- \StateMachine_1|Selector6~3_combout\ = (!\FallingEdge_Start|Falling_o~0_combout\ & ((\StateMachine_1|mode.st_190~q\) # ((!\Counter_1|CountBlockTelemet_o~q\ & \StateMachine_1|mode.st_200~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -20513,7 +20516,7 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \FallingEdge_Start|FallingOutput~0_combout\,
+	dataa => \FallingEdge_Start|Falling_o~0_combout\,
 	datab => \Counter_1|CountBlockTelemet_o~q\,
 	datac => \StateMachine_1|mode.st_200~q\,
 	datad => \StateMachine_1|mode.st_190~q\,
