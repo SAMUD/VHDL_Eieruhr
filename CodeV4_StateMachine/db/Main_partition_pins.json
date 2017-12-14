@@ -204,6 +204,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "BuzzerOut",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},

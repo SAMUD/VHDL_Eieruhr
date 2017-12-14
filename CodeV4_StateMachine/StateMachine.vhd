@@ -100,7 +100,7 @@ BEGIN
 						
 		------------------------------------
 				WHEN st_300 =>
-						IF  CountValueBuzzer = 0 OR BtnStartF_i = '1' THEN
+						IF  CountValueBuzzer < 2 OR BtnStartF_i = '1' THEN
 							mode <= st_390;	--value load
 						END IF;
 						IF  clk_Deci_i = '1' THEN

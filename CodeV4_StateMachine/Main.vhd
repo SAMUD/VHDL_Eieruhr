@@ -149,6 +149,15 @@ ARCHITECTURE behave OF Main IS
 	);
 	end component;
 	
+	component Buzzer
+	  port(
+		clk			:		IN		std_logic;
+		Enable		:		IN		std_logic;
+													
+		BuzzerOut	:		OUT	std_logic
+	);
+	end component;
+	
 
 BEGIN
 
@@ -251,6 +260,16 @@ ConvertIntBcd_1: component ConvertIntBcd
 				SevenSeg3 => Output3,
 				SevenSeg4 => Output4
 		);
+		
+----------------------------------------------
+--Buzzer	
+	
+Buzzer_1	:component Buzzer
+port map(
+	clk => clk,
+	Enable => CountBlockControl(0),
+	BuzzerOut => BuzzerOut
+);
 
 			
 		
