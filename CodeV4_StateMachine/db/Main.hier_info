@@ -827,6 +827,7 @@ Output[6] <= Output.DB_MAX_OUTPUT_PORT_TYPE
 
 |Main|Buzzer:Buzzer_1
 clk => ClockDivider:ClockDivider_PWM.clk_in
+clk => BuzzerOut~reg0.CLK
 clk => CountedValue[0].CLK
 clk => CountedValue[1].CLK
 clk => CountedValue[2].CLK
@@ -837,17 +838,8 @@ clk => CountedValue[6].CLK
 clk => CountedValue[7].CLK
 clk => CountedValue[8].CLK
 clk => CountedValue[9].CLK
-Enable => CountedValue2nd.OUTPUTSELECT
-Enable => CountedValue2nd.OUTPUTSELECT
-Enable => CountedValue2nd.OUTPUTSELECT
-Enable => CountedValue2nd.OUTPUTSELECT
-Enable => CountedValue2nd.OUTPUTSELECT
-Enable => CountedValue2nd.OUTPUTSELECT
-Enable => CountedValue2nd.OUTPUTSELECT
-Enable => CountedValue2nd.OUTPUTSELECT
-Enable => CountedValue2nd.OUTPUTSELECT
-Enable => CountedValue2nd.OUTPUTSELECT
-BuzzerOut <= LessThan2.DB_MAX_OUTPUT_PORT_TYPE
+Enable => CountingAgain.IN1
+BuzzerOut <= BuzzerOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Main|Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM

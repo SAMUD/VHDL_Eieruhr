@@ -9,7 +9,7 @@
 
 
 -- Changelog:
--- Version 2.0RS | 14.12.17
+-- Version 1.0RS | 14.12.17
 --	 *lot of changes and tests during this time
 --  *commented code again
 --  *renamed signals

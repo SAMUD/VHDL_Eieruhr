@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Main
-Thu Dec 14 16:35:05 2017
+Thu Dec 14 16:53:53 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -60,15 +60,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 14 16:35:05 2017       ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 14 16:53:53 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Main                                        ;
 ; Top-level Entity Name              ; Main                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,319                                       ;
-;     Total combinational functions  ; 2,302                                       ;
-;     Dedicated logic registers      ; 157                                         ;
-; Total registers                    ; 157                                         ;
+; Total logic elements               ; 2,321                                       ;
+;     Total combinational functions  ; 2,304                                       ;
+;     Dedicated logic registers      ; 158                                         ;
+; Total registers                    ; 158                                         ;
 ; Total pins                         ; 61                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -223,20 +223,20 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 2,319     ;
+; Estimated Total logic elements              ; 2,321     ;
 ;                                             ;           ;
-; Total combinational functions               ; 2302      ;
+; Total combinational functions               ; 2304      ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 578       ;
-;     -- 3 input functions                    ; 641       ;
-;     -- <=2 input functions                  ; 1083      ;
+;     -- 3 input functions                    ; 639       ;
+;     -- <=2 input functions                  ; 1087      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1501      ;
+;     -- normal mode                          ; 1503      ;
 ;     -- arithmetic mode                      ; 801       ;
 ;                                             ;           ;
-; Total registers                             ; 157       ;
-;     -- Dedicated logic registers            ; 157       ;
+; Total registers                             ; 158       ;
+;     -- Dedicated logic registers            ; 158       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 61        ;
@@ -244,8 +244,8 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 147       ;
-; Total fan-out                               ; 6774      ;
+; Maximum fan-out                             ; 148       ;
+; Total fan-out                               ; 6778      ;
 ; Average fan-out                             ; 2.62      ;
 +---------------------------------------------+-----------+
 
@@ -255,10 +255,10 @@ agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Main                                     ; 2302 (0)            ; 157 (0)                   ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |Main                                                                                                                               ; Main                ; work         ;
-;    |Buzzer:Buzzer_1|                      ; 77 (37)             ; 48 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Buzzer:Buzzer_1                                                                                                               ; Buzzer              ; work         ;
+; |Main                                     ; 2304 (0)            ; 158 (0)                   ; 0           ; 0            ; 0       ; 0         ; 61   ; 0            ; |Main                                                                                                                               ; Main                ; work         ;
+;    |Buzzer:Buzzer_1|                      ; 77 (37)             ; 49 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Buzzer:Buzzer_1                                                                                                               ; Buzzer              ; work         ;
 ;       |ClockDivider:ClockDivider_PWM|     ; 40 (40)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM                                                                                 ; ClockDivider        ; work         ;
-;    |ClockDivider:ClockDivider_1|          ; 43 (43)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ClockDivider:ClockDivider_1                                                                                                   ; ClockDivider        ; work         ;
+;    |ClockDivider:ClockDivider_1|          ; 45 (45)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ClockDivider:ClockDivider_1                                                                                                   ; ClockDivider        ; work         ;
 ;    |ConvertIntBcd:ConvertIntBcd_1|        ; 1360 (14)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1                                                                                                 ; ConvertIntBcd       ; work         ;
 ;       |Decoder:Decoder_Min|               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1|Decoder:Decoder_Min                                                                             ; Decoder             ; work         ;
 ;       |Decoder:Decoder_SecDeci|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Main|ConvertIntBcd:ConvertIntBcd_1|Decoder:Decoder_SecDeci                                                                         ; Decoder             ; work         ;
@@ -366,7 +366,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 157   ;
+; Total registers                              ; 158   ;
 ; Number of registers using Synchronous Clear  ; 114   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 8     ;
@@ -381,10 +381,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValueSaved[12] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Main|Buzzer:Buzzer_1|CountedValue2nd[6]    ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValueSaved[0]  ;
 ; 10:1               ; 13 bits   ; 78 LEs        ; 52 LEs               ; 26 LEs                 ; Yes        ; |Main|Counter:Counter_1|CountValue[4]       ;
-; 13:1               ; 6 bits    ; 48 LEs        ; 30 LEs               ; 18 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector3 ;
+; 13:1               ; 6 bits    ; 48 LEs        ; 30 LEs               ; 18 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector8 ;
 ; 15:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |Main|StateMachine:StateMachine_1|Selector6 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
@@ -642,23 +641,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM"                                                                         ;
-+--------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port               ; Type   ; Severity ; Details                                                                                                  ;
-+--------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; reset_i            ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[18..17] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; divider_in[12..11] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; divider_in[26..19] ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[16..13] ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[6..0]   ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[10]     ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[9]      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; divider_in[8]      ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; divider_in[7]      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
-; clk_out_alt        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+--------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Buzzer:Buzzer_1|ClockDivider:ClockDivider_PWM"                                                    ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; divider_in[18..17] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; divider_in[12..11] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; divider_in[26..19] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[16..13] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[6..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[10]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[9]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; divider_in[8]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; divider_in[7]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; reset_i            ; Input  ; Info     ; Stuck at GND                                                                        ;
+; clk_out_alt        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -710,26 +709,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 61                          ;
-; cycloneiii_ff         ; 157                         ;
+; cycloneiii_ff         ; 158                         ;
 ;     CLR               ; 8                           ;
 ;     ENA               ; 13                          ;
 ;     ENA SCLR          ; 13                          ;
 ;     SCLR              ; 101                         ;
-;     plain             ; 22                          ;
-; cycloneiii_lcell_comb ; 2310                        ;
+;     plain             ; 23                          ;
+; cycloneiii_lcell_comb ; 2312                        ;
 ;     arith             ; 801                         ;
 ;         1 data inputs ; 7                           ;
 ;         2 data inputs ; 219                         ;
 ;         3 data inputs ; 575                         ;
-;     normal            ; 1509                        ;
+;     normal            ; 1511                        ;
 ;         0 data inputs ; 89                          ;
 ;         1 data inputs ; 29                          ;
-;         2 data inputs ; 747                         ;
-;         3 data inputs ; 66                          ;
+;         2 data inputs ; 751                         ;
+;         3 data inputs ; 64                          ;
 ;         4 data inputs ; 578                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 59.10                       ;
-; Average LUT depth     ; 32.91                       ;
+; Average LUT depth     ; 32.87                       ;
 +-----------------------+-----------------------------+
 
 
@@ -748,7 +747,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Dec 14 16:34:26 2017
+    Info: Processing started: Thu Dec 14 16:53:19 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Eieruhr -c Main
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file fallingedge.vhd
@@ -805,11 +804,9 @@ Warning (12125): Using design file decoder.vhd, which is not specified as a desi
     Info (12023): Found entity 1: Decoder File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/decoder.vhd Line: 29
 Info (12128): Elaborating entity "Decoder" for hierarchy "ConvertIntBcd:ConvertIntBcd_1|Decoder:Decoder_Min" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 66
 Warning (12125): Using design file buzzer.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: Buzzer-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 38
-    Info (12023): Found entity 1: Buzzer File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 24
+    Info (12022): Found design unit 1: Buzzer-behave File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 42
+    Info (12023): Found entity 1: Buzzer File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 28
 Info (12128): Elaborating entity "Buzzer" for hierarchy "Buzzer:Buzzer_1" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 271
-Warning (10492): VHDL Process Statement warning at buzzer.vhd(102): signal "CountedValue2nd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 102
-Warning (10492): VHDL Process Statement warning at buzzer.vhd(102): signal "CountedValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/buzzer.vhd Line: 102
 Info (278001): Inferred 11 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Div4" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 62
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ConvertIntBcd:ConvertIntBcd_1|Mod2" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/convertintbcd.vhd Line: 61
@@ -909,7 +906,6 @@ Info (12133): Instantiated megafunction "Counter:Counter_1|lpm_divide:Mod0" with
     Info (12134): Parameter "LPM_WIDTHD" = "13"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13014): Ignored 13 buffer(s)
     Info (13016): Ignored 13 CARRY_SUM buffer(s)
 Warning (13012): Latch StateMachine:StateMachine_1|CountValueBuzzer[2] has unsafe behavior File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/statemachine.vhd Line: 122
@@ -963,14 +959,14 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "BuzzerOverride" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 37
     Warning (15610): No output dependent on input pin "SW2" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 38
     Warning (15610): No output dependent on input pin "SW3" File: D:/OneDrive/Studium/Offenburg/Sem7/HDL/VHDL_Eieruhr/CodeV4_StateMachine/main.vhd Line: 39
-Info (21057): Implemented 2385 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2387 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 2324 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
-    Info: Peak virtual memory: 742 megabytes
-    Info: Processing ended: Thu Dec 14 16:35:05 2017
-    Info: Elapsed time: 00:00:39
-    Info: Total CPU time (on all processors): 00:01:03
+    Info (21061): Implemented 2326 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 729 megabytes
+    Info: Processing ended: Thu Dec 14 16:53:53 2017
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:56
 
 
